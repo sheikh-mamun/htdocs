@@ -22,10 +22,18 @@
 
 // access index arrays
 
+// $cars = array ("volve", "BMW", "TOYTOTA");
+// echo $cars[1];
+// echo "<br>";
+// echo $cars[0];
+
+
 $cars = array ("volve", "BMW", "TOYTOTA");
 echo $cars[1];
 echo "<br>";
 echo $cars[0];
+echo $cars[2];
+
 
 
 
