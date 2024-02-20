@@ -15,6 +15,12 @@
 $food = "burger";
 echo "my favourit " .$food;
 
+$foods = "pizza";
+echo "my favourit $food";
+
+
+
+
 ?>
 
 
