@@ -34,10 +34,10 @@
 // echo $cars[0];
 // echo $cars[2];
 
-// $x= 5;
-// $yh = "text";
-// var_dump($x."<br>");
-// var_dump($yh);
+$x= 5;
+$yh = "text";
+var_dump($x."<br>");
+var_dump($yh);
 
 
 

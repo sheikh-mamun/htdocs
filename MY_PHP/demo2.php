@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>index</title>
+  <title>demo2</title>
 </head>
 <body>
 
@@ -100,15 +100,41 @@
 
 // count values arrays
 
-$states = array("Washington","Vatican City","Dhaka","DC","Dhaka","DC");
+// $states = array("Washington","Vatican City","Dhaka","DC","Dhaka","DC");
 	
-	$stateFrequency = array_count_values($states);
+// 	$stateFrequency = array_count_values($states);
 	
-		print_r($stateFrequency);
+// 		print_r($stateFrequency);
 		
 //how many times are situated elements in an array
 
 
+
+// echo "Today is " . date("Y/m/d") . "<br>";
+// echo "Today is " . date("Y.m.d") . "<br>";
+// echo "Today is " . date("Y-m-d") . "<br>";
+// echo "Today is " . date("1") . "<br>";
+
+
+// echo "The time is " .date("h:i:sa");
+
+// $d=strtotime("tomorrow");
+// echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+// $d=strtotime("next Saturday");
+// echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+// $d=strtotime("+3 Months");
+// echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+
+$startdate = strtotime("friday");
+$enddate = strtotime("+7 weeks", $startdate);
+
+while ($startdate < $enddate) {
+  echo date("M d", $startdate) . "<br>";
+  $startdate = strtotime("+1 week", $startdate);
+}
 
 
 
