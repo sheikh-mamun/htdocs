@@ -128,13 +128,24 @@
 // echo date("Y-m-d h:i:sa", $d) . "<br>";
 
 
-$startdate = strtotime("friday");
-$enddate = strtotime("+7 weeks", $startdate);
+// $startdate = strtotime("friday");
+// $enddate = strtotime("+7 weeks", $startdate);
 
-while ($startdate < $enddate) {
-  echo date("M d", $startdate) . "<br>";
-  $startdate = strtotime("+1 week", $startdate);
-}
+// while ($startdate < $enddate) {
+//   echo date("M d", $startdate) . "<br>";
+//   $startdate = strtotime("+1 week", $startdate);
+// }
+
+
+// echo $_SERVER["SERVER_NAME"];
+// echo $_SERVER['HTTP_HOST']
+
+
+// $_SERVER['HTTP_REFERER']
+
+// $_SERVER['GATEWAY_INTERFACE'];
+
+$_SERVER["HTTPS"]
 
 
 
