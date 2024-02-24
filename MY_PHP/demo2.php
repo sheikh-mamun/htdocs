@@ -128,13 +128,57 @@
 // echo date("Y-m-d h:i:sa", $d) . "<br>";
 
 
-$startdate = strtotime("friday");
-$enddate = strtotime("+7 weeks", $startdate);
+// $startdate = strtotime("friday");
+// $enddate = strtotime("+7 weeks", $startdate);
 
-while ($startdate < $enddate) {
-  echo date("M d", $startdate) . "<br>";
-  $startdate = strtotime("+1 week", $startdate);
-}
+// while ($startdate < $enddate) {
+//   echo date("M d", $startdate) . "<br>";
+//   $startdate = strtotime("+1 week", $startdate);
+// }
+
+
+// cuurent rarray
+
+// $fruits = array ("apple","orange","banana");
+
+// $fruit = current($fruits);
+
+// echo $fruit . "<br>";
+
+// $b = array ("appale", "orange","banana");
+// $c = end($b);  // returns banana  
+
+// echo $c;
+
+
+// date_default_timezone_set("America/New_York");
+// echo "The time is " . date("h:i:sa");
+
+
+// $d=mktime(11, 14, 54, 8, 12, 2014);
+// echo "Created date is " . date("Y-m-d h:i:sa", $d);
+
+// $d = strtotime ("tommorow");
+// echo date ("y-m-d h:i:sa , $d") . "<br>";
+
+// $d=strtotime("next Saturday");
+// echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+// $d=strtotime("+3 Months");
+// echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+// new file create 
+
+// $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+// $txt = "John Doe";
+// fwrite($myfile, $txt);
+// $txt = "Jane Doe";
+// fwrite($myfile, $txt);
+// fclose($myfile);
+
+// 
+
+
 
 
 
