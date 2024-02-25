@@ -130,6 +130,7 @@
 
 // $startdate = strtotime("friday");
 // $enddate = strtotime("+7 weeks", $startdate);
+<<<<<<< HEAD
 
 // while ($startdate < $enddate) {
 //   echo date("M d", $startdate) . "<br>";
@@ -179,6 +180,24 @@
 // 
 
 
+=======
+
+// while ($startdate < $enddate) {
+//   echo date("M d", $startdate) . "<br>";
+//   $startdate = strtotime("+1 week", $startdate);
+// }
+
+
+// echo $_SERVER["SERVER_NAME"];
+// echo $_SERVER['HTTP_HOST']
+
+
+// $_SERVER['HTTP_REFERER']
+
+// $_SERVER['GATEWAY_INTERFACE'];
+
+$_SERVER["HTTPS"]
+>>>>>>> 89d7fe546e3b095f47e4aac67d0cac59c8fb0d1f
 
 
 
