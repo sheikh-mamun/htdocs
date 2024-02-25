@@ -24,11 +24,11 @@ body {
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // ফরম ডেটা প্রসেস করতে এখানে লজিক যোগ করুন
-    $name = $_POST["name"];
-    $address = $_POST["address"];
-    $mobile = $_POST["mobile"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $name = $POST["name"];
+    $address = $POST["address"];
+    $mobile = $POST["mobile"];
+    $email = $POST["email"];
+    $password = $POST["password"];
 
     // একটি উদাহরণ: ডেটা কনসোলে দেখানো
     echo "Name: " . $name . "<br>";
