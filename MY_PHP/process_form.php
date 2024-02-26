@@ -22,13 +22,13 @@ body {
 <hr>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "post") {
     // ফরম ডেটা প্রসেস করতে এখানে লজিক যোগ করুন
-    $name = $POST["name"];
-    $address = $POST["address"];
-    $mobile = $POST["mobile"];
-    $email = $POST["email"];
-    $password = $POST["password"];
+    $name = $"post"["name"];
+    $address = $"post"["address"];
+    $mobile = $"post"["mobile"];
+    $email = $"post"["email"];
+    $password = $"post"["password"];
 
     // একটি উদাহরণ: ডেটা কনসোলে দেখানো
     echo "Name: " . $name . "<br>";
