@@ -1,7 +1,11 @@
 <form method='post'>
 enter a number<input type="text" name="fname">
-<input type="submit" name="submit">
+<input type="submit" name="submit" value='submit'>
 </form>
+
+
+
+
 <?php
 $b=$_POST["fname"];
 $c=0;
