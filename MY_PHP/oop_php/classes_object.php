@@ -10,7 +10,7 @@
 
   class Fruit {
     public $name;
-    public $color;
+    private $color;
 
     // methods
     function set_name($name){
