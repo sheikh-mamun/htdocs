@@ -1,42 +1,49 @@
 <?php
-
+// Step 1: Define the Student class
 class Student {
     private $id;
     private $name;
     private $course;
     private $phone;
-
+   
     private static $file_path = "data.txt";
 
-    public function __construct($id, $name, $course, $phone) {
-        $this->id = $id;
-        $this->name = $name;
-        $this->course = $course;
-        $this->phone = $phone;
+    // Constructor to initialize the object
+    public function __construct($_id, $_name, $_course, $_phone) {
+        $this->id = $_id;
+        $this->name = $_name;
+        $this->course = $_course;
+        $this->phone = $_phone;
     }
 
+    // Function to convert student data to CSV format
+    public function toCsv() {
+        return "{$this->id},{$this->name},{$this->course},{$this->phone}" . PHP_EOL;
+    }
+
+    // Function to save student data to the file
     public function save() {
+        $students = file(self::$file_path);
         file_put_contents(self::$file_path, $this->toCsv(), FILE_APPEND);
     }
 
-    private function toCsv() {
-        return "{$this->id},{$this->name},{$this->course},{$this->phone}" . PHP_EOL;
-    }
+    /// Function to display all students in a table
+public static function display_students() {
+  $students = file(self::$file_path);
+
+  echo "<table border='2'>";
+  echo "<tr><th>ID</th><th>Name</th><th>COURSE</th><th>PHONE</th></tr>";
+
+  foreach ($students as $student) {
+      list($id, $name, $course, $phone) = explode(",", trim($student));
+      echo "<tr><td>$id</td><td>$name</td><td>$course</td><td>$phone</td></tr>";
+  }
+
+  echo "</table>";
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $id = $_POST["txtId"];
-    $name = $_POST["txtName"];
-    $course = $_POST["txtCourse"];
-    $phone = $_POST["txtPhone"];
-
-    if (preg_match("/^[0-9+]{11,14}$/", $phone)) {
-        $student = new Student($id, $name, $course, $phone);
-        $student->save();
-        echo "Success!";
-    } else {
-        echo "Invalid Phone";
     }
-}
 
+
+// End of the Student class definition
 ?>
