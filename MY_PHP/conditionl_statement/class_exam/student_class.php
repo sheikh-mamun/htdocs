@@ -32,11 +32,21 @@ public static function display_students() {
   $students = file(self::$file_path);
 
   echo "<table border='2'>";
-  echo "<tr><th>ID</th><th>Name</th><th>COURSE</th><th>PHONE</th></tr>";
+  echo "<tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>COURSE</th>
+            <th>PHONE</th>
+       </tr>";
 
   foreach ($students as $student) {
       list($id, $name, $course, $phone) = explode(",", trim($student, 0 ));
-      echo "<tr><td>$id</td><td>$name</td><td>$course</td><td>$phone</td></tr>";
+      echo "<tr>
+                <td>$id</td>
+                <td>$name</td>
+                <td>$course</td>
+                <td>$phone</td>
+            </tr>";
   }
 
   echo "</table>";
