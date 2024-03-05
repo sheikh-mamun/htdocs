@@ -1,5 +1,5 @@
 <?php
-// Step 1: Define the Student class
+// ধাপ 1: ছাত্র শ্রেণীর সংজ্ঞায়িত করুন
 class Student {
     private $id;
     private $name;
@@ -8,7 +8,7 @@ class Student {
    
     private static $file_path = "data.txt";
 
-    // Constructor to initialize the object
+    //অবজেক্ট আরম্ভ করার কনস্ট্রাক্টর
     public function __construct($_id, $_name, $_course, $_phone) {
         $this->id = $_id;
         $this->name = $_name;
@@ -16,18 +16,18 @@ class Student {
         $this->phone = $_phone;
     }
 
-    // Function to convert student data to CSV format
+    // শিক্ষার্থীদের ডেটাকে CSV ফর্ম্যাটে রূপান্তর করার ফাংশন
     public function toCsv() {
         return "{$this->id},{$this->name},{$this->course},{$this->phone}" . PHP_EOL;
     }
 
-    // Function to save student data to the file
+    // ফাইলে ছাত্র ডেটা সংরক্ষণ করার ফাংশন
     public function save() {
         $students = file(self::$file_path);
         file_put_contents(self::$file_path, $this->toCsv(), FILE_APPEND);
     }
 
-    /// Function to display all students in a table
+    /// একটি টেবিলে সমস্ত ছাত্রদের display করার ফাংশন
 public static function display_students() {
   $students = file(self::$file_path);
 
@@ -55,5 +55,5 @@ public static function display_students() {
     }
 
 
-// End of the Student class definition
+// class শ্রেণীর oop শেষ
 ?>

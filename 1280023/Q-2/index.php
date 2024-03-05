@@ -1,17 +1,17 @@
 
 
 <?php
-// Step 2: Include the Student class file
+// ধাপ 2: ছাত্র শ্রেণীর ফাইল অন্তর্ভুক্ত করুন
 require_once("student_class.php");
 
-// Check if the form is submitted
+// ফর্ম জমা হয়েছে কিনা তা পরীক্ষা করুন
 if (isset($_POST["btnSubmit"])) {
     $id = $_POST["txtId"];
     $name = $_POST["txtName"];
     $course = $_POST["txtCourse"];
     $phone = $_POST["txtPhone"];
 
-    // Validate phone number
+    // ফোন নম্বর যাচাই করুন
     if (preg_match("/^[0-9+]{11,14}$/", $phone)) {
         // Create a new Student object
         $student = new Student($id, $name, $course, $phone);
@@ -94,7 +94,7 @@ if (isset($_POST["btnSubmit"])) {
         </div>
 
         <div>
-            Course<br/>
+            Batch<br/>
             <input type="text" name="txtCourse"/>
         </div>
 
