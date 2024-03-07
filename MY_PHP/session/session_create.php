@@ -1,6 +1,6 @@
 <?php  
 session_start();
-$_SESSION["carName"] = "BMW-sw";
+$_SESSION["carName"] = "Toyta";
 echo "session is start set.";
 
 ?>

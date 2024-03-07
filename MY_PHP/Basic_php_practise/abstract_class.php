@@ -2,6 +2,9 @@
 abstract class ParentClass {
   // Abstract method with an argument
   abstract protected function prefixName($name);
+   public function info(){
+    echo "this is info";
+  }
 }
 
 class ChildClass extends ParentClass {

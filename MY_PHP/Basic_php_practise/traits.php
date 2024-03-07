@@ -31,10 +31,11 @@ echo "<br>";
 
 
 $obj2 = new Welcome2();
-$obj2->msg1();
+$obj2->msg2();
 echo "<br>";
 $obj2->msg2();
 echo "<br>";
 $obj2->msg3();
 echo "<br>";
+
 ?>
