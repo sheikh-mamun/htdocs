@@ -1,6 +1,13 @@
 
 
 <?php
+
+session_start();
+
+if (!isset($_SESSION["sname"])) {
+    header("location:login.php");
+}
+
 // ধাপ 2: ছাত্র শ্রেণীর ফাইল অন্তর্ভুক্ত করুন
 require_once("student_class.php");
 
@@ -23,6 +30,13 @@ if (isset($_POST["btnSubmit"])) {
     }
 }
 ?>
+
+ session_start();
+
+ unset($_SESSION["sname"]);
+ session_destroy();
+ header("location:login.php");
+
 
 
 
