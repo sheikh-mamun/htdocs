@@ -8,38 +8,36 @@ if (isset($_POST["btnSubmit"])) {
     $name = $_POST["txtName"];
     $course = $_POST["txtCourse"];
     $phone = $_POST["txtPhone"];
-
+    $filename = $_FILES['myfile']['name'];
+    $tmpfile = $_FILES['myfile']['tmp_name'];
+    $img = 'uploads/';
+   
+     if(!empty($filename)){ 
+      move_uploaded_file($tmpfile,$img.$filename);
+     } else { 
+      echo "please select a file";
+     }
     // ফোন নম্বর যাচাই করুন
     if (preg_match("/^[0-9+]{11,14}$/", $phone)) {
         // Create a new Student object
         $student = new Student($id, $name, $course, $phone);
 
-        // Handle file upload
-        $uploadsDir = "uploads/";
-        $uploadedFile = $_FILES["fileUpload"];
-        $fileExtension = pathinfo($uploadedFile["name"], PATHINFO_EXTENSION);
-        $newFileName = $id . "_" . time() . "." . $fileExtension;
-        $destination = $uploadsDir . $newFileName;
-
-        if (move_uploaded_file($uploadedFile["tmp_name"], $destination)) {
-            // Save the student data
-            $student->setFileName($newFileName);
-            $student->save();
-            echo "Success!";
-        } else {
-            echo "File upload failed!";
-        }
-    } else {
-        echo "Invalid Phone";
+// if (isset($_POST["btnsubmit"])){ 
+  
+}
+ 
     }
-}
 
-// Logout logic
-if (isset($_POST["btnLogout"])) {
+    // Logout logic
+    if (isset($_POST["btnLogout"])) {
     session_start();
+    
+
     session_destroy();
-    header("location: login.php");
-}
+    header("location:login.php");
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -99,6 +97,7 @@ if (isset($_POST["btnLogout"])) {
 <fieldset>
     <legend><h2>Student Information Form</h2></legend>
     <form action="#" method="post" enctype="multipart/form-data">
+     
         <div>
             ID:<br/>
             <input type="text" name="txtId"/>
@@ -121,7 +120,7 @@ if (isset($_POST["btnLogout"])) {
 
         <div>
             File Upload:<br/>
-            <input type="file" name="fileUpload"/>
+            <input type="file" name="myfile"/>
         </div>
 
         <div>
@@ -132,9 +131,20 @@ if (isset($_POST["btnLogout"])) {
         </div>
     </form>
 </fieldset>
+    </form>
+</fieldset>
+
+<?php
+
+if (isset($_POST["btnSubmit"])) {
+    echo "<img src='$img/$filename' width='400px'>";
+}
+
+?>
 
 <?php
 Student::display_students();
+
 ?>
 
 </body>
