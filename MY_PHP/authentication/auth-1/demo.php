@@ -64,7 +64,7 @@ if(isset($_POST["btnSubmit"])){
 
 </form>
 <?php 
-	student::display_students();
+	Student::display_students();
 ?>
 
 </body>
