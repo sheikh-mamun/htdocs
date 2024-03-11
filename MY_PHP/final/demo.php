@@ -29,14 +29,11 @@ if (isset($_POST["btnSubmit"])) {
     }
 
     // Logout logic
-    if (isset($_POST["btnLogout"])) {
     session_start();
-    
 
-    session_destroy();
-    header("location:login.php");
-    }
-
+ if(!isset($_SESSION["sname"])){
+	 header("location:login.php");
+  }
 
 ?>
 
@@ -127,7 +124,7 @@ if (isset($_POST["btnSubmit"])) {
             <input type="submit" name="btnSubmit" value="Submit"/>
         </div>
         <div>
-            <input type="submit" name="btnLogout" value="Log Out"/>
+            <a href="logout.php">Logout</a>
         </div>
     </form>
 </fieldset>
@@ -137,7 +134,7 @@ if (isset($_POST["btnSubmit"])) {
 <?php
 
 if (isset($_POST["btnSubmit"])) {
-    echo "<img src='$img/$filename' width='400px'>";
+    echo "<img src='$img/$filename' width='400px' height='300px'>";
 }
 
 ?>

@@ -33,38 +33,95 @@ if(isset($_POST["btnSubmit"])){
 ?>
 
 
-<!doctype html>
-<html>
+
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 10px;
+        }
+
+        a:hover {
+            color: #0066cc;
+        }
+    </style>
 </head>
-
 <body>
-<a href="another.php">another</a>
+
 <form action="#" method="post">
-<div>Id<br/>
-<input type="text" name="txtId" />
-</div>
+    <div>
+        <label for="txtId">Id:</label><br/>
+        <input type="text" id="txtId" name="txtId"/>
+    </div>
 
-<div>Name<br/>
-<input type="text" name="txtName" />
-</div>
+    <div>
+        <label for="txtName">Name:</label><br/>
+        <input type="text" id="txtName" name="txtName"/>
+    </div>
 
-<div>email<br/>
-<input type="text" name="email" />
-</div>
+    <div>
+        <label for="email">Email:</label><br/>
+        <input type="text" id="email" name="email"/>
+    </div>
 
-<div>Phone<br/>
-<input type="text" name="txtPhone" />
-</div>
-<div>
-<input type="submit" name="btnSubmit" value="Submit"/>
-</div>
+    <div>
+        <label for="txtPhone">Phone:</label><br/>
+        <input type="text" id="txtPhone" name="txtPhone"/>
+    </div>
 
+    <div>
+        <input type="submit" name="btnSubmit" value="Submit"/>
+        <a href="logout.php">Logout</a>
+    </div>
 </form>
-<?php 
-	Student::display_students();
+
+<?php
+Student::display_students();
 ?>
 
 </body>
