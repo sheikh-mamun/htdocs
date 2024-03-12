@@ -1,41 +1,3 @@
-<?php
-// ধাপ 2: ছাত্র শ্রেণীর ফাইল অন্তর্ভুক্ত করুন
-require_once("student_class.php");
-
-// ফর্ম জমা হয়েছে কিনা তা পরীক্ষা করুন
-if (isset($_POST["btnSubmit"])) {
-    $id = $_POST["txtId"];
-    $name = $_POST["txtName"];
-    $course = $_POST["txtCourse"];
-    $phone = $_POST["txtPhone"];
-    $filename = $_FILES['myfile']['name'];
-    $tmpfile = $_FILES['myfile']['tmp_name'];
-    $img = 'uploads/';
-   
-     if(!empty($filename)){ 
-      move_uploaded_file($tmpfile,$img.$filename);
-     } else { 
-      echo "please select a file";
-     }
-    // ফোন নম্বর যাচাই করুন
-    if (preg_match("/^[0-9+]{11,14}$/", $phone)) {
-        // Create a new Student object
-        $student = new Student($id, $name, $course, $phone);
-
-// if (isset($_POST["btnsubmit"])){ 
-  
-}
- 
-    }
-
-    // Logout logic
-    session_start();
-
- if(!isset($_SESSION["sname"])){
-	 header("location:login.php");
-  }
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,61 +50,93 @@ if (isset($_POST["btnSubmit"])) {
             height: 450px;
         }
     </style>
+    </style>
 </head>
 <body>
 
 <fieldset>
-    <legend><h2>Student Information Form</h2></legend>
-    <form action="#" method="post" enctype="multipart/form-data">
-     
-        <div>
-            ID:<br/>
-            <input type="text" name="txtId"/>
-        </div>
+<legend><h2>Student Information Form</h2></legend>
+<form action="#" method="post" enctype="multipart/form-data">
 
-        <div>
-            Name<br/>
-            <input type="text" name="txtName"/>
-        </div>
+    <div>
+        ID:<br/>
+        <input type="text" name="txtId"/>
+    </div>
 
-        <div>
-            Course<br/>
-            <input type="text" name="txtCourse"/>
-        </div>
+    <div>
+        Name:<br/>
+        <input type="text" name="txtName"/>
+    </div>
 
-        <div>
-            Phone<br/>
-            <input type="text" name="txtPhone"/>
-        </div>
+    <div>
+        Email:<br/>
+        <input type="text" name="email"/>
+    </div>
 
-        <div>
-            File Upload:<br/>
-            <input type="file" name="myfile"/>
-        </div>
+    <div>
+        Phone:<br/>
+        <input type="text" name="txtPhone"/>
+    </div>
 
-        <div>
-            <input type="submit" name="btnSubmit" value="Submit"/>
-        </div>
-        <div>
+    <div>
+        File Upload:<br/>
+        <input type="file" name="myfile"/>
+    </div>
+
+    <div>
+        <input type="submit" name="btnSubmit" value="Submit"/>
+    </div>
+
+    <div>
             <a href="logout.php">Logout</a>
-        </div>
-    </form>
+    </div>
+
+</form>
 </fieldset>
-    </form>
-</fieldset>
+
+
 
 <?php
+// Include the Student class file
+require_once("student_class.php");
 
+// Check if the form is submitted
 if (isset($_POST["btnSubmit"])) {
-    echo "<img src='$img/$filename' width='400px' height='300px'>";
+    $id = $_POST["txtId"];
+    $name = $_POST["txtName"];
+    $email = $_POST["email"];
+    $phone = $_POST["txtPhone"];
+
+    // Create a new Student object
+    $student = new Student($id, $name, $email, $phone);
+
+    // Save the student data
+    $student->save();
+
+    // Check if a file is uploaded
+    if (!empty($_FILES['myfile']['name'])) {
+        $filename = $_FILES['myfile']['name'];
+        $tmpfile = $_FILES['myfile']['tmp_name'];
+        $img = 'uploads/';
+
+        move_uploaded_file($tmpfile, $img . $filename);
+        echo "<img src='$img/$filename' width='400px' height='300px'>";
+    } else {
+        echo "Please select a file";
+    }
 }
 
-?>
+// Logout logic
+session_start();
 
-<?php
+if(!isset($_SESSION["sname"])){
+    header("location:login.php");
+ }
+
+// Display students
 Student::display_students();
-
 ?>
 
 </body>
 </html>
+

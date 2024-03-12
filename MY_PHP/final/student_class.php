@@ -3,22 +3,22 @@
 class Student {
     private $id;
     private $name;
-    private $course;
+    private $email;
     private $phone;
    
     private static $file_path = "data.txt";
 
     //অবজেক্ট আরম্ভ করার কনস্ট্রাক্টর
-    public function __construct($_id, $_name, $_course, $_phone) {
+    public function __construct($_id, $_name, $_email, $_phone) {
         $this->id = $_id;
         $this->name = $_name;
-        $this->course = $_course;
+        $this->email = $_email;
         $this->phone = $_phone;
     }
 
     // শিক্ষার্থীদের ডেটাকে CSV ফর্ম্যাটে রূপান্তর করার ফাংশন
     public function toCsv() {
-        return "{$this->id},{$this->name},{$this->course},{$this->phone}" . PHP_EOL;
+        return "{$this->id},{$this->name},{$this->email},{$this->phone}" . PHP_EOL;
     }
 
     // ফাইলে ছাত্র ডেটা সংরক্ষণ করার ফাংশন
@@ -35,16 +35,16 @@ public static function display_students() {
   echo "<tr>
             <th>ID</th>
             <th>Name</th>
-            <th>COURSE</th>
+            <th>Email</th>
             <th>PHONE</th>
        </tr>";
 
   foreach ($students as $student) {
-      list($id, $name, $course, $phone) = explode(",", trim($student, 0 ));
+      list($id, $name, $email, $phone) = explode(",", trim($student, 0 ));
       echo "<tr>
                 <td>$id</td>
                 <td>$name</td>
-                <td>$course</td>
+                <td>$email</td>
                 <td>$phone</td>
             </tr>";
   }
