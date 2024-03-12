@@ -64,6 +64,16 @@
     </style>
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiple File Upload and Display</title>
+    <style>
+        /* Your existing styles */
+    </style>
+</head>
+<body>
 
 <form action="#" method="post" enctype="multipart/form-data">
     <div>
@@ -88,20 +98,31 @@ if (isset($_POST["btnSubmit"])) {
                 <th>File Name</th>
                 <th>File Type</th>
                 <th>File Size</th>
+                <th>Status</th>
             </tr>";
 
     foreach ($_FILES['files']['tmp_name'] as $key => $tmp_name) {
         $file_name = $_FILES['files']['name'][$key];
         $file_type = $_FILES['files']['type'][$key];
         $file_size = $_FILES['files']['size'][$key];
-
         $targetFilePath = $uploadDir . $file_name;
-        move_uploaded_file($_FILES['files']['tmp_name'][$key], $targetFilePath);
+
+        // Check file size (600KB limit)
+        $maxFileSize = 600 * 1024; // 600KB in bytes
+
+        if ($file_size > $maxFileSize) {
+            $status = "Size Limit Exceeded";
+            @unlink($tmp_name); // Delete the temporary file
+        } else {
+            move_uploaded_file($tmp_name, $targetFilePath);
+            $status = "Uploaded Successfully";
+        }
 
         echo "<tr>
                 <td>$file_name</td>
                 <td>$file_type</td>
                 <td>$file_size</td>
+                <td>$status</td>
               </tr>";
     }
 
