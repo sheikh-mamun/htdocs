@@ -1,97 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: teal;
-        }
-
-        form {
-            width: 400px;
-            height: 604px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: rgb(178, 189, 189);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 12px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .error {
-            color: red;
-            margin-top: 8px;
-        }
-    </style>
-</head>
-<body>
-
 <?php
-// Establish database connection (update with your database credentials)
 $host = "localhost";
 $username = "root";
-$password = " ";
-$database = "student_info";
+$password = "";
+$database = "myphp";
 
+// Create connection
 $conn = new mysqli($host, $username, $password, $database);
 
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Retrieve form data
-if (isset($_POST['btnSubmit'])) {
-    $name = $_POST['name'];
-    $address = $_POST['address'];
-    $gender = $_POST['gender'];
-    $course = $_POST['course'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash the password
+// Initialize variables for error messages
+$nameErr = $addressErr = $emailErr = $passwordErr = $confirmPasswordErr = "";
 
-    // Insert data into the database
-    $sql = "INSERT INTO student_info (name, address, gender, course, email, password)
-            VALUES ('$name', '$address', '$gender', '$course', '$email', '$password')";
+// Validate and process form data
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = test_input($_POST["name"]);
+    $address = test_input($_POST["address"]);
+    $gender = test_input($_POST["gender"]);
+    $course = test_input($_POST["course"]);
+    $email = test_input($_POST["email"]);
+    $password = test_input($_POST["password"]);
+    $confirmPassword = test_input($_POST["passwordConfirmation"]);
 
-    if ($conn->query($sql) === TRUE) {
-        echo "<p>User registration successful</p>";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    // Password validation
+    if ($password != $confirmPassword) {
+        $passwordErr = "Passwords do not match";
+    }
+
+    // Insert data into the database if there are no validation errors
+    if (empty($passwordErr)) {
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        $sql = "INSERT INTO myphp (name, address, gender, course, email, password)
+                VALUES ('$name', '$address', '$gender', '$course', '$email', '$hashedPassword')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "<p>User registration successful</p>";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
 }
 
+// Close the database connection
 $conn->close();
+
+// Function to sanitize user input
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 ?>
 
 <form id="registrationForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -99,9 +61,11 @@ $conn->close();
     <hr>
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" placeholder="John Doe" required>
+    <span class="error"><?php echo $nameErr; ?></span>
 
     <label for="address">Address:</label>
     <input type="text" id="address" name="address" placeholder="Enter your area" required>
+    <span class="error"><?php echo $addressErr; ?></span>
 
     <label for="gender">Gender:</label>
     <select id="gender" name="gender" required>
@@ -121,15 +85,15 @@ $conn->close();
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+    <span class="error"><?php echo $emailErr; ?></span>
 
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    <span class="error"><?php echo $passwordErr; ?></span>
 
     <label for="passwordConfirmation">Confirm Password:</label>
     <input type="password" id="passwordConfirmation" name="passwordConfirmation" placeholder="Enter your password" required>
-    <button type="submit" name="btnSubmit">Create Account</button>
-    <div id="errorMessages" class="error"></div>
-</form>
+    <span class="error"><?php echo $confirmPasswordErr; ?></span>
 
-</body>
-</html>
+    <button type="submit" name="btnSubmit">Create Account</button>
+</form>
