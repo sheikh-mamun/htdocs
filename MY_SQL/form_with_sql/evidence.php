@@ -8,39 +8,31 @@
             border-collapse: collapse;
             width: 50%;
             margin-top: 20px;
-            border: 1px solid white;
         }
         th, td {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
-            
         }
         th {
             background-color: #f2f2f2;
         }
         tr:nth-child(even) {
-            background-color:  #D6EEEE;
+            background-color: #f9f9f9;
         }
         tr:hover {
             background-color: #f2f2f2;
         }
 
+        /* form css*/
 
-        /* USER FROM CSS */
-
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
         fieldset {
-            width: 30%;
-            margin: 50px auto;
-            text-align: center;
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 25px;
-            background-color: teal;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            background-color:rgb(180, 180, 180);
         }
         legend {
             font-size: 20px;
@@ -50,19 +42,18 @@
         label {
             display: block;
             margin-bottom: 10px;
-            font-weight: bold;
-            color: #333;
         }
         input[type="text"],
         input[type="email"] {
             width: 100%;
             padding: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             box-sizing: border-box;
         }
-        
         input[type="submit"] {
-            background-color: #4caf50;
+            background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -72,11 +63,13 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+
+
     </style>
 </head>
 <body>
 
-<fieldset><legend>User personal information</legend>
+<fieldset><legend>User Information</legend>
 <form method="post">
     <label for="name">Name:</label><br>
     <input type="text" id="name" name="name"><br>
@@ -129,8 +122,7 @@ $sql = "SELECT * FROM $table";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<h2>User Database Information</h2>";
-    
+    echo "<h2>Student Save Information</h2>";
     echo "<table>";
     echo "<tr><th>Name</th><th>Email</th><th>Phone</th><th>Age</th></tr>";
     while($row = $result->fetch_assoc()) {
