@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2024 at 11:23 AM
+-- Generation Time: Mar 27, 2024 at 11:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `company`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_Manufacturer` (IN `name` VARCHAR(50), IN `address` VARCHAR(100), IN `contact_no` VARCHAR(50))   BEGIN
+    INSERT INTO manufacturer(name, address, contact_no) VALUES (name, address, contact_no);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `add_product` (IN ` p_name` VARCHAR(255), IN `p_price` DECIMAL(10,2), IN `p_manufacturer_id` INT(11))   BEGIN
+    INSERT INTO Product (name, price, manufacturer_id) VALUES (p_name, p_price, p_manufacturer_id);
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -43,7 +57,17 @@ INSERT INTO `manufacturer` (`id`, `name`, `address`, `contact_no`) VALUES
 (2, 'jamal', 'motijil', '9876543210'),
 (3, 'karim', 'Islamabad', '9876543210'),
 (4, 'Faruk', 'Gabtoli', '98765568510'),
-(5, 'Emtiaj', 'Komlapur', '98789743210');
+(5, 'Emtiaj', 'Komlapur', '98789743210'),
+(6, 'df', 'mirpur', '6546546545'),
+(7, 'mamunfactory', 'agargaun', '546564564'),
+(8, 'mamunfactory', 'agargaun', '546564564'),
+(9, 'mamunfactory', 'agargaun', '546564564'),
+(10, 'mamunfactory', 'agargaun', '546564564'),
+(11, 'mamunfactory', 'agargaun', '546564564'),
+(12, 'mamunfactory', 'agargaun', '546564564'),
+(13, 'mamunfactory', 'agargaun', '546564564'),
+(14, 'GF', 'MIRPUR', '654654564'),
+(15, 'mamunfactory', 'agargaun', '6546546545');
 
 -- --------------------------------------------------------
 
@@ -65,9 +89,10 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`id`, `name`, `price`, `manufacturer_id`) VALUES
 (1, 'Product 1', 100, 1),
 (2, 'Product 2', 150, 1),
-(3, 'Product 3', 120, 2),
-(4, 'Product 4', 400, 2),
-(5, 'Product 5', 500, 2);
+(5, 'Product 5', 500, 2),
+(13, 'Led tev', 80000, 13),
+(14, 'Lg', 10000, 14),
+(15, 'walton', 7000, 15);
 
 --
 -- Indexes for dumped tables
@@ -94,13 +119,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `manufacturer`
 --
 ALTER TABLE `manufacturer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
