@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2024 at 07:01 AM
+-- Generation Time: Mar 30, 2024 at 11:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -68,9 +68,22 @@ CREATE TABLE `manufacturer` (
 INSERT INTO `manufacturer` (`id`, `name`, `address`, `contact_no`) VALUES
 (1, 'walton', 'mirpur,dhaka', '017796123874'),
 (2, 'lg', 'WEST-SHEWRAPARA,MIRPUR,DHAKA', '01779612381'),
-(3, 'LED', 'shewrapara', '017796123874'),
-(4, 'LED', 'shewrapara', '017796123874'),
-(5, 'SAMSUNG', 'shewrapara', '017796123874');
+(5, 'SAMSUNG', 'shewrapara', '017796123874'),
+(6, 'oppo', 'savar', '56555555'),
+(7, 'walton 3', 'WEST-SHEWRAPARA,MIRPUR,DHAKA', '017796123874'),
+(8, 'hpp', 'WEST-SHEWRAPARA,MIRPUR,DHAKA', '017796123874');
+
+--
+-- Triggers `manufacturer`
+--
+DELIMITER $$
+CREATE TRIGGER `add_trigger` AFTER DELETE ON `manufacturer` FOR EACH ROW BEGIN
+DELETE FROM product WHERE manufacturer_id = old.id;
+
+
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -94,7 +107,11 @@ INSERT INTO `product` (`id`, `name`, `price`, `manufacturer_id`) VALUES
 (2, 'JAMAL', 8000, 2),
 (3, 'kamal', 70000, 1),
 (4, 'JAMAL', 80000, 5),
-(5, 'JAMAL', 80000, 5);
+(5, 'JAMAL', 80000, 5),
+(6, 'ipad', 17000, 6),
+(7, 'ipad', 17000, 6),
+(8, 'ram', 70000, 8),
+(9, 'ram', 70000, 8);
 
 -- --------------------------------------------------------
 
@@ -156,13 +173,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `manufacturer`
 --
 ALTER TABLE `manufacturer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

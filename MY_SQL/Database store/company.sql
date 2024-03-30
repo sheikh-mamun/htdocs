@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2024 at 11:37 AM
+-- Generation Time: Mar 30, 2024 at 08:57 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,19 +55,11 @@ CREATE TABLE `manufacturer` (
 INSERT INTO `manufacturer` (`id`, `name`, `address`, `contact_no`) VALUES
 (1, 'kamal', 'mirpur', '1234567890'),
 (2, 'jamal', 'motijil', '9876543210'),
-(3, 'karim', 'Islamabad', '9876543210'),
-(4, 'Faruk', 'Gabtoli', '98765568510'),
-(5, 'Emtiaj', 'Komlapur', '98789743210'),
-(6, 'df', 'mirpur', '6546546545'),
-(7, 'mamunfactory', 'agargaun', '546564564'),
-(8, 'mamunfactory', 'agargaun', '546564564'),
-(9, 'mamunfactory', 'agargaun', '546564564'),
-(10, 'mamunfactory', 'agargaun', '546564564'),
-(11, 'mamunfactory', 'agargaun', '546564564'),
-(12, 'mamunfactory', 'agargaun', '546564564'),
 (13, 'mamunfactory', 'agargaun', '546564564'),
 (14, 'GF', 'MIRPUR', '654654564'),
-(15, 'mamunfactory', 'agargaun', '6546546545');
+(15, 'mamunfactory', 'agargaun', '6546546545'),
+(16, 'arong', 'mirpur', '6546546545'),
+(17, 'arong', 'mirpur', '6546546545');
 
 -- --------------------------------------------------------
 
@@ -92,7 +84,9 @@ INSERT INTO `product` (`id`, `name`, `price`, `manufacturer_id`) VALUES
 (5, 'Product 5', 500, 2),
 (13, 'Led tev', 80000, 13),
 (14, 'Lg', 10000, 14),
-(15, 'walton', 7000, 15);
+(15, 'walton', 7000, 15),
+(16, 'walton', 40000, 16),
+(17, 'walton', 40000, 17);
 
 --
 -- Indexes for dumped tables
@@ -119,13 +113,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `manufacturer`
 --
 ALTER TABLE `manufacturer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
