@@ -84,11 +84,9 @@ if(isset($_POST['addproduct'])){
 if(isset($_POST['delete'])){
    
     $mid = $_POST['manufac'];
-    $db->query("delete from manufacturer where id='$mid'"); 
+    $db->query("delete from manufacturer where id=$mid"); 
 }
-
 ?>
-
 <fieldset>
     <legend><h3>Manufacturer Form</h3></legend>
     <form action="#" method="post">
@@ -122,9 +120,6 @@ if(isset($_POST['delete'])){
     </form>
 </fieldset>
 
-
-
-
 <fieldset>
     <legend><h3>Product Form</h3></legend>
     <form action="#" method="post">
@@ -141,7 +136,6 @@ if(isset($_POST['delete'])){
         <input type="submit" name="delete" value="delete">
     </form>
 </fieldset>
-
 <h3>View Product</h3>
 
 <table>
@@ -172,28 +166,17 @@ if(isset($_POST['delete'])){
     }
     ?>
 </table>
-
-<h1>logical view</h1>
-<table> 
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        
-    </tr>
-    <?php 
-        $product = $db->query("SELECT * FROM high_price_products"); // Corrected view name
-        while(list($_id,$_name,$_price) = $product->fetch_row()){
-            echo "<tr> 
-                    <td>$_id</td>
-                    <td>$_name</td>
-                    <td>$_price</td>
-                    
-                </tr>";
-        }
-    ?>
-</table>
-
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
