@@ -81,10 +81,10 @@ if(isset($_POST['addproduct'])){
 }
 
 
-if(isset($_POST['delete'])){
+if(isset($_POST['mdelete'])){
    
     $mid = $_POST['manufac'];
-    $db->query("delete from manufacturer where id=$mid"); 
+    $db->query("delete from manufacturer where id='$mid'"); 
 }
 ?>
 <fieldset>
@@ -133,7 +133,7 @@ if(isset($_POST['delete'])){
                 }
             ?>
         </select>
-        <input type="submit" name="delete" value="delete">
+        <input type="submit" name="mdelete" value="delete">
     </form>
 </fieldset>
 <h3>View Product</h3>
@@ -152,7 +152,7 @@ if(isset($_POST['delete'])){
 
     <?php
     $product = $db->query("SELECT * FROM viewcompanydata");
-    while(list($_id,$_name,$_address,$_contact,$_pid,$_pname,$_price,$_manufactuer) = $product->fetch_row()){
+    while(list($_id,$_name,$_address,$_contact,$_pid,$_pname,$_price,$_manufacturer) = $product->fetch_row()){
         echo "<tr> 
                 <td>$_id</td>
                 <td>$_name</td>
@@ -161,7 +161,7 @@ if(isset($_POST['delete'])){
                 <td>$_pid</td>
                 <td>$_pname</td>
                 <td>$_price</td>
-                <td>$_manufactuer</td>
+                <td>$_manufacturer</td>
             </tr>";
     }
     ?>
