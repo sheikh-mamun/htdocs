@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2024 at 07:37 PM
+-- Generation Time: Apr 01, 2024 at 09:28 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -71,7 +71,8 @@ INSERT INTO `manufacturer` (`id`, `name`, `address`, `contact_no`) VALUES
 (5, 'SAMSUNG', 'shewrapara', '017796123874'),
 (6, 'oppo', 'savar', '56555555'),
 (7, 'walton 3', 'WEST-SHEWRAPARA,MIRPUR,DHAKA', '017796123874'),
-(8, 'hpp', 'WEST-SHEWRAPARA,MIRPUR,DHAKA', '017796123874');
+(8, 'hpp', 'WEST-SHEWRAPARA,MIRPUR,DHAKA', '017796123874'),
+(9, 'lg', 'shewrapara', '017796123874');
 
 --
 -- Triggers `manufacturer`
@@ -112,7 +113,21 @@ INSERT INTO `product` (`id`, `name`, `price`, `manufacturer_id`) VALUES
 (7, 'ipad', 17000, 6),
 (8, 'ram', 70000, 8),
 (9, 'ram', 70000, 8),
-(10, 'samsung', 70000, 5);
+(10, 'samsung', 70000, 5),
+(11, 'JAMAL', 70000, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `productview`
+-- (See below for the actual view)
+--
+CREATE TABLE `productview` (
+`id` int(11)
+,`product_name` varchar(50)
+,`price` int(5)
+,`manufacturer_name` varchar(50)
+);
 
 -- --------------------------------------------------------
 
@@ -139,6 +154,15 @@ CREATE TABLE `viewcompanydata` (
 DROP TABLE IF EXISTS `high_price_products`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `high_price_products`  AS SELECT `product`.`id` AS `id`, `product`.`name` AS `name`, `product`.`price` AS `price`, `product`.`manufacturer_id` AS `manufacturer_id` FROM `product` WHERE `product`.`price` > 5000 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `productview`
+--
+DROP TABLE IF EXISTS `productview`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `productview`  AS SELECT `p`.`id` AS `id`, `p`.`name` AS `product_name`, `p`.`price` AS `price`, `m`.`name` AS `manufacturer_name` FROM (`product` `p` join `manufacturer` `m` on(`p`.`manufacturer_id` = `m`.`id` & `p`.`price` > 5000)) ;
 
 -- --------------------------------------------------------
 
@@ -174,13 +198,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `manufacturer`
 --
 ALTER TABLE `manufacturer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

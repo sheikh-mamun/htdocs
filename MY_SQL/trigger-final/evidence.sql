@@ -56,6 +56,17 @@ delimiter ;
 
 
 
+delimiter //
+drop trigger if exists ad_manufacturer //
+create trigger ad_manufacturer after delete on manufacturer
+for each row
+begin 
+delete from product where manufac_id = old.id ;
+end //
+
+delimiter ;
+
+
 
 
 

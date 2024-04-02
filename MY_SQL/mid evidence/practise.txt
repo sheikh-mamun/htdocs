@@ -66,7 +66,7 @@ DELIMITER ;
 CREATE VIEW ProductView AS
 SELECT p.id, p.name AS product_name, p.price, m.name AS manufacturer_name
 FROM Product p
-INNER JOIN Manufacturer m ON p.manufacturer_id = m.id;
+INNER JOIN Manufacturer m ON p.manufacturer_id = m.id and price > 5000 ;
 
 
 CREATE VIEW expensive_products_view AS
