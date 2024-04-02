@@ -17,7 +17,7 @@ CREATE TABLE Manufacturer (
 
 INSERT INTO Manufacturer (name, address, contact_no)
 VALUES
-'led', 'sherapara', '01921755782'),
+('led', 'sherapara', '01921755782'),
 --------------------------------------------------
 
 
@@ -38,7 +38,7 @@ VALUES
 ----------------------------------------------------------------
 
 
-CREATE PROCEDURE insertManufacturer(
+CREATE PROCEDURE add_manufacture(
     IN p_name VARCHAR(50),
     IN p_address VARCHAR(100),
     IN p_contact_no VARCHAR(50)
@@ -48,7 +48,7 @@ BEGIN
 END
 -------------------------------------------------------------------------
 
-CREATE PROCEDURE insertProduct(
+CREATE PROCEDURE add_product(
     IN p_name VARCHAR(50),
     IN p_price INT,
     IN p_manufacturer_id INT

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2024 at 10:24 AM
+-- Generation Time: Apr 02, 2024 at 12:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -68,7 +68,6 @@ INSERT INTO `manufacturer` (`id`, `name`, `contact`) VALUES
 (1, 'Samsung', '01874874587'),
 (2, 'LG', '01974874584'),
 (3, 'Redmi', '01574874874'),
-(4, 'Philips', '01878745874'),
 (5, 'Toshiba', '0167845874');
 
 --
@@ -101,8 +100,7 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`id`, `name`, `price`, `manufac_id`) VALUES
 (1, 'Monitor', 8000.00, 1),
 (2, 'Mobile', 28000.00, 3),
-(3, 'USB Drive', 720.00, 5),
-(4, 'HDD', 7200.00, 4);
+(3, 'USB Drive', 720.00, 5);
 
 -- --------------------------------------------------------
 
@@ -160,13 +158,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `manufacturer`
 --
 ALTER TABLE `manufacturer`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

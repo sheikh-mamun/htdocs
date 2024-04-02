@@ -21,3 +21,4 @@ while(list($_id,$_name,$_price) = $product->fetch_row()){
 
 echo "</table>";
 ?>
+djkfdsgdfjgkkjkjkjkljukiuk
