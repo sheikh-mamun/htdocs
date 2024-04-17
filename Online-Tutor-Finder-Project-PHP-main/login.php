@@ -5,23 +5,15 @@
 	<link rel="stylesheet" type="text/css" href="css/Navbar.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
-<body style="background:fixed url(./image/bg1.jpg); background-size: 100%;">
+<body class="body1" style="background-color: #838996;">
 <header>
 <?php
 
-$servername = "localhost";
-$username = "root"; // Usually 'root' for local development
-$password = " "; // Your MySQL password
-$database = "main_db"; // Your database name
+$con = new mysqli('localhost', 'root', '', 'main_db');
 
-// Create connection
-$con = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
+if($con->connect_errno > 0){
+    die('Unable to connect to database [' . $con->connect_error . ']');
 }
-
 ?>
 <?php
 ob_start();

@@ -78,25 +78,31 @@ $time = new timeago();
               <i class="fas fa-map-marker-alt"></i>
               <div class="topic">Address</div>
               <br>
-              <div class="text-one">GC University Layyah Campus</div>
-              <div class="text-two">Layyah City,District Layyah,Punjab,Pakistan</div>
+              <div class="text-one">IsDB-BISEW</div>
+              <div class="text-two">Agargaon,MRPUR,DHAKA</div>
             </div>
             <div class="phone details">
               <i class="fas fa-phone-alt"></i>
               <div class="topic">Phone</div>
               <br>
-              <div class="text-one">+92 315 3788537</div>
-              <div class="text-two">+92 305 1560920</div>
+              <div class="text-one">+88 01779612381</div>
+              <div class="text-two">+88 01921755782</div>
             </div>
             <div class="email details">
               <i class="fas fa-envelope"></i>
               <div class="topic">Email</div>
               <br>
-              <div class="text-one">Naveed Ur Rehman</div>
-              <div class="text-two">naveedkhanworld@outlook.com</div>
+              <div class="text-one">MD Abdullah-Al-Mamun</div>
+              <div class="text-two">abalmamun2515@gmail.com</div>
               <br>
-              <div class="text-one">Asim Kamran</div>
-              <div class="text-two">ka1702504@gmail.com</div>
+              <div class="text-one">Shahriyar Rahman Shakil</div>
+              <div class="text-two">shahriyarshakil2345@gmail.com</div>
+
+              <div class="text-one">Rafiya khan Tuli</div>
+              <div class="text-two">rafiyakhantuli5754@gmail.com</div>
+
+              <div class="text-one">Fima Akther Suma</div>
+              <div class="text-two">fimakhtersuma@gmail.com</div>
             </div>
           </div>
           <div class="right-side">

@@ -5,7 +5,7 @@ class checkboxlist{
 	public function sublist()
 	{
 		echo'
-			<div class="divp35"><input type="checkbox" name="sub_list[]" value="Urdu"><span>Urdu</span></div>
+			
 			<div class="divp35"><input type="checkbox" name="sub_list[]" value="English"><span>English</span></div>
 			<div class="divp35"><input type="checkbox" name="sub_list[]" value="Math"><span>Math</span></div>
 			<div class="divp35"><input type="checkbox" name="sub_list[]" value="Social Science"><span>Social Science</span></div>
@@ -28,25 +28,25 @@ class checkboxlist{
 	{
 		echo'
 			<select name="sublistcombo" style="width: 180px;">
+			<option value="English">English</option>
+			<option value="Math">Math</option>
+			<option value="Social Science">Social Science</option>
+			<option value="General Science">General Science</option>
+			<option value="Islamic Study">Islamic Study</option>
+			<option value="Physics">Physics</option>
+			<option value="Chemistry">Chemistry</option>
+			<option value="Biology">Biology</option>
+			<option value="Sociology">Sociology</option>
+			<option value="Economics">Economics</option>
+			<option value="Accounting">Accounting</option>
+			<option value="History">History</option>
+			<option value="Finance">Finance</option>
+			<option value="Statistics">Statistics</option>
+			<option value="Computer Science">Computer Science</option>
+		</select>
 					
 			  <option value="None">None</option>
-			  <option value="Urdu">Urdu</option>
-			  <option value="English">English</option>
-			  <option value="Math">Math</option>
-			  <option value="Social Science">Social Science</option>
-			  <option value="General Science">General Science</option>
-			  <option value="Islamic Study">Islamic Study</option>
-			  <option value="Physics">Physics</option>
-			  <option value="Chemistry">Chemistry</option>
-			  <option value="Biology">Biology</option>
-			  <option value="Sociology">Sociology</option>
-			  <option value="Economics">Economics</option>
-			  <option value="Accounting">Accounting</option>
-			  <option value="History">History</option>
-			  <option value="Finance">Finance</option>
-			  <option value="Statistics">Statistics</option>
-			  <option value="Computer Science">Computer Science</option>
-			</select>
+			
 
 
 		';
@@ -87,7 +87,7 @@ class checkboxlist{
 	public function mediumlist()
 	{
 		echo '
-			<div class="divp35"><input  type="radio" name="medium_list[]" value="Urdu"><span>Urdu</span></div>
+			<div class="divp35"><input  type="radio" name="medium_list[]" value="Bangla"><span>Bangla</span></div>
 			<div class="divp35"><input  type="radio" name="medium_list[]" value="English"><span>English</span></div>
 			<div class="divp35"><input  type="radio" name="medium_list[]" value="Any"><span>Any</span></div>
 		';
@@ -99,7 +99,7 @@ class checkboxlist{
 			<select name="mediumlistcombo" style="width: 180px;">
 					
 			  <option value="None">None</option>
-			  <option value="Urdu">Urdu</option>
+			  <option value="Bamgla">Bamgla</option>
 			  <option value="English">English</option>
 			  <option value="Any">Any</option>
 			</select>

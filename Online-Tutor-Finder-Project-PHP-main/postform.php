@@ -128,7 +128,7 @@ $list_check = new checkboxlist();
 
 <!--------------------NavBar Script ------------------------>
 <script src="js/script.js"></script>
-<body class="body1" style="background:fixed url(./image/bg1.jpg); background-size: 100%;">
+<body class="body1" style="background-color: #838996;">
 <header>
 <nav>
 		  <div class="logo">
@@ -215,7 +215,7 @@ $list_check = new checkboxlist();
     <div class="location">
         <h3>Location</h3>
         <div class="lc">
-            <?php echo '<input type="text" id="location" name="location" value="'.$f_loca.'" placeholder="e.g: Layyah,Punjab">'; ?>
+            <?php echo '<input type="text" id="location" name="location" value="'.$f_loca.'" placeholder="e.g: Dhaka,Rajshahi">'; ?>
         </div>
     </div>
     <div class="university">
@@ -224,9 +224,14 @@ $list_check = new checkboxlist();
             <select name="p_university">
                 <?php if($f_uni!="") echo '<option value="'.$f_uni.'">'.$f_uni.'</option>';  ?>
               <option value="None">None</option>
-              <option value="GC University">GC University</option>
-              <option value="Nawaz Shareef University">Nawaz Shareef University</option>
-              <option value="BZU Univesity">BZU Univesity</option>
+              <option value="GC University">Dhaka University</option>
+              <option value="Nawaz Shareef University"> Jahangir Nogor University</option>
+              <option value="BZU Univesity">Jagonnath University</option>
+              <option value="BZU Univesity">Dhaka Medical collage</option>
+              <option value="BZU Univesity">Rajshai Medical Cillage</option>
+              <option value="BZU Univesity">Sulimoollah Medical Collage</option>
+              <option value="BZU Univesity">Rajshahi Medical Collage</option>
+              <option value="BZU Univesity">Rajshahi Uiversity</option>
             </select>
         </div>
     </div>

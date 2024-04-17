@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/Navbar.css">
 	<link rel="stylesheet" type="text/css" href="css/nfeed.css">
 </head>
-<body style="  background:fixed url(./image/bg1.jpg);background-size: 100%;">
+<body >
 <?php
  include ( "inc/connection.inc.php" );
 ob_start();
@@ -176,7 +176,7 @@ $time = new timeago();
 <div class="footer">
     <footer>
         <center>
-            <h2>Developed by Naveed & Asim</h2><br>
+            <h2>Developed by Mamun,Shakil & Rafia, Fima</h2><br>
             <a href="./contact.php">Contact Us</a>
         </center>
     </footer>

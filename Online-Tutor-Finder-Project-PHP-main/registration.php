@@ -116,7 +116,7 @@ $_POST['full_name'] = trim($_POST['full_name']);
 						?>
 		</ul>
 </nav>
-<body style="  background:fixed url(./image/bg1.jpg);background-size: 100%;" class="">
+<body class="body1" style="background-color: #838996;">
 <div class="nbody">
 			<?php
 				echo '<center><div class="main"> 

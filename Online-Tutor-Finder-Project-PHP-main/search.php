@@ -6,7 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="css/search.css">
     
 </head>
-<body class="body1" style="background:fixed url(./image/bg1.jpg); background-size: 100%;">
+<body class="body1" style="background-color: #838996;">
+
 <header>
 <?php
  include ( "inc/connection.inc.php" );
