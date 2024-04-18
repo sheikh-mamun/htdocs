@@ -1,5 +1,5 @@
 <?php 
-$conn = mysqli_connect('localhost','root','','testclass');
+$conn = mysqli_connect('localhost','root','','crud1');
 if (isset($_GET['deleteid'])){ 
     $deleteid = $_GET['deleteid'];
 

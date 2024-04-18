@@ -1,5 +1,5 @@
 <?php 
-$conn = mysqli_connect('localhost','root','','testclass');
+$conn = mysqli_connect('localhost','root','','crud1');
 if ($_GET['id']){ 
     $getid = $_GET['id'];
    $sql = "SELECT * FROM users WHERE id=$getid";
