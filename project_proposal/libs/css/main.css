@@ -12,13 +12,32 @@ body{
   text-decoration: none;
 }.padding-top{
   padding-top: 20px;
-}.login-page{
+}
+
+/* .login-page{
   width: 350px;
   margin: 5% 40% 6% auto;
   padding: 0 20px;
   background-color: #f9f9f9;
   border: 1px solid #f2f2f2;
-}.login-page .text-center{
+  
+} */
+
+
+.login-page {
+  width: 90%; /* Adjusted width */
+  max-width: 350px; /* Added maximum width */
+  margin: 5% auto 10% auto;
+  padding: 0 20px;
+  background-color: teal;
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
+}
+
+
+
+
+.login-page .text-center{
   margin-bottom: 10px;
 }.box{
   padding: 20px;
