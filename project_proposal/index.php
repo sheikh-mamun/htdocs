@@ -6,7 +6,7 @@
 <title>Login Panel</title>
 <link rel="stylesheet" href="libs/css/main.css">
 </head>
-<body style="background-image: url('PHOTOS/images (1).jpg'); background-size: cover;">
+<body style="background-image: url('PHOTOS/fgggf.jpg'); background-size: cover; background-repeat: no-repeat;">
 
   <?php
     ob_start();
@@ -15,7 +15,7 @@
   ?>
   <?php include_once('layouts/header.php'); ?>
   <div>
-  <div class="login-page")>
+  <div class="login-page">
       <div class="text-center">
          <h1>Login Panel</h1>
          <h4>Inventory Management System</h4>
