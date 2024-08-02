@@ -1,25 +1,38 @@
 <?php
 /**
- * Customize API: WP_Customize_Code_Editor_Control class
+ * The code editor control.
  *
- * @package WordPress
- * @subpackage Customize
- * @since 4.9.0
+ * Creates a code editor control.
+ *
+ * @package kirki-framework/control-code
+ * @license MIT (https://oss.ninja/mit?organization=Kirki%20Framework)
+ * @since   1.0.2
  */
 
+namespace Kirki\Control;
+
+use Kirki\Control\Base;
+
 /**
- * Customize Code Editor Control class.
+ * Slider control.
  *
- * @since 4.9.0
- *
- * @see WP_Customize_Control
+ * @since 1.0.2
  */
-class WP_Customize_Code_Editor_Control extends WP_Customize_Control {
+class Code extends Base {
+
+	/**
+	 * The control version.
+	 *
+	 * @since 1.0.2
+	 * @access public
+	 * @var string
+	 */
+	public static $control_ver = '1.0.2';
 
 	/**
 	 * Customize control type.
 	 *
-	 * @since 4.9.0
+	 * @since 1.0.2
 	 * @var string
 	 */
 	public $type = 'code_editor';
@@ -27,7 +40,7 @@ class WP_Customize_Code_Editor_Control extends WP_Customize_Control {
 	/**
 	 * Type of code that is being edited.
 	 *
-	 * @since 4.9.0
+	 * @since 1.0.2
 	 * @var string
 	 */
 	public $code_type = '';
@@ -36,7 +49,7 @@ class WP_Customize_Code_Editor_Control extends WP_Customize_Control {
 	 * Code editor settings.
 	 *
 	 * @see wp_enqueue_code_editor()
-	 * @since 4.9.0
+	 * @since 1.0.2
 	 * @var array|false
 	 */
 	public $editor_settings = array();
@@ -44,7 +57,7 @@ class WP_Customize_Code_Editor_Control extends WP_Customize_Control {
 	/**
 	 * Enqueue control related scripts/styles.
 	 *
-	 * @since 4.9.0
+	 * @since 1.0.2
 	 */
 	public function enqueue() {
 		$this->editor_settings = wp_enqueue_code_editor(
@@ -64,7 +77,7 @@ class WP_Customize_Code_Editor_Control extends WP_Customize_Control {
 	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
-	 * @since 4.9.0
+	 * @since 1.0.2
 	 *
 	 * @see WP_Customize_Control::json()
 	 *
@@ -80,14 +93,14 @@ class WP_Customize_Code_Editor_Control extends WP_Customize_Control {
 	/**
 	 * Don't render the control content from PHP, as it's rendered via JS on load.
 	 *
-	 * @since 4.9.0
+	 * @since 1.0.2
 	 */
 	public function render_content() {}
 
 	/**
 	 * Render a JS template for control display.
 	 *
-	 * @since 4.9.0
+	 * @since 1.0.2
 	 */
 	public function content_template() {
 		?>
@@ -108,4 +121,5 @@ class WP_Customize_Code_Editor_Control extends WP_Customize_Control {
 			></textarea>
 		<?php
 	}
+
 }

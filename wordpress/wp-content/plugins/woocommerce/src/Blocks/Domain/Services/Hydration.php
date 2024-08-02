@@ -2,9 +2,12 @@
 namespace Automattic\WooCommerce\Blocks\Domain\Services;
 
 use Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry;
+<<<<<<< HEAD
 use Automattic\WooCommerce\StoreApi\RoutesController;
 use Automattic\WooCommerce\StoreApi\SchemaController;
 use Automattic\WooCommerce\StoreApi\StoreApi;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 /**
  * Service class that handles hydration of API data for blocks.
@@ -22,7 +25,11 @@ class Hydration {
 	 *
 	 * @var array
 	 */
+<<<<<<< HEAD
 	protected $cached_store_notices = array();
+=======
+	protected $cached_store_notices = [];
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 	/**
 	 * Constructor.
@@ -41,6 +48,7 @@ class Hydration {
 	 * @return array Response data.
 	 */
 	public function get_rest_api_response_data( $path = '' ) {
+<<<<<<< HEAD
 		if ( ! str_starts_with( $path, '/wc/store' ) ) {
 			return array();
 		}
@@ -88,11 +96,19 @@ class Hydration {
 			$preloaded_requests = rest_preload_api_request( array(), $path );
 			$preloaded_data     = $preloaded_requests[ $path ] ?? array();
 		}
+=======
+		$this->cache_store_notices();
+		$this->disable_nonce_check();
+
+		// Preload the request and add it to the array. It will be $preloaded_requests['path']  and contain 'body' and 'headers'.
+		$preloaded_requests = rest_preload_api_request( [], $path );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		$this->restore_cached_store_notices();
 		$this->restore_nonce_check();
 
 		// Returns just the single preloaded request, or an empty array if it doesn't exist.
+<<<<<<< HEAD
 		return $preloaded_data;
 	}
 
@@ -190,13 +206,20 @@ class Hydration {
 			}
 		}
 		return $matched_route;
+=======
+		return $preloaded_requests[ $path ] ?? [];
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
 	 * Disable the nonce check temporarily.
 	 */
 	protected function disable_nonce_check() {
+<<<<<<< HEAD
 		add_filter( 'woocommerce_store_api_disable_nonce_check', array( $this, 'disable_nonce_check_callback' ) );
+=======
+		add_filter( 'woocommerce_store_api_disable_nonce_check', [ $this, 'disable_nonce_check_callback' ] );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -211,7 +234,11 @@ class Hydration {
 	 * Restore the nonce check.
 	 */
 	protected function restore_nonce_check() {
+<<<<<<< HEAD
 		remove_filter( 'woocommerce_store_api_disable_nonce_check', array( $this, 'disable_nonce_check_callback' ) );
+=======
+		remove_filter( 'woocommerce_store_api_disable_nonce_check', [ $this, 'disable_nonce_check_callback' ] );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -233,6 +260,10 @@ class Hydration {
 			return;
 		}
 		WC()->session->set( 'wc_notices', $this->cached_store_notices );
+<<<<<<< HEAD
 		$this->cached_store_notices = array();
+=======
+		$this->cached_store_notices = [];
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 }

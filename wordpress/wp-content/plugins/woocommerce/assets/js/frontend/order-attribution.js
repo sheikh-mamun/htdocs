@@ -65,8 +65,11 @@
 		if ( ! allow ) {
 			// Reset cookies, and clear form data.
 			removeTrackingCookies();
+<<<<<<< HEAD
 		} else if ( typeof sbjs === 'undefined' ) {
 			return; // Do nothing, as sourcebuster.js is not loaded.
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		} else {
 			// If not done yet, initialize sourcebuster.js which populates `sbjs.get` object.
 			sbjs.init( {

@@ -1172,8 +1172,13 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 			}
 			
 			$img_url = ENVO_URL . 'img/demos/envo-royal/';
+<<<<<<< HEAD
 				$url		= 'http://envo-demos.com/wp-content/uploads/demo-import/envo-royal/envo-royal/';
 				$url_woo	= 'http://envo-demos.com/wp-content/uploads/demo-import/envo-royal/envo-royal-woocommerce/';
+=======
+				$url		= 'http://envothemes.com/wp-content/uploads/demo-import/envo-royal/envo-royal/';
+				$url_woo	= 'http://envothemes.com/wp-content/uploads/demo-import/envo-royal/envo-royal-woocommerce/';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				$data_royal	 = array(
 					'home-free-1' => array(
 						'demo_name'						 => 'Envo Royal Home #1',
@@ -1183,7 +1188,11 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 						'widgets_file'					 => $url . 'widgets.wie',
 						'screenshot'					 => $img_url . 'screenshot.webp',
 						'home_title'					 => 'Home Free #1',
+<<<<<<< HEAD
 						'demo_link'						 => 'http://envo-demos.com/envo-royal/',
+=======
+						'demo_link'						 => 'http://envothemes.com/envo-royal/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						'blog_title'					 => 'Blog',
 						'posts_to_show'					 => '6',
 						'elementor_width'				 => '1140',
@@ -1228,7 +1237,11 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 						'widgets_file'					 => $url . 'widgets.wie',
 						'screenshot'					 => $img_url . 'screenshot-2.webp',
 						'home_title'					 => 'Home Free #2',
+<<<<<<< HEAD
 						'demo_link'						 => 'http://envo-demos.com/envo-royal/home-free-2/',
+=======
+						'demo_link'						 => 'http://envothemes.com/envo-royal/home-free-2/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						'blog_title'					 => 'Blog',
 						'posts_to_show'					 => '6',
 						'elementor_width'				 => '1140',
@@ -1273,7 +1286,11 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 						'widgets_file'					 => $url . 'widgets.wie',
 						'screenshot'					 => $img_url . 'screenshot-3.webp',
 						'home_title'					 => 'Home Free #3',
+<<<<<<< HEAD
 						'demo_link'						 => 'http://envo-demos.com/envo-royal/home-free-3/',
+=======
+						'demo_link'						 => 'http://envothemes.com/envo-royal/home-free-3/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						'blog_title'					 => 'Blog',
 						'posts_to_show'					 => '6',
 						'elementor_width'				 => '1140',
@@ -1318,7 +1335,11 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 						'widgets_file'					 => $url_woo . 'widgets.wie',
 						'screenshot'					 => $img_url . 'screenshot-woo-1.webp',
 						'home_title'					 => 'Home Free WooCommerce #1',
+<<<<<<< HEAD
 						'demo_link'						 => 'http://envo-demos.com/envo-royal-woocommerce/home-free-woocommerce-1/',
+=======
+						'demo_link'						 => 'http://envothemes.com/envo-royal-woocommerce/home-free-woocommerce-1/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						'blog_title'					 => 'Blog',
 						'posts_to_show'					 => '6',
 						'elementor_width'				 => '1140',
@@ -1371,7 +1392,11 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 						'widgets_file'					 => $url_woo . 'widgets.wie',
 						'screenshot'					 => $img_url . 'screenshot-woo-2.webp',
 						'home_title'					 => 'Home Free WooCommerce #2',
+<<<<<<< HEAD
 						'demo_link'						 => 'http://envo-demos.com/envo-royal-woocommerce/home-free-woocommerce-2/',
+=======
+						'demo_link'						 => 'http://envothemes.com/envo-royal-woocommerce/home-free-woocommerce-2/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						'blog_title'					 => 'Blog',
 						'posts_to_show'					 => '6',
 						'elementor_width'				 => '1140',
@@ -1424,7 +1449,11 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 						'widgets_file'					 => $url_woo . 'widgets.wie',
 						'screenshot'					 => $img_url . 'screenshot-woo-3.webp',
 						'home_title'					 => 'Home Free WooCommerce #3',
+<<<<<<< HEAD
 						'demo_link'						 => 'http://envo-demos.com/envo-royal-woocommerce/home-free-woocommerce-3/',
+=======
+						'demo_link'						 => 'http://envothemes.com/envo-royal-woocommerce/home-free-woocommerce-3/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						'blog_title'					 => 'Blog',
 						'posts_to_show'					 => '6',
 						'elementor_width'				 => '1140',
@@ -2063,6 +2092,7 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 
 				die();
 			}
+<<<<<<< HEAD
 			
 			public function new_get_page_by_title( $page_title, $output = OBJECT, $post_type = 'page' ) {
 				$args  = array(
@@ -2085,6 +2115,8 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 
 				return get_post( $pages[0], $output );
 			}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 			/**
 			 * After import
@@ -2147,7 +2179,11 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 
 						foreach ( $woopages as $woo_page_name => $woo_page_title ) {
 
+<<<<<<< HEAD
 							$woopage = $this->new_get_page_by_title( $woo_page_title );
+=======
+							$woopage = get_page_by_title( $woo_page_title );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 							if ( isset( $woopage ) && $woopage->ID ) {
 								update_option( $woo_page_name, $woopage->ID );
 							}
@@ -2202,8 +2238,13 @@ if ( !class_exists( 'EnvoThemes_Demos' ) ) {
 					}
 
 					// Assign front page and posts page (blog page).
+<<<<<<< HEAD
 					$home_page	 = $this->new_get_page_by_title( $homepage_title );
 					$blog_page	 = $this->new_get_page_by_title( $blog_title );
+=======
+					$home_page	 = get_page_by_title( $homepage_title );
+					$blog_page	 = get_page_by_title( $blog_title );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 					update_option( 'show_on_front', 'page' );
 

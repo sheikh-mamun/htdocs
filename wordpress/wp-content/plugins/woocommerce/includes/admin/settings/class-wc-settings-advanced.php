@@ -5,8 +5,11 @@
  * @package  WooCommerce\Admin
  */
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Admin\Features\Features;
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 defined( 'ABSPATH' ) || exit;
 
 /**

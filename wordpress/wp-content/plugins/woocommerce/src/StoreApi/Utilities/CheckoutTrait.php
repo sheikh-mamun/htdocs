@@ -85,7 +85,11 @@ trait CheckoutTrait {
 				throw new RouteException( 'woocommerce_rest_checkout_invalid_payment_result', __( 'Invalid payment result received from payment method.', 'woocommerce' ), 500 );
 			}
 		} catch ( \Exception $e ) {
+<<<<<<< HEAD
 			throw new RouteException( 'woocommerce_rest_checkout_process_payment_error', esc_html( $e->getMessage() ), 400 );
+=======
+			throw new RouteException( 'woocommerce_rest_checkout_process_payment_error', $e->getMessage(), 402 );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 	}
 
@@ -194,16 +198,28 @@ trait CheckoutTrait {
 		$request_fields = $request['additional_fields'] ?? [];
 		foreach ( $request_fields as $key => $value ) {
 			try {
+<<<<<<< HEAD
 				$this->additional_fields_controller->validate_field_for_location( $key, $value, 'order' );
+=======
+				$this->additional_fields_controller->validate_field_for_location( $key, $value, 'additional' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			} catch ( \Exception $e ) {
 				$errors[] = $e->getMessage();
 				continue;
 			}
+<<<<<<< HEAD
 			$this->additional_fields_controller->persist_field_for_order( $key, $value, $this->order, 'other', false );
+=======
+			$this->additional_fields_controller->persist_field_for_order( $key, $value, $this->order, false );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 
 		if ( $errors->has_errors() ) {
 			throw new RouteException( 'woocommerce_rest_checkout_invalid_additional_fields', $errors->get_error_messages(), 400 );
 		}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 }

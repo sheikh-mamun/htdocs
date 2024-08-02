@@ -2,24 +2,34 @@
 
 namespace Automattic\WooCommerce\Admin\Features;
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Admin\PageController;
 use Automattic\WooCommerce\Blocks\Utils\BlockTemplateUtils;
 use Automattic\WooCommerce\Admin\WCAdminHelper;
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /**
  * Takes care of Launch Your Store related actions.
  */
 class LaunchYourStore {
+<<<<<<< HEAD
 	const BANNER_DISMISS_USER_META_KEY = 'woocommerce_coming_soon_banner_dismissed';
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	/**
 	 * Constructor.
 	 */
 	public function __construct() {
+<<<<<<< HEAD
 		add_action( 'woocommerce_update_options_site-visibility', array( $this, 'save_site_visibility_options' ) );
 		add_filter( 'woocommerce_admin_shared_settings', array( $this, 'preload_settings' ) );
 		add_action( 'wp_footer', array( $this, 'maybe_add_coming_soon_banner_on_frontend' ) );
 		add_action( 'init', array( $this, 'register_launch_your_store_user_meta_fields' ) );
 		add_action( 'wp_login', array( $this, 'reset_woocommerce_coming_soon_banner_dismissed' ), 10, 2 );
+=======
+		add_action( 'woocommerce_update_options_general', array( $this, 'save_site_visibility_options' ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -39,12 +49,16 @@ class LaunchYourStore {
 			'woocommerce_private_link'     => array( 'yes', 'no' ),
 		);
 
+<<<<<<< HEAD
 		$at_least_one_saved = false;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		foreach ( $options as $name => $option ) {
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			if ( isset( $_POST[ $name ] ) && in_array( $_POST[ $name ], $option, true ) ) {
 				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 				update_option( $name, wp_unslash( $_POST[ $name ] ) );
+<<<<<<< HEAD
 				$at_least_one_saved = true;
 			}
 		}
@@ -197,5 +211,9 @@ class LaunchYourStore {
 		if ( 'yes' === $existing_meta ) {
 			update_user_meta( $user->ID, self::BANNER_DISMISS_USER_META_KEY, 'no' );
 		}
+=======
+			}
+		}
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 }

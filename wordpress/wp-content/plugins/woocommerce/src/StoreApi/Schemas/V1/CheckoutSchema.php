@@ -243,7 +243,11 @@ class CheckoutSchema extends AbstractSchema {
 	 */
 	protected function prepare_payment_details_for_response( array $payment_details ) {
 		return array_map(
+<<<<<<< HEAD
 			function ( $key, $value ) {
+=======
+			function( $key, $value ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				return (object) [
 					'key'   => $key,
 					'value' => $value,
@@ -261,6 +265,7 @@ class CheckoutSchema extends AbstractSchema {
 	 * @return array
 	 */
 	protected function get_additional_fields_response( \WC_Order $order ) {
+<<<<<<< HEAD
 		$fields = wp_parse_args(
 			$this->additional_fields_controller->get_all_fields_from_object( $order, 'other' ),
 			$this->additional_fields_controller->get_all_fields_from_object( wc()->customer, 'other' )
@@ -281,6 +286,22 @@ class CheckoutSchema extends AbstractSchema {
 		}
 
 		return $fields;
+=======
+		$fields   = wp_parse_args(
+			$this->additional_fields_controller->get_all_fields_from_order( $order ),
+			$this->additional_fields_controller->get_all_fields_from_customer( wc()->customer )
+		);
+		$response = [];
+
+		foreach ( $fields as $key => $value ) {
+			if ( 0 === strpos( $key, '/billing/' ) || 0 === strpos( $key, '/shipping/' ) ) {
+				continue;
+			}
+			$response[ $key ] = $value;
+		}
+
+		return $response;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -291,7 +312,11 @@ class CheckoutSchema extends AbstractSchema {
 	protected function get_additional_fields_schema() {
 		return $this->generate_additional_fields_schema(
 			$this->additional_fields_controller->get_fields_for_location( 'contact' ),
+<<<<<<< HEAD
 			$this->additional_fields_controller->get_fields_for_location( 'order' )
+=======
+			$this->additional_fields_controller->get_fields_for_location( 'additional' )
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		);
 	}
 
@@ -314,7 +339,11 @@ class CheckoutSchema extends AbstractSchema {
 
 			if ( 'select' === $field['type'] ) {
 				$field_schema['enum'] = array_map(
+<<<<<<< HEAD
 					function ( $option ) {
+=======
+					function( $option ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						return $option['value'];
 					},
 					$field['options']
@@ -339,7 +368,11 @@ class CheckoutSchema extends AbstractSchema {
 	protected function schema_has_required_property( $additional_fields_schema ) {
 		return array_reduce(
 			array_keys( $additional_fields_schema ),
+<<<<<<< HEAD
 			function ( $carry, $key ) use ( $additional_fields_schema ) {
+=======
+			function( $carry, $key ) use ( $additional_fields_schema ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				return $carry || $additional_fields_schema[ $key ]['required'];
 			},
 			false
@@ -358,7 +391,11 @@ class CheckoutSchema extends AbstractSchema {
 		$fields             = $sanitization_utils->wp_kses_array(
 			array_reduce(
 				array_keys( $fields ),
+<<<<<<< HEAD
 				function ( $carry, $key ) use ( $fields, $properties ) {
+=======
+				function( $carry, $key ) use ( $fields, $properties ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					if ( ! isset( $properties[ $key ] ) ) {
 						return $carry;
 					}
@@ -389,6 +426,7 @@ class CheckoutSchema extends AbstractSchema {
 		$fields                  = $this->sanitize_additional_fields( $fields );
 		$additional_field_schema = $this->get_additional_fields_schema();
 
+<<<<<<< HEAD
 		// Loop over the schema instead of the fields. This is to ensure missing fields are validated.
 		foreach ( $additional_field_schema as $key => $schema ) {
 			if ( ! isset( $fields[ $key ] ) && ! $schema['required'] ) {
@@ -398,6 +436,14 @@ class CheckoutSchema extends AbstractSchema {
 
 			$field_value = isset( $fields[ $key ] ) ? $fields[ $key ] : null;
 			$result      = rest_validate_value_from_schema( $field_value, $schema, $key );
+=======
+		// Validate individual properties first.
+		foreach ( $fields as $key => $field_value ) {
+			if ( ! isset( $additional_field_schema[ $key ] ) ) {
+				continue;
+			}
+			$result = rest_validate_value_from_schema( $field_value, $additional_field_schema[ $key ], $key );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 			// Only allow custom validation on fields that pass the schema validation.
 			if ( true === $result ) {
@@ -420,17 +466,29 @@ class CheckoutSchema extends AbstractSchema {
 		}
 
 		// Validate groups of properties per registered location.
+<<<<<<< HEAD
 		$locations = array( 'contact', 'order' );
 
 		foreach ( $locations as $location ) {
 			$location_fields = $this->additional_fields_controller->filter_fields_for_location( $fields, $location );
 			$result          = $this->additional_fields_controller->validate_fields_for_location( $location_fields, $location, 'other' );
+=======
+		$locations = array( 'contact', 'additional' );
+
+		foreach ( $locations as $location ) {
+			$location_fields = $this->additional_fields_controller->filter_fields_for_location( $fields, $location );
+			$result          = $this->additional_fields_controller->validate_fields_for_location( $location_fields, $location );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 			if ( is_wp_error( $result ) && $result->has_errors() ) {
 				$errors->merge_from( $result );
 			}
 		}
 
+<<<<<<< HEAD
 		return $errors->has_errors() ? $errors : true;
+=======
+		return $errors->has_errors( $errors ) ? $errors : true;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 }

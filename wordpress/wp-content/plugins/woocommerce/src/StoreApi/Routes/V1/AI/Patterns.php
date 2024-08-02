@@ -34,6 +34,7 @@ class Patterns extends AbstractRoute {
 	 * @return string
 	 */
 	public function get_path() {
+<<<<<<< HEAD
 		return self::get_path_regex();
 	}
 
@@ -43,6 +44,8 @@ class Patterns extends AbstractRoute {
 	 * @return string
 	 */
 	public static function get_path_regex() {
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		return '/ai/patterns';
 	}
 

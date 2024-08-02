@@ -4,7 +4,11 @@
 	"title": "Product Image Gallery",
 	"icon": "gallery",
 	"description": "Display a product's images.",
+<<<<<<< HEAD
 	"category": "woocommerce-product-elements",
+=======
+	"category": "woocommerce",
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	"supports": {
 		"align": true,
 		"multiple": false

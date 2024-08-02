@@ -45,6 +45,7 @@ class StoreTitle extends AbstractRoute {
 	 * @return string
 	 */
 	public function get_path() {
+<<<<<<< HEAD
 		return self::get_path_regex();
 	}
 
@@ -54,6 +55,8 @@ class StoreTitle extends AbstractRoute {
 	 * @return string
 	 */
 	public static function get_path_regex() {
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		return '/ai/store-title';
 	}
 
@@ -63,6 +66,7 @@ class StoreTitle extends AbstractRoute {
 	 * @return array An array of endpoints.
 	 */
 	public function get_args() {
+<<<<<<< HEAD
 		return array(
 			array(
 				'methods'             => \WP_REST_Server::CREATABLE,
@@ -78,6 +82,23 @@ class StoreTitle extends AbstractRoute {
 			'schema'      => array( $this->schema, 'get_public_item_schema' ),
 			'allow_batch' => array( 'v1' => true ),
 		);
+=======
+		return [
+			[
+				'methods'             => \WP_REST_Server::CREATABLE,
+				'callback'            => [ $this, 'get_response' ],
+				'permission_callback' => [ Middleware::class, 'is_authorized' ],
+				'args'                => [
+					'business_description' => [
+						'description' => __( 'The business description for a given store.', 'woocommerce' ),
+						'type'        => 'string',
+					],
+				],
+			],
+			'schema'      => [ $this->schema, 'get_public_item_schema' ],
+			'allow_batch' => [ 'v1' => true ],
+		];
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -100,8 +121,13 @@ class StoreTitle extends AbstractRoute {
 			);
 		}
 
+<<<<<<< HEAD
 		$store_title                 = html_entity_decode( get_option( 'blogname' ) );
 		$previous_ai_generated_title = html_entity_decode( get_option( 'ai_generated_site_title' ) );
+=======
+		$store_title                 = get_option( 'blogname' );
+		$previous_ai_generated_title = get_option( 'ai_generated_site_title' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		if ( self::DEFAULT_TITLE === $store_title || ( ! empty( $store_title ) && $previous_ai_generated_title !== $store_title ) ) {
 			return rest_ensure_response( array( 'ai_content_generated' => false ) );

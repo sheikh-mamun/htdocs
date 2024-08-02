@@ -335,6 +335,12 @@ class OrderAttributionController implements RegisterHooksInterface {
 		$source_type = $order->get_meta( $this->get_meta_prefixed_field_name( 'source_type' ) );
 		$source      = $order->get_meta( $this->get_meta_prefixed_field_name( 'utm_source' ) );
 		$origin      = $this->get_origin_label( $source_type, $source );
+<<<<<<< HEAD
+=======
+		if ( empty( $origin ) ) {
+			$origin = __( 'Unknown', 'woocommerce' );
+		}
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		echo esc_html( $origin );
 	}
 

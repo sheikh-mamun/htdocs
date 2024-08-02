@@ -4,7 +4,11 @@
  * Description: The Elementor Website Builder has it all: drag and drop page builder, pixel perfect design, mobile responsive editing, and more. Get started now!
  * Plugin URI: https://elementor.com/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
  * Author: Elementor.com
+<<<<<<< HEAD
  * Version: 3.21.7
+=======
+ * Version: 3.21.5
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
  * Author URI: https://elementor.com/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
  *
  * Text Domain: elementor
@@ -27,7 +31,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+<<<<<<< HEAD
 define( 'ELEMENTOR_VERSION', '3.21.7' );
+=======
+define( 'ELEMENTOR_VERSION', '3.21.5' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 define( 'ELEMENTOR__FILE__', __FILE__ );
 define( 'ELEMENTOR_PLUGIN_BASE', plugin_basename( ELEMENTOR__FILE__ ) );
@@ -82,7 +90,11 @@ function elementor_fail_php_version() {
 		sprintf(
 			/* translators: %s: PHP version. */
 			esc_html__( 'Update to version %s and get back to creating!', 'elementor' ),
+<<<<<<< HEAD
 			'7.4'
+=======
+			'7.4',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		),
 		esc_html__( 'Show me how', 'elementor' )
 	);
@@ -106,7 +118,11 @@ function elementor_fail_wp_version() {
 		sprintf(
 			/* translators: %s: WordPress version. */
 			esc_html__( 'Update to version %s and get back to creating!', 'elementor' ),
+<<<<<<< HEAD
 			'6.0'
+=======
+			'6.0',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		),
 		esc_html__( 'Show me how', 'elementor' )
 	);

@@ -501,13 +501,21 @@ jQuery( function( $ ) {
 							var maybe_valid_json = raw_response.match( /{"result.*}/ );
 
 							if ( null === maybe_valid_json ) {
+<<<<<<< HEAD
 								console.log( 'Unable to fix malformed JSON #1' );
+=======
+								console.log( 'Unable to fix malformed JSON' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 							} else if ( wc_checkout_form.is_valid_json( maybe_valid_json[0] ) ) {
 								console.log( 'Fixed malformed JSON. Original:' );
 								console.log( raw_response );
 								raw_response = maybe_valid_json[0];
 							} else {
+<<<<<<< HEAD
 								console.log( 'Unable to fix malformed JSON #2' );
+=======
+								console.log( 'Unable to fix malformed JSON' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 							}
 						}
 
@@ -560,6 +568,7 @@ jQuery( function( $ ) {
 						// Detach the unload handler that prevents a reload / redirect
 						wc_checkout_form.detachUnloadEventsOnSubmit();
 
+<<<<<<< HEAD
 						// This is just a technical error fallback. i18_checkout_error is expected to be always defined and localized.
 						var errorMessage = errorThrown;
 
@@ -575,6 +584,12 @@ jQuery( function( $ ) {
 
 						wc_checkout_form.submit_error(
 							'<div class="woocommerce-error">' + errorMessage + '</div>'
+=======
+						wc_checkout_form.submit_error(
+							'<div class="woocommerce-error">' +
+							( errorThrown || wc_checkout_params.i18n_checkout_error ) +
+							'</div>'
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						);
 					}
 				});

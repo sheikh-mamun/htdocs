@@ -3,14 +3,20 @@
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
 
 use Automattic\WooCommerce\Blocks\Utils\StyleAttributesUtils;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Blocks\Utils\BlockHooksTrait;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 /**
  * CustomerAccount class.
  */
 class CustomerAccount extends AbstractBlock {
+<<<<<<< HEAD
 	use BlockHooksTrait;
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	const TEXT_ONLY   = 'text_only';
 	const ICON_ONLY   = 'icon_only';
 	const DISPLAY_ALT = 'alt';
@@ -23,6 +29,7 @@ class CustomerAccount extends AbstractBlock {
 	protected $block_name = 'customer-account';
 
 	/**
+<<<<<<< HEAD
 	 * Block Hook API placements.
 	 *
 	 * @var array
@@ -102,6 +109,8 @@ class CustomerAccount extends AbstractBlock {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Render the block.
 	 *
 	 * @param array    $attributes Block attributes.
@@ -129,11 +138,17 @@ class CustomerAccount extends AbstractBlock {
 			),
 		);
 
+<<<<<<< HEAD
 		$label_markup = self::ICON_ONLY === $attributes['displayStyle'] ? '' : '<span class="label">' . wp_kses( $this->render_label(), array() ) . '</span>';
 
 		return "<div class='wp-block-woocommerce-customer-account " . esc_attr( $classes_and_styles['classes'] ) . "' style='" . esc_attr( $classes_and_styles['styles'] ) . "'>
 			<a href='" . esc_attr( $account_link ) . "'>
 				" . wp_kses( $this->render_icon( $attributes ), $allowed_svg ) . $label_markup . '
+=======
+		return "<div class='wp-block-woocommerce-customer-account " . esc_attr( $classes_and_styles['classes'] ) . "' style='" . esc_attr( $classes_and_styles['styles'] ) . "'>
+			<a href='" . esc_attr( $account_link ) . "'>
+				" . wp_kses( $this->render_icon( $attributes ), $allowed_svg ) . "<span class='label'>" . wp_kses( $this->render_label( $attributes ), array() ) . '</span>
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			</a>
 		</div>';
 	}
@@ -177,9 +192,21 @@ class CustomerAccount extends AbstractBlock {
 	/**
 	 * Gets the label to render depending on the displayStyle.
 	 *
+<<<<<<< HEAD
 	 * @return string Label to render on the block.
 	 */
 	private function render_label() {
+=======
+	 * @param array $attributes Block attributes.
+	 *
+	 * @return string Label to render on the block.
+	 */
+	private function render_label( $attributes ) {
+		if ( self::ICON_ONLY === $attributes['displayStyle'] ) {
+			return '';
+		}
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		return get_current_user_id()
 			? __( 'My Account', 'woocommerce' )
 			: __( 'Login', 'woocommerce' );

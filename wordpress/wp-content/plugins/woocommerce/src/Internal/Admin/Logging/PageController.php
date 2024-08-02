@@ -104,7 +104,11 @@ class PageController {
 		if ( ! $this->settings->logging_is_enabled() ) {
 			add_action(
 				'admin_notices',
+<<<<<<< HEAD
 				function () {
+=======
+				function() {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					?>
 					<div class="notice notice-warning">
 						<p>
@@ -395,7 +399,11 @@ class PageController {
 				if ( is_string( $line ) ) {
 					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- format_line does the escaping.
 					echo $this->format_line( $line, $line_number );
+<<<<<<< HEAD
 					++$line_number;
+=======
+					$line_number ++;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				}
 				?>
 			<?php endwhile; ?>
@@ -464,7 +472,11 @@ class PageController {
 			array(
 				'file_id' => array(
 					'filter'  => FILTER_CALLBACK,
+<<<<<<< HEAD
 					'options' => function ( $file_id ) {
+=======
+					'options' => function( $file_id ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						return sanitize_file_name( wp_unslash( $file_id ) );
 					},
 				),
@@ -484,13 +496,21 @@ class PageController {
 				),
 				'search'  => array(
 					'filter'  => FILTER_CALLBACK,
+<<<<<<< HEAD
 					'options' => function ( $search ) {
+=======
+					'options' => function( $search ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						return esc_html( wp_unslash( $search ) );
 					},
 				),
 				'source'  => array(
 					'filter'  => FILTER_CALLBACK,
+<<<<<<< HEAD
 					'options' => function ( $source ) {
+=======
+					'options' => function( $source ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						return File::sanitize_source( wp_unslash( $source ) );
 					},
 				),
@@ -624,7 +644,11 @@ class PageController {
 					}
 
 					if ( is_wp_error( $export_error ) ) {
+<<<<<<< HEAD
 						wp_die( wp_kses_post( $export_error->get_error_message() ) );
+=======
+						wp_die( wp_kses_post( $export_error ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					}
 					break;
 				case 'delete':
@@ -654,7 +678,11 @@ class PageController {
 		if ( is_numeric( $deleted ) ) {
 			add_action(
 				'admin_notices',
+<<<<<<< HEAD
 				function () use ( $deleted ) {
+=======
+				function() use ( $deleted ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					?>
 					<div class="notice notice-info is-dismissible">
 						<p>

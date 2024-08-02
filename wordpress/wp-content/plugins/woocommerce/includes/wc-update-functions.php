@@ -18,11 +18,16 @@
 
 defined( 'ABSPATH' ) || exit;
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Admin\Notes\Note;
 use Automattic\WooCommerce\Admin\Notes\Notes;
 use Automattic\WooCommerce\Database\Migrations\MigrationHelper;
 use Automattic\WooCommerce\Internal\Admin\Marketing\MarketingSpecs;
 use Automattic\WooCommerce\Internal\Admin\Notes\WooSubscriptionsNotes;
+=======
+use Automattic\WooCommerce\Database\Migrations\MigrationHelper;
+use Automattic\WooCommerce\Internal\Admin\Marketing\MarketingSpecs;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use Automattic\WooCommerce\Internal\AssignDefaultCategory;
 use Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer;
 use Automattic\WooCommerce\Internal\DataStores\Orders\OrdersTableDataStore;
@@ -170,7 +175,11 @@ function wc_update_200_taxrates() {
 						)
 					);
 
+<<<<<<< HEAD
 					++$loop;
+=======
+					$loop++;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				}
 			}
 		}
@@ -219,7 +228,11 @@ function wc_update_200_taxrates() {
 				}
 			}
 
+<<<<<<< HEAD
 			++$loop;
+=======
+			$loop++;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 	}
 
@@ -2574,6 +2587,10 @@ function wc_update_750_add_columns_to_order_stats_table() {
 			and postmeta.meta_key = '_date_completed'
 		SET order_stats.date_completed = IFNULL(FROM_UNIXTIME(postmeta.meta_value), '0000-00-00 00:00:00');"
 	);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }
 
 /**
@@ -2669,6 +2686,7 @@ function wc_update_870_prevent_listing_of_transient_files_directory() {
 	$wp_filesystem->put_contents( $default_transient_files_dir . '/.htaccess', 'deny from all' );
 	$wp_filesystem->put_contents( $default_transient_files_dir . '/index.html', '' );
 }
+<<<<<<< HEAD
 
 /**
  * If it exists, remove and recreate the inbox note that asks users to connect to `Woo.com` so that the domain name is changed to the updated `WooCommerce.com`.
@@ -2724,3 +2742,5 @@ function wc_update_891_create_plugin_autoinstall_history_option() {
 		}
 	}
 }
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744

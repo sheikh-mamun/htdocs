@@ -25,7 +25,11 @@ class envo_Settings_Importer {
 		$data = @unserialize( $raw );
 
 		// Delete import file
+<<<<<<< HEAD
 		//unlink( $file );
+=======
+		unlink( $file );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		// If wp_css is set then import it.
 		if ( function_exists( 'wp_update_custom_css_post' ) && isset( $data['wp_css'] ) && '' !== $data['wp_css'] ) {

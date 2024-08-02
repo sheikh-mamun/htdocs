@@ -5,7 +5,10 @@ namespace Elementor\Modules\Promotions\AdminMenuItems;
 use Elementor\Core\Admin\Menu\Interfaces\Admin_Menu_Item_With_Page;
 use Elementor\Core\Utils\Promotions\Filtered_Promotions_Manager;
 use Elementor\Settings;
+<<<<<<< HEAD
 use Elementor\Utils;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -29,10 +32,13 @@ class Go_Pro_Promotion_Item implements Admin_Menu_Item_With_Page {
 	public function get_label() {
 		$upgrade_text = esc_html__( 'Upgrade', 'elementor' );
 
+<<<<<<< HEAD
 		if ( Utils::is_sale_time() ) {
 			$upgrade_text = esc_html__( 'Upgrade Sale Now', 'elementor' );
 		}
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		return apply_filters( 'elementor/admin_menu/custom_promotion', [ 'upgrade_text' => $upgrade_text ] )['upgrade_text'] ?? $upgrade_text;
 	}
 

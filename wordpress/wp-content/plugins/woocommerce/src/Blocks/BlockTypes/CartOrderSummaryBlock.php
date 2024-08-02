@@ -11,6 +11,7 @@ class CartOrderSummaryBlock extends AbstractInnerBlock {
 	 * @var string
 	 */
 	protected $block_name = 'cart-order-summary-block';
+<<<<<<< HEAD
 
 	/**
 	 * Get the contents of the given inner block.
@@ -75,4 +76,6 @@ class CartOrderSummaryBlock extends AbstractInnerBlock {
 
 		return preg_replace( '/\n\n( *?)/i', '', $content );
 	}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }

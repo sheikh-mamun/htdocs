@@ -4,7 +4,11 @@ Tags: online store, ecommerce, shop, shopping cart, sell online, storefront, che
 Requires at least: 6.4
 Tested up to: 6.5
 Requires PHP: 7.4
+<<<<<<< HEAD
 Stable tag: 8.8.3
+=======
+Stable tag: 8.8.2
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -57,9 +61,15 @@ Unlike hosted ecommerce solutions, WooCommerce store data is future-proof; youâ€
 Developers can use [WooCommerce](https://woocommerce.com/woocommerce/) to create, customize, and scale a store to meet a clientâ€™s exact specifications, making enhancements through extensions or custom solutions.
 
 - Leverage [hooks and filters](https://woocommerce.com/document/introduction-to-hooks-actions-and-filters/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing) to modify or create functionality.
+<<<<<<< HEAD
 - Integrate virtually any service using a robust [REST API](https://developer.woocommerce.com/docs/getting-started-with-the-woocommerce-rest-api/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing) and webhooks.
 - Design and build custom content blocks with React.
 - [Inspect and modify](https://developer.woocommerce.com/docs/category/extension-development/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing) any aspect of the core plugin code.
+=======
+- Integrate virtually any service using a robust [REST API](https://woocommerce.com/document/woocommerce-rest-api/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing) and webhooks.
+- Design and build custom content blocks with React.
+- [Inspect and modify](https://woocommerce.com/documentation/plugins/woocommerce/woocommerce-codex/extending/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing) any aspect of the core plugin code.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 - Speed up development with a lightning-fast [CLI](https://woocommerce.github.io/code-reference/classes/wc-cli-rest-command.html?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing).
 
 The core platform is tested rigorously and often, supported by a dedicated development team working across time zones. Comprehensive documentation is updated with each release, empowering you to build exactly the store required.
@@ -84,7 +94,11 @@ WooCommerce is translated into multiple languages, including Danish, Ukrainian, 
 
 For help setting up and configuring WooCommerce, please refer to [Getting Started](https://woocommerce.com/documentation/plugins/woocommerce/getting-started/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing) and the [New WooCommerce Store Owner Guide](https://woocommerce.com/guides/new-store/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing).
 
+<<<<<<< HEAD
 For extending or theming WooCommerce, see our [documentation](https://github.com/woocommerce/woocommerce/tree/trunk/docs), as well as the [Plugin Developer Best Practices](https://github.com/woocommerce/woocommerce/blob/trunk/docs/extension-development/extension-development-best-practices.md).
+=======
+For extending or theming WooCommerce, see our [codex](https://woocommerce.com/documentation/plugins/woocommerce/woocommerce-codex/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing), as well as the [Plugin Developer Handbook](https://woocommerce.com/document/create-a-plugin/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing).
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 = Where can I get help or talk to other users about WooCommerce Core? =
 
@@ -165,6 +179,7 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 == Changelog ==
 
+<<<<<<< HEAD
 = 8.9.1 2024-05-21 =
 
 **WooCommerce**
@@ -177,3 +192,10 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 [See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/changelog.txt).
 /trunk/changelog.txt).
+=======
+= 8.8.3 2024-04-29 =
+
+* Update - Reverts auto-injecting specific Woo Blocks in every block theme and restores only auto-injecting in themes found in the allow list. [#46935](https://github.com/woocommerce/woocommerce/pull/46935)
+
+[See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/changelog.txt).
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744

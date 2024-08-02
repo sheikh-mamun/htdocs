@@ -572,6 +572,7 @@ class Ai extends Library {
 		}
 
 		if ( Plugin::instance()->experiments->get_active_features()['nested-elements'] ) {
+<<<<<<< HEAD
 			$context['features']['supportedFeatures'][] = 'Nested';
 		}
 
@@ -581,6 +582,9 @@ class Ai extends Library {
 
 		if ( Plugin::instance()->experiments->get_active_features()['mega-menu'] ) {
 			$context['features']['supportedFeatures'][] = 'MegaMenu';
+=======
+			$context['features']['supportedFeatures'][] = 'NestedElements';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 
 		$metadata = [

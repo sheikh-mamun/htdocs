@@ -211,30 +211,45 @@ class Controller extends ReportsController implements ExportableInterface {
 					'readonly'    => true,
 				),
 				'extended_info'    => array(
+<<<<<<< HEAD
 					'products'    => array(
+=======
+					'products' => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						'type'        => 'array',
 						'readonly'    => true,
 						'context'     => array( 'view', 'edit' ),
 						'description' => __( 'List of order product IDs, names, quantities.', 'woocommerce' ),
 					),
+<<<<<<< HEAD
 					'coupons'     => array(
+=======
+					'coupons'  => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						'type'        => 'array',
 						'readonly'    => true,
 						'context'     => array( 'view', 'edit' ),
 						'description' => __( 'List of order coupons.', 'woocommerce' ),
 					),
+<<<<<<< HEAD
 					'customer'    => array(
+=======
+					'customer' => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						'type'        => 'object',
 						'readonly'    => true,
 						'context'     => array( 'view', 'edit' ),
 						'description' => __( 'Order customer information.', 'woocommerce' ),
 					),
+<<<<<<< HEAD
 					'attribution' => array(
 						'type'        => 'object',
 						'readonly'    => true,
 						'context'     => array( 'view', 'edit' ),
 						'description' => __( 'Order attribution information.', 'woocommerce' ),
 					),
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				),
 			),
 		);
@@ -532,7 +547,10 @@ class Controller extends ReportsController implements ExportableInterface {
 			'num_items_sold'  => __( 'Items sold', 'woocommerce' ),
 			'coupons'         => __( 'Coupon(s)', 'woocommerce' ),
 			'net_total'       => __( 'N. Revenue', 'woocommerce' ),
+<<<<<<< HEAD
 			'attribution'     => __( 'Attribution', 'woocommerce' ),
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		);
 
 		/**
@@ -565,7 +583,10 @@ class Controller extends ReportsController implements ExportableInterface {
 			'num_items_sold'  => $item['num_items_sold'],
 			'coupons'         => isset( $item['extended_info']['coupons'] ) ? $this->get_coupons( $item['extended_info']['coupons'] ) : null,
 			'net_total'       => $item['net_total'],
+<<<<<<< HEAD
 			'attribution'     => $item['extended_info']['attribution']['origin'],
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		);
 
 		/**

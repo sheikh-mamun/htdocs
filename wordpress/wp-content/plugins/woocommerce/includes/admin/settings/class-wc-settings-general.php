@@ -218,6 +218,14 @@ class WC_Settings_General extends WC_Settings_Page {
 				),
 
 				array(
+<<<<<<< HEAD
+=======
+					'id'   => 'wc_settings_general_site_visibility_slotfill',
+					'type' => 'slotfill_placeholder',
+				),
+
+				array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					'title' => __( 'Currency options', 'woocommerce' ),
 					'type'  => 'title',
 					'desc'  => __( 'The following options affect how prices are displayed on the frontend.', 'woocommerce' ),

@@ -30,6 +30,7 @@ class ProductCollectionData extends AbstractRoute {
 	 * @return string
 	 */
 	public function get_path() {
+<<<<<<< HEAD
 		return self::get_path_regex();
 	}
 
@@ -39,6 +40,8 @@ class ProductCollectionData extends AbstractRoute {
 	 * @return string
 	 */
 	public static function get_path_regex() {
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		return '/products/collection-data';
 	}
 
@@ -100,6 +103,7 @@ class ProductCollectionData extends AbstractRoute {
 		}
 
 		if ( ! empty( $request['calculate_attribute_counts'] ) ) {
+<<<<<<< HEAD
 			$taxonomy__or_queries  = [];
 			$taxonomy__and_queries = [];
 
@@ -143,6 +147,14 @@ class ProductCollectionData extends AbstractRoute {
 
 			if ( $taxonomy__and_queries ) {
 				$counts = $filters->get_attribute_counts( $request, $taxonomy__and_queries );
+=======
+			foreach ( $request['calculate_attribute_counts'] as $attributes_to_count ) {
+				if ( ! isset( $attributes_to_count['taxonomy'] ) ) {
+					continue;
+				}
+
+				$counts = $filters->get_attribute_counts( $request, $attributes_to_count['taxonomy'] );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 				foreach ( $counts as $key => $value ) {
 					$data['attribute_counts'][] = (object) [

@@ -32,7 +32,11 @@ class CheckoutFieldsFrontend {
 	public function init() {
 		// Show custom checkout fields on the order details page.
 		add_action( 'woocommerce_order_details_after_customer_address', array( $this, 'render_order_address_fields' ), 10, 2 );
+<<<<<<< HEAD
 		add_action( 'woocommerce_order_details_after_customer_details', array( $this, 'render_order_other_fields' ), 10 );
+=======
+		add_action( 'woocommerce_order_details_after_customer_details', array( $this, 'render_order_additional_fields' ), 10 );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		// Show custom checkout fields on the My Account page.
 		add_action( 'woocommerce_my_account_after_my_address', array( $this, 'render_address_fields' ), 10, 1 );
@@ -87,10 +91,17 @@ class CheckoutFieldsFrontend {
 	 *
 	 * @param WC_Order $order Order object.
 	 */
+<<<<<<< HEAD
 	public function render_order_other_fields( $order ) {
 		$fields = array_merge(
 			$this->checkout_fields_controller->get_order_additional_fields_with_values( $order, 'contact', 'other', 'view' ),
 			$this->checkout_fields_controller->get_order_additional_fields_with_values( $order, 'order', 'other', 'view' ),
+=======
+	public function render_order_additional_fields( $order ) {
+		$fields = array_merge(
+			$this->checkout_fields_controller->get_order_additional_fields_with_values( $order, 'contact', '', 'view' ),
+			$this->checkout_fields_controller->get_order_additional_fields_with_values( $order, 'additional', '', 'view' ),
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		);
 
 		if ( ! $fields ) {
@@ -122,7 +133,11 @@ class CheckoutFieldsFrontend {
 
 		foreach ( $fields as $key => $field ) {
 			$value = $this->checkout_fields_controller->format_additional_field_value(
+<<<<<<< HEAD
 				$this->checkout_fields_controller->get_field_from_object( $key, $customer, $address_type ),
+=======
+				$this->checkout_fields_controller->get_field_from_customer( $key, $customer, $address_type ),
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				$field
 			);
 
@@ -160,10 +175,15 @@ class CheckoutFieldsFrontend {
 		$fields   = $this->checkout_fields_controller->get_fields_for_location( 'contact' );
 
 		foreach ( $fields as $key => $field ) {
+<<<<<<< HEAD
 			$field_key           = CheckoutFields::get_group_key( 'other' ) . $key;
 			$form_field          = $field;
 			$form_field['id']    = $field_key;
 			$form_field['value'] = $this->checkout_fields_controller->get_field_from_object( $key, $customer, 'contact' );
+=======
+			$form_field          = $field;
+			$form_field['value'] = $this->checkout_fields_controller->get_field_from_customer( $key, $customer, 'contact' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 			if ( 'select' === $field['type'] ) {
 				$form_field['options'] = array_column( $field['options'], 'label', 'value' );
@@ -191,6 +211,7 @@ class CheckoutFieldsFrontend {
 		$additional_fields = $this->checkout_fields_controller->get_fields_for_location( 'contact' );
 		$field_values      = array();
 
+<<<<<<< HEAD
 		foreach ( array_keys( $additional_fields ) as $key ) {
 			$post_key = CheckoutFields::get_group_key( 'other' ) . $key;
 			if ( ! isset( $_POST[ $post_key ] ) ) {
@@ -198,6 +219,14 @@ class CheckoutFieldsFrontend {
 			}
 
 			$field_value = $this->checkout_fields_controller->sanitize_field( $key, wc_clean( wp_unslash( $_POST[ $post_key ] ) ) );
+=======
+		foreach ( $additional_fields as $key => $field ) {
+			if ( ! isset( $_POST[ $key ] ) ) {
+				continue;
+			}
+
+			$field_value = $this->checkout_fields_controller->sanitize_field( $key, wc_clean( wp_unslash( $_POST[ $key ] ) ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			$validation  = $this->checkout_fields_controller->validate_field( $key, $field_value );
 
 			if ( is_wp_error( $validation ) && $validation->has_errors() ) {
@@ -210,11 +239,19 @@ class CheckoutFieldsFrontend {
 
 		// Persist individual additional fields to customer.
 		foreach ( $field_values as $key => $value ) {
+<<<<<<< HEAD
 			$this->checkout_fields_controller->persist_field_for_customer( $key, $value, $customer, 'other' );
 		}
 
 		// Validate all fields for this location.
 		$location_validation = $this->checkout_fields_controller->validate_fields_for_location( $field_values, 'contact', 'other' );
+=======
+			$this->checkout_fields_controller->persist_field_for_customer( $key, $value, $customer );
+		}
+
+		// Validate all fields for this location.
+		$location_validation = $this->checkout_fields_controller->validate_fields_for_location( $field_values, 'contact' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		if ( is_wp_error( $location_validation ) && $location_validation->has_errors() ) {
 			wc_add_notice( $location_validation->get_error_message(), 'error' );
@@ -236,9 +273,15 @@ class CheckoutFieldsFrontend {
 		$fields   = $this->checkout_fields_controller->get_fields_for_location( 'address' );
 
 		foreach ( $fields as $key => $field ) {
+<<<<<<< HEAD
 			$field_key                      = CheckoutFields::get_group_key( $address_type ) . $key;
 			$address[ $field_key ]          = $field;
 			$address[ $field_key ]['value'] = $this->checkout_fields_controller->get_field_from_object( $key, $customer, $address_type );
+=======
+			$field_key                      = "/{$address_type}/{$key}";
+			$address[ $field_key ]          = $field;
+			$address[ $field_key ]['value'] = $this->checkout_fields_controller->get_field_from_customer( $key, $customer, $address_type );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 			if ( 'select' === $field['type'] ) {
 				$address[ $field_key ]['options'] = array_column( $field['options'], 'label', 'value' );
@@ -269,8 +312,13 @@ class CheckoutFieldsFrontend {
 		$additional_fields = $this->checkout_fields_controller->get_fields_for_location( 'address' );
 		$field_values      = array();
 
+<<<<<<< HEAD
 		foreach ( array_keys( $additional_fields ) as $key ) {
 			$post_key = CheckoutFields::get_group_key( $address_type ) . $key;
+=======
+		foreach ( $additional_fields as $key => $field ) {
+			$post_key = "/{$address_type}/{$key}";
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 			if ( ! isset( $_POST[ $post_key ] ) ) {
 				continue;
@@ -289,7 +337,11 @@ class CheckoutFieldsFrontend {
 
 		// Persist individual additional fields to customer.
 		foreach ( $field_values as $key => $value ) {
+<<<<<<< HEAD
 			$this->checkout_fields_controller->persist_field_for_customer( $key, $value, $customer, $address_type );
+=======
+			$this->checkout_fields_controller->persist_field_for_customer( "/{$address_type}/{$key}", $value, $customer );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 
 		// Validate all fields for this location.

@@ -12,7 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+<<<<<<< HEAD
 // phpcs:disable Squiz.Classes.ClassFileName.NoMatch, Squiz.Classes.ValidClassName.NotCamelCaps -- Backward compatibility.
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /**
  * Abstract Order Data Store: Stored in CPT.
  *
@@ -81,6 +84,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 		}
 
 		$id = wp_insert_post(
+<<<<<<< HEAD
 			/**
 			 * Filters the data for a new order before it is inserted into the database.
 			 *
@@ -88,6 +92,8 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 			 *
 			 * @since 3.3.0
 			 */
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			apply_filters(
 				'woocommerce_new_order_data',
 				array(
@@ -123,7 +129,11 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 	 * @param int $order_id The order id to check.
 	 * @return bool True if an order exists with the given name.
 	 */
+<<<<<<< HEAD
 	public function order_exists( $order_id ): bool {
+=======
+	public function order_exists( $order_id ) : bool {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		if ( ! $order_id ) {
 			return false;
 		}
@@ -143,7 +153,11 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 		$order->set_defaults();
 		$post_object = get_post( $order->get_id() );
 		if ( ! $order->get_id() || ! $post_object || ! in_array( $post_object->post_type, wc_get_order_types(), true ) ) {
+<<<<<<< HEAD
 			throw new Exception( esc_html__( 'Invalid order.', 'woocommerce' ) );
+=======
+			throw new Exception( __( 'Invalid order.', 'woocommerce' ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 
 		$this->set_order_props(
@@ -299,7 +313,11 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 				/**
 				 * Fires immediately after an order is deleted.
 				 *
+<<<<<<< HEAD
 				 * @since 2.7.0
+=======
+				 * @since
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				 *
 				 * @param int $order_id ID of the order that has been deleted.
 				 */
@@ -353,6 +371,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 		$order_status = $order->get_status( 'edit' );
 
 		if ( ! $order_status ) {
+<<<<<<< HEAD
 			/**
 			 * Filters the default order status to use when creating a new order.
 			 *
@@ -360,6 +379,8 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 			 *
 			 * @since 3.7.0
 			 */
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			$order_status = apply_filters( 'woocommerce_default_order_status', 'pending' );
 		}
 
@@ -367,7 +388,11 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 		$valid_statuses = get_post_stati();
 
 		// Add a wc- prefix to the status, but exclude some core statuses which should not be prefixed.
+<<<<<<< HEAD
 		// In the future this should only happen based on `wc_is_order_status`, but in order to
+=======
+		// @todo In the future this should only happen based on `wc_is_order_status`, but in order to
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		// preserve back-compatibility this happens to all statuses except a select few. A doing_it_wrong
 		// Notice will be needed here, followed by future removal.
 		if ( ! in_array( $post_status, array( 'auto-draft', 'draft', 'trash' ), true ) && in_array( 'wc-' . $post_status, $valid_statuses, true ) ) {
@@ -395,7 +420,11 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 	protected function get_post_title() {
 		// @codingStandardsIgnoreStart
 		/* translators: %s: Order date */
+<<<<<<< HEAD
 		return sprintf( __( 'Order &ndash; %s', 'woocommerce' ), ( new DateTime( 'now' ) )->format( _x( 'M d, Y @ h:i A', 'Order date parsed by DateTime::format', 'woocommerce' ) ) );
+=======
+		return sprintf( __( 'Order &ndash; %s', 'woocommerce' ), (new DateTime('now'))->format( _x( 'M d, Y @ h:i A', 'Order date parsed by DateTime::format', 'woocommerce' ) ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		// @codingStandardsIgnoreEnd
 	}
 
@@ -481,6 +510,7 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 			}
 		}
 
+<<<<<<< HEAD
 		/**
 		 * Action fired after updating order properties.
 		 *
@@ -489,6 +519,8 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 		 *
 		 * @since 2.7.0
 		 */
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		do_action( 'woocommerce_order_object_updated_props', $order, $updated_props );
 	}
 
@@ -514,11 +546,14 @@ abstract class Abstract_WC_Order_Data_Store_CPT extends WC_Data_Store_WP impleme
 	public function read_items( $order, $type ) {
 		global $wpdb;
 
+<<<<<<< HEAD
 		// When the order is not yet saved, we cannot get the items from DB. Trying to do so will risk reading items of different orders that were saved incorrectly.
 		if ( 0 === $order->get_id() ) {
 			return array();
 		}
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		// Get from cache if available.
 		$items = 0 < $order->get_id() ? wp_cache_get( 'order-items-' . $order->get_id(), 'orders' ) : false;
 

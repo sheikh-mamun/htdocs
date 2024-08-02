@@ -221,9 +221,12 @@ class WooSubscriptionsNotes {
 	 * @return int|false
 	 */
 	public function get_product_id_from_subscription_note( &$note ) {
+<<<<<<< HEAD
 		if ( ! is_object( $note ) ) {
 			return false;
 		}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$content_data = $note->get_content_data();
 
 		if ( property_exists( $content_data, 'product_id' ) ) {

@@ -7,9 +7,12 @@ namespace Automattic\WooCommerce\Admin\API\Reports\Orders;
 
 defined( 'ABSPATH' ) || exit;
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\Traits\OrderAttributionMeta;
 use Automattic\WooCommerce\Internal\DataStores\Orders\OrdersTableDataStore;
 use Automattic\WooCommerce\Utilities\OrderUtil;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use Automattic\WooCommerce\Admin\API\Reports\DataStore as ReportsDataStore;
 use Automattic\WooCommerce\Admin\API\Reports\DataStoreInterface;
 use Automattic\WooCommerce\Admin\API\Reports\SqlQuery;
@@ -21,7 +24,10 @@ use Automattic\WooCommerce\Admin\API\Reports\TimeInterval;
  * API\Reports\Orders\DataStore.
  */
 class DataStore extends ReportsDataStore implements DataStoreInterface {
+<<<<<<< HEAD
 	use OrderAttributionMeta;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 	/**
 	 * Dynamically sets the date column name based on configuration
@@ -342,6 +348,7 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 	 * @param array $query_args  Query parameters.
 	 */
 	protected function include_extended_info( &$orders_data, $query_args ) {
+<<<<<<< HEAD
 		$mapped_orders      = $this->map_array_by_key( $orders_data, 'order_id' );
 		$related_orders     = $this->get_orders_with_parent_id( $mapped_orders );
 		$order_ids          = array_merge( array_keys( $mapped_orders ), array_keys( $related_orders ) );
@@ -350,6 +357,15 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 		$order_attributions = $this->get_order_attributions_by_order_ids( array_keys( $mapped_orders ) );
 		$customers          = $this->get_customers_by_orders( $orders_data );
 		$mapped_customers   = $this->map_array_by_key( $customers, 'customer_id' );
+=======
+		$mapped_orders    = $this->map_array_by_key( $orders_data, 'order_id' );
+		$related_orders   = $this->get_orders_with_parent_id( $mapped_orders );
+		$order_ids        = array_merge( array_keys( $mapped_orders ), array_keys( $related_orders ) );
+		$products         = $this->get_products_by_order_ids( $order_ids );
+		$coupons          = $this->get_coupons_by_order_ids( array_keys( $mapped_orders ) );
+		$customers        = $this->get_customers_by_orders( $orders_data );
+		$mapped_customers = $this->map_array_by_key( $customers, 'customer_id' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		$mapped_data = array();
 		foreach ( $products as $product ) {
@@ -389,7 +405,11 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 
 		foreach ( $coupons as $coupon ) {
 			if ( ! isset( $mapped_data[ $coupon['order_id'] ] ) ) {
+<<<<<<< HEAD
 				$mapped_data[ $coupon['order_id'] ]['coupons'] = array();
+=======
+				$mapped_data[ $product['order_id'] ]['coupons'] = array();
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			}
 
 			$mapped_data[ $coupon['order_id'] ]['coupons'][] = array(
@@ -399,6 +419,7 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 		}
 
 		foreach ( $orders_data as $key => $order_data ) {
+<<<<<<< HEAD
 			$defaults = array(
 				'products'    => array(),
 				'coupons'     => array(),
@@ -415,6 +436,17 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 			$source_type = $order_attributions[ $order_id ]['_wc_order_attribution_source_type'] ?? '';
 			$utm_source  = $order_attributions[ $order_id ]['_wc_order_attribution_utm_source'] ?? '';
 			$orders_data[ $key ]['extended_info']['attribution']['origin'] = $this->get_origin_label( $source_type, $utm_source );
+=======
+			$defaults                             = array(
+				'products' => array(),
+				'coupons'  => array(),
+				'customer' => array(),
+			);
+			$orders_data[ $key ]['extended_info'] = isset( $mapped_data[ $order_data['order_id'] ] ) ? array_merge( $defaults, $mapped_data[ $order_data['order_id'] ] ) : $defaults;
+			if ( $order_data['customer_id'] && isset( $mapped_customers[ $order_data['customer_id'] ] ) ) {
+				$orders_data[ $key ]['extended_info']['customer'] = $mapped_customers[ $order_data['customer_id'] ];
+			}
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 	}
 
@@ -547,6 +579,7 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get order attributions data from order IDs.
 	 *
 	 * @param array $order_ids Array of order IDs.
@@ -593,6 +626,8 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Get all statuses that have been synced.
 	 *
 	 * @return array Unique order statuses.

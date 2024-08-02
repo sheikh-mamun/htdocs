@@ -1,7 +1,10 @@
 <?php
 namespace Automattic\WooCommerce\Blocks;
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Admin\Features\Features;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use Automattic\WooCommerce\Blocks\AI\Connection;
 use Automattic\WooCommerce\Blocks\Images\Pexels;
 use Automattic\WooCommerce\Blocks\Domain\Package;
@@ -120,7 +123,10 @@ class BlockPatterns {
 			'keywords'      => 'Keywords',
 			'blockTypes'    => 'Block Types',
 			'inserter'      => 'Inserter',
+<<<<<<< HEAD
 			'featureFlag'   => 'Feature Flag',
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		);
 
 		if ( ! file_exists( $this->patterns_path ) ) {
@@ -172,10 +178,13 @@ class BlockPatterns {
 				continue;
 			}
 
+<<<<<<< HEAD
 			if ( $pattern_data['featureFlag'] && ! Features::is_enabled( $pattern_data['featureFlag'] ) ) {
 				continue;
 			}
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			// Title is a required property.
 			if ( ! $pattern_data['title'] ) {
 				_doing_it_wrong(

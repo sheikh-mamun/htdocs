@@ -44,6 +44,7 @@ class Checkout extends AbstractCartRoute {
 	 * @return string
 	 */
 	public function get_path() {
+<<<<<<< HEAD
 		return self::get_path_regex();
 	}
 
@@ -53,6 +54,8 @@ class Checkout extends AbstractCartRoute {
 	 * @return string
 	 */
 	public static function get_path_regex() {
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		return '/checkout';
 	}
 
@@ -428,7 +431,11 @@ class Checkout extends AbstractCartRoute {
 			if ( is_callable( [ $customer, $callback ] ) ) {
 				$customer->$callback( $value );
 			} elseif ( $this->additional_fields_controller->is_field( $key ) ) {
+<<<<<<< HEAD
 				$this->additional_fields_controller->persist_field_for_customer( $key, $value, $customer, 'billing' );
+=======
+				$this->additional_fields_controller->persist_field_for_customer( "/billing/$key", $value, $customer );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			}
 		}
 
@@ -440,7 +447,11 @@ class Checkout extends AbstractCartRoute {
 			if ( is_callable( [ $customer, $callback ] ) ) {
 				$customer->$callback( $value );
 			} elseif ( $this->additional_fields_controller->is_field( $key ) ) {
+<<<<<<< HEAD
 				$this->additional_fields_controller->persist_field_for_customer( $key, $value, $customer, 'shipping' );
+=======
+				$this->additional_fields_controller->persist_field_for_customer( "/shipping/$key", $value, $customer );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			}
 		}
 

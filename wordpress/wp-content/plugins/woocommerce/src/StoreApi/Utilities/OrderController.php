@@ -1,7 +1,11 @@
 <?php
 namespace Automattic\WooCommerce\StoreApi\Utilities;
 
+<<<<<<< HEAD
 use Exception;
+=======
+use \Exception;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use Automattic\WooCommerce\StoreApi\Exceptions\RouteException;
 use Automattic\WooCommerce\Blocks\Domain\Services\CheckoutFields;
 use Automattic\WooCommerce\Blocks\Package;
@@ -79,7 +83,11 @@ class OrderController {
 		 */
 		add_filter(
 			'woocommerce_order_get_tax_location',
+<<<<<<< HEAD
 			function ( $location ) {
+=======
+			function( $location ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 				if ( ! is_null( wc()->customer ) ) {
 
@@ -148,11 +156,22 @@ class OrderController {
 					'shipping_phone'      => $order->get_shipping_phone(),
 				)
 			);
+<<<<<<< HEAD
 
 			$this->additional_fields_controller->sync_customer_additional_fields_with_order( $order, $customer );
 
 			$customer->save();
 		}
+=======
+			$order_fields = $this->additional_fields_controller->get_all_fields_from_order( $order );
+
+			$customer_fields = $this->additional_fields_controller->filter_fields_for_customer( $order_fields );
+			foreach ( $customer_fields as $key => $value ) {
+				$this->additional_fields_controller->persist_field_for_customer( $key, $value, $customer );
+			}
+			$customer->save();
+		};
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -199,7 +218,11 @@ class OrderController {
 			try {
 				array_walk(
 					$validators,
+<<<<<<< HEAD
 					function ( $validator, $index, $params ) {
+=======
+					function( $validator, $index, $params ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						call_user_func_array( array( $this, $validator ), $params );
 					},
 					array( $coupon, $order )
@@ -381,15 +404,30 @@ class OrderController {
 		$address        = $order->get_address( $address_type );
 		$current_locale = isset( $all_locales[ $address['country'] ] ) ? $all_locales[ $address['country'] ] : array();
 
+<<<<<<< HEAD
 		$additional_fields = $this->additional_fields_controller->get_all_fields_from_object( $order, $address_type );
 
 		$address = array_merge( $address, $additional_fields );
+=======
+		$additional_fields = $this->additional_fields_controller->get_all_fields_from_order( $order );
+
+		foreach ( $additional_fields as $field_id => $field_value ) {
+			$prefix = '/' . $address_type . '/';
+			if ( strpos( $field_id, $prefix ) === 0 ) {
+				$address[ str_replace( $prefix, '', $field_id ) ] = $field_value;
+			}
+		}
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		$fields              = $this->additional_fields_controller->get_additional_fields();
 		$address_fields_keys = $this->additional_fields_controller->get_address_fields_keys();
 		$address_fields      = array_filter(
 			$fields,
+<<<<<<< HEAD
 			function ( $key ) use ( $address_fields_keys ) {
+=======
+			function( $key ) use ( $address_fields_keys ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				return in_array( $key, $address_fields_keys, true );
 			},
 			ARRAY_FILTER_USE_KEY
@@ -562,7 +600,11 @@ class OrderController {
 			if (
 				false === $chosen_shipping_method ||
 				! is_string( $chosen_shipping_method ) ||
+<<<<<<< HEAD
 				! ArrayUtils::string_contains_array( $chosen_shipping_method, $valid_methods )
+=======
+				! in_array( current( explode( ':', $chosen_shipping_method ) ), $valid_methods, true )
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			) {
 				throw $exception;
 			}
@@ -751,6 +793,13 @@ class OrderController {
 				'shipping_phone'      => wc()->customer->get_shipping_phone(),
 			)
 		);
+<<<<<<< HEAD
 		$this->additional_fields_controller->sync_order_additional_fields_with_customer( $order, wc()->customer );
+=======
+		$customer_fields = $this->additional_fields_controller->get_all_fields_from_customer( wc()->customer );
+		foreach ( $customer_fields as $key => $value ) {
+			$this->additional_fields_controller->persist_field_for_order( $key, $value, $order, false );
+		}
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 }

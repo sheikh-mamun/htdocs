@@ -1,7 +1,10 @@
 <?php
 namespace Automattic\WooCommerce\Blocks\Utils;
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Admin\Features\Features;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use Automattic\WooCommerce\Blocks\Options;
 use Automattic\WooCommerce\Blocks\Package;
 use Automattic\WooCommerce\Blocks\BlockTemplatesRegistry;
@@ -293,6 +296,7 @@ class BlockTemplateUtils {
 	/**
 	 * Finds all nested template part file paths in a theme's directory.
 	 *
+<<<<<<< HEAD
 	 * @param string $template_type wp_template or wp_template_part.
 	 * @return array $path_list A list of paths to all template part files.
 	 */
@@ -332,6 +336,20 @@ class BlockTemplateUtils {
 			'wp_template' === $template_type ? $wp_template_filenames : $wp_template_part_filenames
 		);
 
+=======
+	 * @param string $base_directory The theme's file path.
+	 * @return array $path_list A list of paths to all template part files.
+	 */
+	public static function get_template_paths( $base_directory ) {
+		$path_list = array();
+		if ( file_exists( $base_directory ) ) {
+			$nested_files      = new \RecursiveIteratorIterator( new \RecursiveDirectoryIterator( $base_directory ) );
+			$nested_html_files = new \RegexIterator( $nested_files, '/^.+\.html$/i', \RecursiveRegexIterator::GET_MATCH );
+			foreach ( $nested_html_files as $path => $file ) {
+				$path_list[] = $path;
+			}
+		}
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		return $path_list;
 	}
 
@@ -707,6 +725,19 @@ class BlockTemplateUtils {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Returns whether the passed `$template` has a title, and it's different from the slug.
+	 *
+	 * @param object $template The template object.
+	 * @return boolean
+	 */
+	public static function template_has_title( $template ) {
+		return ! empty( $template->title ) && $template->title !== $template->slug;
+	}
+
+	/**
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Returns whether the passed `$template` has the legacy template block.
 	 *
 	 * @param object $template The template object.
@@ -717,6 +748,7 @@ class BlockTemplateUtils {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Updates the title, description and area of a template to the correct values and to make them more user-friendly.
 	 * For example, instead of:
 	 * - Title: `Tag (product_tag)`
@@ -748,6 +780,8 @@ class BlockTemplateUtils {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Gets the templates saved in the database.
 	 *
 	 * @param array  $slugs An array of slugs to retrieve templates for.

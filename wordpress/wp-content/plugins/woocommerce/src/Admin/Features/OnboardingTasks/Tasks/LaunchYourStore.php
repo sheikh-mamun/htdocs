@@ -10,6 +10,7 @@ use Automattic\WooCommerce\Admin\Features\OnboardingTasks\Task;
  */
 class LaunchYourStore extends Task {
 	/**
+<<<<<<< HEAD
 	 * Constructor
 	 *
 	 * @param TaskList $task_list Parent task list.
@@ -21,12 +22,18 @@ class LaunchYourStore extends Task {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * ID.
 	 *
 	 * @return string
 	 */
 	public function get_id() {
+<<<<<<< HEAD
 		return 'launch-your-store';
+=======
+		return 'launch_your_store';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -60,6 +67,7 @@ class LaunchYourStore extends Task {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Action URL.
 	 *
 	 * @return string
@@ -69,12 +77,26 @@ class LaunchYourStore extends Task {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Task completion.
 	 *
 	 * @return bool
 	 */
 	public function is_complete() {
+<<<<<<< HEAD
 		return 'yes' !== get_option( 'woocommerce_coming_soon' );
+=======
+		$launch_status = get_option( 'launch-status' );
+
+		// The site is launched when the launch status is 'launched' or missing.
+		$launched_values = array(
+			'launched',
+			'',
+			false,
+		);
+		return in_array( $launch_status, $launched_values, true );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -85,6 +107,7 @@ class LaunchYourStore extends Task {
 	public function can_view() {
 		return Features::is_enabled( 'launch-your-store' );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Hide the WP admin bar when the user is previewing the site.
@@ -121,4 +144,6 @@ class LaunchYourStore extends Task {
 
 		return $show;
 	}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }

@@ -800,9 +800,15 @@ class Widget_Icon_Box extends Widget_Base {
 			<div class="elementor-icon-box-icon">
 				<{{{ htmlTag }}} {{{ view.getRenderAttributeString( 'link' ) }}} {{{ view.getRenderAttributeString( 'icon' ) }}}>
 					<# if ( iconHTML && iconHTML.rendered && ( ! settings.icon || migrated ) ) { #>
+<<<<<<< HEAD
 						{{{ elementor.helpers.sanitize( iconHTML.value ) }}}
 					<# } else { #>
 						<i class="{{ _.escape( settings.icon ) }}" aria-hidden="true"></i>
+=======
+						{{{ iconHTML.value }}}
+					<# } else { #>
+						<i class="{{ settings.icon }}" aria-hidden="true"></i>
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					<# } #>
 				</{{{ htmlTag }}}>
 			</div>
@@ -814,13 +820,21 @@ class Widget_Icon_Box extends Widget_Base {
 				<# if ( settings.title_text ) { #>
 				<{{{ titleSizeTag }}} class="elementor-icon-box-title">
 					<{{{ htmlTag }}} {{{ view.getRenderAttributeString( 'link' ) }}} {{{ view.getRenderAttributeString( 'title_text' ) }}}>
+<<<<<<< HEAD
 						{{{ elementor.helpers.sanitize( settings.title_text ) }}}
+=======
+						{{{ settings.title_text }}}
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					</{{{ htmlTag }}}>
 				</{{{ titleSizeTag }}}>
 				<# } #>
 
 				<# if ( settings.description_text ) { #>
+<<<<<<< HEAD
 				<p {{{ view.getRenderAttributeString( 'description_text' ) }}}>{{{ elementor.helpers.sanitize( settings.description_text ) }}}</p>
+=======
+				<p {{{ view.getRenderAttributeString( 'description_text' ) }}}>{{{ settings.description_text }}}</p>
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				<# } #>
 
 			</div>

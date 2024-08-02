@@ -54,14 +54,24 @@ final class BlockTypesController {
 		add_action( 'woocommerce_delete_product_transients', array( $this, 'delete_product_transients' ) );
 		add_filter(
 			'woocommerce_is_checkout',
+<<<<<<< HEAD
 			function ( $ret ) {
 				return $ret || $this->has_block_variation( 'woocommerce/classic-shortcode', 'shortcode', 'checkout' );
+=======
+			function( $return ) {
+				return $return || $this->has_block_variation( 'woocommerce/classic-shortcode', 'shortcode', 'checkout' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			}
 		);
 		add_filter(
 			'woocommerce_is_cart',
+<<<<<<< HEAD
 			function ( $ret ) {
 				return $ret || $this->has_block_variation( 'woocommerce/classic-shortcode', 'shortcode', 'cart' );
+=======
+			function( $return ) {
+				return $return || $this->has_block_variation( 'woocommerce/classic-shortcode', 'shortcode', 'cart' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			}
 		);
 	}
@@ -225,7 +235,10 @@ final class BlockTypesController {
 			'CatalogSorting',
 			'ClassicTemplate',
 			'ClassicShortcode',
+<<<<<<< HEAD
 			'ComingSoon',
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'CustomerAccount',
 			'FeaturedCategory',
 			'FeaturedProduct',
@@ -234,6 +247,10 @@ final class BlockTypesController {
 			'MiniCart',
 			'StoreNotices',
 			'PriceFilter',
+<<<<<<< HEAD
+=======
+			'ProductAddToCart',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'ProductBestSellers',
 			'ProductButton',
 			'ProductCategories',
@@ -352,4 +369,8 @@ final class BlockTypesController {
 
 		return $block_types;
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }

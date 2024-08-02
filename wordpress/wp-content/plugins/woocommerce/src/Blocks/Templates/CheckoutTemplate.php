@@ -1,6 +1,11 @@
 <?php
 namespace Automattic\WooCommerce\Blocks\Templates;
 
+<<<<<<< HEAD
+=======
+use Automattic\WooCommerce\Blocks\Utils\BlockTemplateUtils;
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /**
  * CheckoutTemplate class.
  *

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*! elementor - v3.21.0 - 22-05-2024 */
+=======
+/*! elementor - v3.21.0 - 08-05-2024 */
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["vendors-node_modules_react-query_devtools_index_js"],{
 
 /***/ "../node_modules/match-sorter/dist/match-sorter.esm.js":

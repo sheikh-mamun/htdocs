@@ -1,13 +1,15 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "core/query-no-results",
+	"name": "woocommerce/product-collection-no-results",
 	"title": "No results",
-	"category": "theme",
-	"description": "Contains the block elements used to render content when no query results are found.",
-	"parent": [ "core/query" ],
-	"textdomain": "default",
+	"version": "1.0.0",
+	"category": "woocommerce",
+	"description": "The contents of this block will display when there are no products found.",
+	"textdomain": "woocommerce",
+	"keywords": [ "Product Collection" ],
 	"usesContext": [ "queryId", "query" ],
+	"ancestor": [ "woocommerce/product-collection" ],
 	"supports": {
 		"align": true,
 		"reusable": false,
@@ -28,9 +30,6 @@
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
-		},
-		"interactivity": {
-			"clientNavigation": true
 		}
 	}
 }

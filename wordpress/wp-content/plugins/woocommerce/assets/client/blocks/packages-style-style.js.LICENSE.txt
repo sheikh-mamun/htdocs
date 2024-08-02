@@ -5,9 +5,15 @@ object-assign
 */
 
 /*!
+<<<<<<< HEAD
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames
+=======
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 */
 
 /** @license React v0.20.2
@@ -29,6 +35,7 @@ object-assign
  */
 
 /** @license React v17.0.2
+<<<<<<< HEAD
  * react-dom-test-utils.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -47,6 +54,8 @@ object-assign
  */
 
 /** @license React v17.0.2
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
  * react-test-renderer.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.

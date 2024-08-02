@@ -159,11 +159,14 @@ function wc_get_webhook_statuses() {
  * @return bool
  */
 function wc_load_webhooks( $status = '', $limit = null ) {
+<<<<<<< HEAD
 	// short-circuit if webhooks should not be loaded at all.
 	if ( ! is_null( $limit ) && $limit <= 0 ) {
 		return false;
 	}
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	$data_store = WC_Data_Store::load( 'webhook' );
 	$webhooks   = $data_store->get_webhooks_ids( $status );
 	$loaded     = 0;

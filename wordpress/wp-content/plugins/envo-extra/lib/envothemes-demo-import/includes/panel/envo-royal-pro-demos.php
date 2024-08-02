@@ -13,7 +13,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro/screenshot-1.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro/envo-royal-pro-home-1/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro/envo-royal-pro-home-1/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Envo Royal PRO Home #1',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',
@@ -59,7 +63,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro/screenshot-2.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro/envo-royal-pro-home-2/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro/envo-royal-pro-home-2/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Envo Royal PRO Home #2',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',
@@ -105,7 +113,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro/screenshot-3.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro/envo-royal-pro-home-3/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro/envo-royal-pro-home-3/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Envo Royal PRO Home #3',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',
@@ -151,7 +163,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro/screenshot-4.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro/envo-royal-pro-home-4/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro/envo-royal-pro-home-4/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Envo Royal PRO Home #4',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',
@@ -197,7 +213,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro/screenshot-5.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro/envo-royal-pro-home-5/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro/envo-royal-pro-home-5/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Envo Royal PRO Home #5',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',
@@ -243,7 +263,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro-woocommerce/screenshot-woo-1.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro-woocommerce/home-pro-woocommerce-1/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro-woocommerce/home-pro-woocommerce-1/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Home PRO WooCommerce #1',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',
@@ -298,7 +322,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro-woocommerce/screenshot-woo-2.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro-woocommerce/home-pro-woocommerce-2/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro-woocommerce/home-pro-woocommerce-2/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Home PRO WooCommerce #2',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',
@@ -353,7 +381,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro-woocommerce/screenshot-woo-3.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro-woocommerce/home-pro-woocommerce-3/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro-woocommerce/home-pro-woocommerce-3/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Home PRO WooCommerce #3',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',
@@ -408,7 +440,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro-woocommerce/screenshot-woo-4.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro-woocommerce/home-pro-woocommerce-4/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro-woocommerce/home-pro-woocommerce-4/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Home PRO WooCommerce #4',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',
@@ -463,7 +499,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro-woocommerce/screenshot-woo-5.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro-woocommerce/home-pro-woocommerce-5/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro-woocommerce/home-pro-woocommerce-5/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Home PRO WooCommerce #5',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',
@@ -518,7 +558,11 @@ function envo_extra_pro_get_demos_data( $data ) {
 			'theme_settings'	 => '',
 			'widgets_file'		 => '',
 			'screenshot'		 => $url . 'envo-royal-pro-woocommerce/screenshot-woo-6.webp',
+<<<<<<< HEAD
 			'demo_link'			 => 'https://envo-demos.com/envo-royal-pro-woocommerce/home-pro-woocommerce-6/',
+=======
+			'demo_link'			 => 'https://envothemes.com/envo-royal-pro-woocommerce/home-pro-woocommerce-6/',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'home_title'		 => 'Home PRO WooCommerce #6',
 			'blog_title'		 => 'Blog',
 			'posts_to_show'		 => '6',

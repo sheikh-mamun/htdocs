@@ -31,7 +31,11 @@
 <wp:author>
   <wp:author_id>1</wp:author_id>
   <wp:author_login>shopmanager</wp:author_login>
+<<<<<<< HEAD
   <wp:author_email>info@woocommerce.com</wp:author_email>
+=======
+  <wp:author_email>info@woo.com</wp:author_email>
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
   <wp:author_display_name><![CDATA[Shop Manager]]></wp:author_display_name>
   <wp:author_first_name><![CDATA[]]></wp:author_first_name>
   <wp:author_last_name><![CDATA[]]></wp:author_last_name>

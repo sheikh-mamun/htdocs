@@ -1,22 +1,30 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "core/site-tagline",
-	"title": "Site Tagline",
-	"category": "theme",
-	"description": "Describe in a few words what the site is about. The tagline can be used in search results or when sharing on social networks even if it’s not displayed in the theme design.",
-	"keywords": [ "description" ],
-	"textdomain": "default",
-	"attributes": {
-		"textAlign": {
-			"type": "string"
-		}
-	},
-	"example": {},
+	"name": "woocommerce/order-confirmation-status",
+	"version": "1.0.0",
+	"title": "Order Status",
+	"description": "Display a \"thank you\" message, or a sentence regarding the current order status.",
+	"category": "woocommerce",
+	"keywords": [ "WooCommerce" ],
 	"supports": {
+		"multiple": false,
 		"align": [ "wide", "full" ],
 		"html": false,
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		},
 		"color": {
+			"background": true,
+			"text": true,
 			"gradients": true,
 			"__experimentalDefaultControls": {
 				"background": true,
@@ -24,29 +32,25 @@
 			}
 		},
 		"spacing": {
-			"margin": true,
 			"padding": true,
+			"margin": true,
 			"__experimentalDefaultControls": {
 				"margin": false,
 				"padding": false
 			}
-		},
-		"typography": {
-			"fontSize": true,
-			"lineHeight": true,
-			"__experimentalFontFamily": true,
-			"__experimentalTextTransform": true,
-			"__experimentalTextDecoration": true,
-			"__experimentalFontStyle": true,
-			"__experimentalFontWeight": true,
-			"__experimentalLetterSpacing": true,
-			"__experimentalDefaultControls": {
-				"fontSize": true
-			}
-		},
-		"interactivity": {
-			"clientNavigation": true
 		}
 	},
-	"editorStyle": "wp-block-site-tagline-editor"
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "wide"
+		},
+		"className": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "woocommerce",
+	"apiVersion": 2,
+	"$schema": "https://schemas.wp.org/trunk/block.json"
 }

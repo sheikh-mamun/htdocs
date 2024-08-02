@@ -112,7 +112,11 @@ function envo_extra_woo_enqueue_header_css() {
 	}
     
     $plus_minus = get_theme_mod('woo_hide_plus_minus', 'block');
+<<<<<<< HEAD
     $equal_height = get_theme_mod('woo_archive_product_equal_height', 1);
+=======
+    $equal_height = get_theme_mod('woo_archive_product_equal_height', 0);
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
     
     if ($plus_minus == 0) {
         $css .= '.woocommerce div.product form.cart div.quantity {margin-right: 4px!important;}';

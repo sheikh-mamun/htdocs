@@ -873,6 +873,7 @@ class Utils {
 
 		return $cache;
 	}
+<<<<<<< HEAD
 
 	public static function is_sale_time(): bool {
 		$sale_start_time = gmmktime( 12, 0, 0, 5, 28, 2024 );
@@ -882,4 +883,6 @@ class Utils {
 
 		return $now_time >= $sale_start_time && $now_time <= $sale_end_time;
 	}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }

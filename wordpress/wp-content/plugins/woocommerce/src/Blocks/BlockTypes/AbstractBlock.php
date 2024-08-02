@@ -463,6 +463,7 @@ abstract class AbstractBlock {
 	 * @return array
 	 */
 	protected function get_routes_from_namespace( $namespace ) {
+<<<<<<< HEAD
 		/**
 		 * Gives opportunity to return routes without invoking the compute intensive REST API.
 		 *
@@ -482,6 +483,8 @@ abstract class AbstractBlock {
 			return $routes;
 		}
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$rest_server     = rest_get_server();
 		$namespace_index = $rest_server->get_namespace_index(
 			[

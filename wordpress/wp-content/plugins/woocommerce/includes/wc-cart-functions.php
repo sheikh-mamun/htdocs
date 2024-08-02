@@ -283,6 +283,11 @@ function wc_cart_totals_coupon_html( $coupon ) {
 		$coupon = new WC_Coupon( $coupon );
 	}
 
+<<<<<<< HEAD
+=======
+	$discount_amount_html = '';
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	$amount               = WC()->cart->get_coupon_discount_amount( $coupon->get_code(), WC()->cart->display_cart_ex_tax );
 	$discount_amount_html = '-' . wc_price( $amount );
 

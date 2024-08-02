@@ -220,12 +220,19 @@ class Options extends \WC_REST_Data_Controller {
 			'woocommerce_admin_customize_store_completed',
 			'woocommerce_admin_customize_store_completed_theme_id',
 			'woocommerce_admin_customize_store_survey_completed',
+<<<<<<< HEAD
 			'woocommerce_admin_launch_your_store_survey_completed',
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'woocommerce_coming_soon',
 			'woocommerce_store_pages_only',
 			'woocommerce_private_link',
 			'woocommerce_share_key',
+<<<<<<< HEAD
 			'woocommerce_show_lys_tour',
+=======
+			'launch-status',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			// WC Test helper options.
 			'wc-admin-test-helper-rest-api-filters',
 			'wc_admin_helper_feature_values',

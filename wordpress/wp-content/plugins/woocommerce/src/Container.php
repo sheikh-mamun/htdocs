@@ -30,7 +30,10 @@ use Automattic\WooCommerce\Internal\DependencyManagement\ServiceProviders\Restoc
 use Automattic\WooCommerce\Internal\DependencyManagement\ServiceProviders\UtilsClassesServiceProvider;
 use Automattic\WooCommerce\Internal\DependencyManagement\ServiceProviders\BatchProcessingServiceProvider;
 use Automattic\WooCommerce\Internal\DependencyManagement\ServiceProviders\LayoutTemplatesServiceProvider;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\DependencyManagement\ServiceProviders\ComingSoonServiceProvider;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 /**
  * PSR11 compliant dependency injection container for WooCommerce.
@@ -80,7 +83,10 @@ final class Container {
 		LayoutTemplatesServiceProvider::class,
 		LoggingServiceProvider::class,
 		EnginesServiceProvider::class,
+<<<<<<< HEAD
 		ComingSoonServiceProvider::class,
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	);
 
 	/**

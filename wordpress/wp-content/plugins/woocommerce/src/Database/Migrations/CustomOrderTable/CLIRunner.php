@@ -58,6 +58,7 @@ class CLIRunner {
 	 * Registers commands for CLI.
 	 */
 	public function register_commands() {
+<<<<<<< HEAD
 		$legacy_commands = array( 'count_unmigrated', 'sync', 'verify_cot_data', 'enable', 'disable' );
 		foreach ( $legacy_commands as $cmd ) {
 			$new_cmd_name = 'verify_cot_data' === $cmd ? 'verify_data' : $cmd;
@@ -72,12 +73,23 @@ class CLIRunner {
 			);
 		}
 
+=======
+		WP_CLI::add_command( 'wc cot count_unmigrated', array( $this, 'count_unmigrated' ) );
+		WP_CLI::add_command( 'wc cot migrate', array( $this, 'migrate' ) );
+		WP_CLI::add_command( 'wc cot sync', array( $this, 'sync' ) );
+		WP_CLI::add_command( 'wc cot verify_cot_data', array( $this, 'verify_cot_data' ) );
+		WP_CLI::add_command( 'wc cot enable', array( $this, 'enable' ) );
+		WP_CLI::add_command( 'wc cot disable', array( $this, 'disable' ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		WP_CLI::add_command( 'wc hpos cleanup', array( $this, 'cleanup_post_data' ) );
 		WP_CLI::add_command( 'wc hpos status', array( $this, 'status' ) );
 		WP_CLI::add_command( 'wc hpos diff', array( $this, 'diff' ) );
 		WP_CLI::add_command( 'wc hpos backfill', array( $this, 'backfill' ) );
+<<<<<<< HEAD
 
 		WP_CLI::add_command( 'wc cot migrate', array( $this, 'migrate' ) ); // Fully deprecated. No longer works.
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -87,7 +99,11 @@ class CLIRunner {
 	 *
 	 * @return bool Whether the COT feature is enabled.
 	 */
+<<<<<<< HEAD
 	private function is_enabled( $log = true ): bool {
+=======
+	private function is_enabled( $log = true ) : bool {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		if ( ! $this->controller->custom_orders_table_usage_is_enabled() ) {
 			if ( $log ) {
 				WP_CLI::log(
@@ -108,7 +124,11 @@ class CLIRunner {
 	 *
 	 * ## EXAMPLES
 	 *
+<<<<<<< HEAD
 	 *     wp wc hpos count_unmigrated
+=======
+	 *     wp wc cot count_unmigrated
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 *
 	 * @param array $args Positional arguments passed to the command.
 	 *
@@ -116,7 +136,11 @@ class CLIRunner {
 	 *
 	 * @return int The number of orders to be migrated.*
 	 */
+<<<<<<< HEAD
 	public function count_unmigrated( $args = array(), $assoc_args = array() ): int {
+=======
+	public function count_unmigrated( $args = array(), $assoc_args = array() ) : int {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 		$order_count = $this->synchronizer->get_current_orders_pending_sync_count();
 
@@ -157,7 +181,11 @@ class CLIRunner {
 	 *
 	 * ## EXAMPLES
 	 *
+<<<<<<< HEAD
 	 *     wp wc hpos sync --batch-size=500
+=======
+	 *     wp wc cot sync --batch-size=500
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 *
 	 * @param array $args Positional arguments passed to the command.
 	 * @param array $assoc_args Associative arguments (options) passed to the command.
@@ -222,7 +250,11 @@ class CLIRunner {
 				)
 			);
 
+<<<<<<< HEAD
 			++$batch_count;
+=======
+			$batch_count ++;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			$total_time += $batch_total_time;
 
 			$progress->tick();
@@ -262,7 +294,11 @@ class CLIRunner {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * [Deprecated] Use `wp wc hpos sync` instead.
+=======
+	 * [Deprecated] Use `wp wc cot sync` instead.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Copy order data into the postmeta table.
 	 *
 	 * Note that this could dramatically increase the size of your postmeta table, but is recommended
@@ -284,7 +320,11 @@ class CLIRunner {
 	 * @param array $args Positional arguments passed to the command.
 	 * @param array $assoc_args Associative arguments (options) passed to the command.
 	 */
+<<<<<<< HEAD
 	public function migrate( array $args = array(), array $assoc_args = array() ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed -- for backwards compat.
+=======
+	public function migrate( $args = array(), $assoc_args = array() ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		WP_CLI::log( __( 'Migrate command is deprecated. Please use `sync` instead.', 'woocommerce' ) );
 	}
 
@@ -329,7 +369,11 @@ class CLIRunner {
 	 * ## EXAMPLES
 	 *
 	 *     # Verify migrated order data, 500 orders at a time.
+<<<<<<< HEAD
 	 *     wp wc hpos verify_cot_data --batch-size=500 --start-from=0 --end-at=10000
+=======
+	 *     wp wc cot verify_cot_data --batch-size=500 --start-from=0 --end-at=10000
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 *
 	 * @param array $args Positional arguments passed to the command.
 	 * @param array $assoc_args Associative arguments (options) passed to the command.
@@ -424,7 +468,11 @@ class CLIRunner {
 			$error_processing            = $error_processing || ! empty( $failed_ids_in_current_batch );
 			$processed                  += count( $order_ids );
 			$batch_total_time            = microtime( true ) - $batch_start_time;
+<<<<<<< HEAD
 			++$batch_count;
+=======
+			$batch_count ++;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			$total_time += $batch_total_time;
 
 			if ( count( $failed_ids_in_current_batch ) > 0 ) {
@@ -477,7 +525,11 @@ class CLIRunner {
 						} else {
 							array_walk(
 								$errors_in_remigrate_batch,
+<<<<<<< HEAD
 								function ( &$errors_for_order ) {
+=======
+								function( &$errors_for_order ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 									$errors_for_order[] = array( 'remigrate_failed' => true );
 								}
 							);
@@ -569,7 +621,11 @@ class CLIRunner {
 	 *
 	 * @return int Order count.
 	 */
+<<<<<<< HEAD
 	private function get_verify_order_count( int $order_id_start, int $order_id_end, array $order_types, bool $log = true ): int {
+=======
+	private function get_verify_order_count( int $order_id_start, int $order_id_end, array $order_types, bool $log = true ) : int {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		global $wpdb;
 
 		$order_types_placeholder = implode( ',', array_fill( 0, count( $order_types ), '%s' ) );
@@ -615,7 +671,11 @@ class CLIRunner {
 	 *
 	 * @return array Failed IDs with meta details.
 	 */
+<<<<<<< HEAD
 	private function verify_meta_data( array $order_ids, array $failed_ids ): array {
+=======
+	private function verify_meta_data( array $order_ids, array $failed_ids ) : array {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$meta_keys_to_ignore = $this->synchronizer->get_ignored_order_props();
 
 		global $wpdb;
@@ -695,7 +755,11 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 	 *
 	 * @return array Normalized data.
 	 */
+<<<<<<< HEAD
 	private function normalize_raw_meta_data( array $data ): array {
+=======
+	private function normalize_raw_meta_data( array $data ) : array {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$clubbed_data = array();
 		foreach ( $data as $row ) {
 			if ( ! isset( $clubbed_data[ $row['entity_id'] ] ) ) {
@@ -729,7 +793,11 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 	 * ### EXAMPLES
 	 *
 	 *      # Enable HPOS on new shops.
+<<<<<<< HEAD
 	 *      wp wc hpos enable --for-new-shop
+=======
+	 *      wp wc cot enable --for-new-shop
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 *
 	 * @param array $args Positional arguments passed to the command.
 	 * @param array $assoc_args Associative arguments (options) passed to the command.
@@ -788,7 +856,11 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 				sprintf(
 					// translators: %s is the command to run (wp wc cot sync).
 					__( '[Failed] There are orders pending sync. Please run `%s` to sync pending orders.', 'woocommerce' ),
+<<<<<<< HEAD
 					'wp wc hpos sync',
+=======
+					'wp wc cot sync',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				)
 			);
 			$enable_hpos = false;
@@ -836,7 +908,11 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 	 * ### EXAMPLES
 	 *
 	 *  # Disable HPOS.
+<<<<<<< HEAD
 	 *  wp wc hpos disable
+=======
+	 *  wp wc cot disable
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 *
 	 * @param array $args Positional arguments passed to the command.
 	 * @param array $assoc_args Associative arguments (options) passed to the command.
@@ -859,7 +935,11 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 				sprintf(
 					// translators: %s is the command to run (wp wc cot sync).
 					__( '[Failed] There are orders pending sync. Please run `%s` to sync pending orders.', 'woocommerce' ),
+<<<<<<< HEAD
 					'wp wc hpos sync',
+=======
+					'wp wc cot sync',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				)
 			);
 		}
@@ -948,14 +1028,20 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 			return;
 		}
 
+<<<<<<< HEAD
 		$progress   = WP_CLI\Utils\make_progress_bar( __( 'HPOS cleanup', 'woocommerce' ), $order_count );
 		$count      = 0;
 		$failed_ids = array();
+=======
+		$progress = WP_CLI\Utils\make_progress_bar( __( 'HPOS cleanup', 'woocommerce' ), $order_count );
+		$count    = 0;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		// translators: %d is the number of orders to clean up.
 		WP_CLI::log( sprintf( _n( 'Starting cleanup for %d order...', 'Starting cleanup for %d orders...', $order_count, 'woocommerce' ), $order_count ) );
 
 		do {
+<<<<<<< HEAD
 			$failed_ids_in_batch = array();
 			$order_ids           = $handler->get_orders_for_cleanup( $q_order_ids, $q_limit );
 
@@ -964,23 +1050,34 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 			}
 
 			$order_ids = array_diff( $order_ids, $failed_ids ); // Do not reattempt IDs that have already failed.
+=======
+			$order_ids = $handler->get_orders_for_cleanup( $q_order_ids, $q_limit );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 			foreach ( $order_ids as $order_id ) {
 				try {
 					$handler->cleanup_post_data( $order_id, $force );
+<<<<<<< HEAD
 					++$count;
+=======
+					$count++;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 					// translators: %d is an order ID.
 					WP_CLI::debug( sprintf( __( 'Cleanup completed for order %d.', 'woocommerce' ), $order_id ) );
 				} catch ( \Exception $e ) {
 					// translators: %1$d is an order ID, %2$s is an error message.
 					WP_CLI::warning( sprintf( __( 'An error occurred while cleaning up order %1$d: %2$s', 'woocommerce' ), $order_id, $e->getMessage() ) );
+<<<<<<< HEAD
 					$failed_ids_in_batch[] = $order_id;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				}
 
 				$progress->tick();
 			}
 
+<<<<<<< HEAD
 			$failed_ids = array_merge( $failed_ids, $failed_ids_in_batch );
 
 			if ( ! $all_orders ) {
@@ -991,10 +1088,16 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 				WP_CLI::warning( __( 'Failed to clean up all orders in a batch. Aborting.', 'woocommerce' ) );
 				break;
 			}
+=======
+			if ( ! $all_orders ) {
+				break;
+			}
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		} while ( $order_ids );
 
 		$progress->finish();
 
+<<<<<<< HEAD
 		if ( $failed_ids ) {
 			return WP_CLI::error(
 				sprintf(
@@ -1005,6 +1108,8 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 			);
 		}
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		WP_CLI::success(
 			sprintf(
 				// translators: %d is the number of orders that were cleaned up.
@@ -1022,7 +1127,11 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 	 * @param array $args       Positional arguments passed to the command.
 	 * @param array $assoc_args Associative arguments (options) passed to the command.
 	 */
+<<<<<<< HEAD
 	public function status( array $args = array(), array $assoc_args = array() ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed -- for backwards compat.
+=======
+	public function status( array $args = array(), array $assoc_args = array() ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$legacy_handler = wc_get_container()->get( LegacyDataHandler::class );
 
 		// translators: %s is either 'yes' or 'no'.
@@ -1094,7 +1203,11 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 
 		// Format the diff array.
 		$diff = array_map(
+<<<<<<< HEAD
 			function ( $key, $hpos_value, $cpt_value ) {
+=======
+			function( $key, $hpos_value, $cpt_value ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				// Format for dates.
 				$hpos_value = is_a( $hpos_value, \WC_DateTime::class ) ? $hpos_value->format( DATE_ATOM ) : $hpos_value;
 				$cpt_value  = is_a( $cpt_value, \WC_DateTime::class ) ? $cpt_value->format( DATE_ATOM ) : $cpt_value;
@@ -1213,4 +1326,8 @@ ORDER BY $meta_table.order_id ASC, $meta_table.meta_key ASC;
 			)
 		);
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }

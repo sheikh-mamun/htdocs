@@ -6,7 +6,10 @@
 namespace Automattic\WooCommerce\Utilities;
 
 use Automattic\WooCommerce\Internal\Traits\AccessiblePrivateMethods;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\Utilities\PluginInstaller;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use Automattic\WooCommerce\Proxies\LegacyProxy;
 
 /**
@@ -183,10 +186,14 @@ class PluginUtil {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Utility method to generate warning string for incompatible features based on active plugins.
 	 *
 	 * Additionally, this method will manually print a warning message on the HPOS feature if both
 	 * the Legacy REST API and HPOS are active.
+=======
+	 * Util function to generate warning string for incompatible features based on active plugins.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 *
 	 * @param string $feature_id Feature id.
 	 * @param array  $plugin_feature_info Array of plugin feature info. See FeaturesControllers->get_compatible_plugins_for_feature() for details.
@@ -199,6 +206,7 @@ class PluginUtil {
 		$incompatibles      = array_filter( $incompatibles, 'is_plugin_active' );
 		$incompatibles      = array_values( array_diff( $incompatibles, $this->get_plugins_excluded_from_compatibility_ui() ) );
 		$incompatible_count = count( $incompatibles );
+<<<<<<< HEAD
 
 		$feature_warnings = array();
 		if ( 'custom_order_tables' === $feature_id && 'yes' === get_option( 'woocommerce_api_enabled' ) ) {
@@ -241,13 +249,26 @@ class PluginUtil {
 				$feature_warnings[] = sprintf( __( '⚠ 1 Incompatible plugin detected (%s).', 'woocommerce' ), $this->get_plugin_name( $incompatibles[0] ) );
 			} elseif ( 2 === $incompatible_count ) {
 				$feature_warnings[] = sprintf(
+=======
+		if ( $incompatible_count > 0 ) {
+			if ( 1 === $incompatible_count ) {
+				/* translators: %s = printable plugin name */
+				$feature_warning = sprintf( __( '⚠ 1 Incompatible plugin detected (%s).', 'woocommerce' ), $this->get_plugin_name( $incompatibles[0] ) );
+			} elseif ( 2 === $incompatible_count ) {
+				$feature_warning = sprintf(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					/* translators: %1\$s, %2\$s = printable plugin names */
 					__( '⚠ 2 Incompatible plugins detected (%1$s and %2$s).', 'woocommerce' ),
 					$this->get_plugin_name( $incompatibles[0] ),
 					$this->get_plugin_name( $incompatibles[1] )
 				);
 			} else {
+<<<<<<< HEAD
 				$feature_warnings[] = sprintf(
+=======
+
+				$feature_warning = sprintf(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					/* translators: %1\$s, %2\$s = printable plugin names, %3\$d = plugins count */
 					_n(
 						'⚠ Incompatible plugins detected (%1$s, %2$s and %3$d other).',
@@ -268,15 +289,28 @@ class PluginUtil {
 				),
 				admin_url( 'plugins.php' )
 			);
+<<<<<<< HEAD
 			$feature_warnings[]       = sprintf(
+=======
+			$extra_desc_tip           = '<br>' . sprintf(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				/* translators: %1$s opening link tag %2$s closing link tag. */
 				__( '%1$sView and manage%2$s', 'woocommerce' ),
 				'<a href="' . esc_url( $incompatible_plugins_url ) . '">',
 				'</a>'
 			);
+<<<<<<< HEAD
 		}
 
 		return str_replace( "\n", '<br>', implode( "\n", $feature_warnings ) );
+=======
+
+			$feature_warning .= $extra_desc_tip;
+
+		}
+
+		return $feature_warning;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**

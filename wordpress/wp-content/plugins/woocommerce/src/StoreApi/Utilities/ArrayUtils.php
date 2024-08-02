@@ -16,7 +16,11 @@ class ArrayUtils {
 	public static function natural_language_join( $array, $enclose_items_with_quotes = false ) {
 		if ( true === $enclose_items_with_quotes ) {
 			$array = array_map(
+<<<<<<< HEAD
 				function ( $item ) {
+=======
+				function( $item ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					return '"' . $item . '"';
 				},
 				$array
@@ -33,6 +37,7 @@ class ArrayUtils {
 		}
 		return $last;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Check if a string contains any of the items in an array.
@@ -50,4 +55,6 @@ class ArrayUtils {
 		}
 		return false;
 	}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }

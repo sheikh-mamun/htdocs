@@ -3,9 +3,14 @@ declare( strict_types=1 );
 
 namespace Automattic\WooCommerce\Internal\Admin\Logging\FileV2;
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\Utilities\FilesystemUtil;
 use Exception;
 use WP_Error;
+=======
+use WP_Error;
+use WP_Filesystem_Direct;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 /**
  * FileExport class.
@@ -40,6 +45,14 @@ class FileExporter {
 	 *                                   part of the path.
 	 */
 	public function __construct( string $path, string $alternate_filename = '' ) {
+<<<<<<< HEAD
+=======
+		global $wp_filesystem;
+		if ( ! $wp_filesystem instanceof WP_Filesystem_Direct ) {
+			WP_Filesystem();
+		}
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$this->path               = $path;
 		$this->alternate_filename = $alternate_filename;
 	}
@@ -50,6 +63,7 @@ class FileExporter {
 	 * @return WP_Error|void Only returns something if there is an error.
 	 */
 	public function emit_file() {
+<<<<<<< HEAD
 		try {
 			$filesystem  = FilesystemUtil::get_wp_filesystem();
 			$is_readable = $filesystem->is_file( $this->path ) && $filesystem->is_readable( $this->path );
@@ -58,6 +72,10 @@ class FileExporter {
 		}
 
 		if ( ! $is_readable ) {
+=======
+		global $wp_filesystem;
+		if ( ! $wp_filesystem->is_file( $this->path ) || ! $wp_filesystem->is_readable( $this->path ) ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			return new WP_Error(
 				'wc_logs_invalid_file',
 				__( 'Could not access file.', 'woocommerce' )
@@ -106,11 +124,19 @@ class FileExporter {
 	 * @return void
 	 */
 	private function send_contents(): void {
+<<<<<<< HEAD
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen -- No suitable alternative.
 		$stream = fopen( $this->path, 'rb' );
 
 		while ( is_resource( $stream ) && ! feof( $stream ) ) {
 			// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fread -- No suitable alternative.
+=======
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fopen -- No suitable alternative.
+		$stream = fopen( $this->path, 'rb' );
+
+		while ( is_resource( $stream ) && ! feof( $stream ) ) {
+			// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fread -- No suitable alternative.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			$chunk = fread( $stream, self::CHUNK_SIZE );
 
 			if ( is_string( $chunk ) ) {
@@ -119,7 +145,11 @@ class FileExporter {
 			}
 		}
 
+<<<<<<< HEAD
 		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose -- No suitable alternative.
+=======
+		// phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fclose -- No suitable alternative.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		fclose( $stream );
 	}
 

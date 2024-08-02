@@ -99,6 +99,7 @@ jQuery( function( $ ) {
 			}
 		}
 	);
+<<<<<<< HEAD
 
 
 	$( 'a.coming-soon-footer-banner-dismiss' ).on( 'click', function( e ) {
@@ -119,4 +120,6 @@ jQuery( function( $ ) {
 			}
 		} );
 	} );
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 });

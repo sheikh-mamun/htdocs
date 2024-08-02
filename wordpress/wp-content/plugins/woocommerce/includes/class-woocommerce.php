@@ -10,8 +10,11 @@ defined( 'ABSPATH' ) || exit;
 
 use Automattic\WooCommerce\Internal\AssignDefaultCategory;
 use Automattic\WooCommerce\Internal\BatchProcessing\BatchProcessingController;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\ComingSoon\ComingSoonCacheInvalidator;
 use Automattic\WooCommerce\Internal\ComingSoon\ComingSoonRequestHandler;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
 use Automattic\WooCommerce\Internal\DownloadPermissionsAdjuster;
 use Automattic\WooCommerce\Internal\Features\FeaturesController;
@@ -41,7 +44,11 @@ final class WooCommerce {
 	 *
 	 * @var string
 	 */
+<<<<<<< HEAD
 	public $version = '8.9.1';
+=======
+	public $version = '8.8.3';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 	/**
 	 * WooCommerce Schema version.
@@ -257,6 +264,14 @@ final class WooCommerce {
 		add_action( 'woocommerce_installed', array( $this, 'add_woocommerce_remote_variant' ) );
 		add_action( 'woocommerce_updated', array( $this, 'add_woocommerce_remote_variant' ) );
 
+<<<<<<< HEAD
+=======
+		if ( Features::is_enabled( 'launch-your-store' ) ) {
+			add_action( 'woocommerce_newly_installed', array( $this, 'add_lys_default_values' ) );
+			add_action( 'woocommerce_updated', array( $this, 'add_lys_default_values' ) );
+		}
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		// These classes set up hooks on instantiation.
 		$container = wc_get_container();
 		$container->get( ProductDownloadDirectories::class );
@@ -273,8 +288,11 @@ final class WooCommerce {
 		$container->get( WebhookUtil::class );
 		$container->get( Marketplace::class );
 		$container->get( TimeUtil::class );
+<<<<<<< HEAD
 		$container->get( ComingSoonCacheInvalidator::class );
 		$container->get( ComingSoonRequestHandler::class );
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		/**
 		 * These classes have a register method for attaching hooks.
@@ -314,6 +332,38 @@ final class WooCommerce {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Set default option values for launch your store task.
+	 */
+	public function add_lys_default_values() {
+		$is_new_install = current_action() === 'woocommerce_newly_installed';
+
+		$coming_soon      = $is_new_install ? 'yes' : 'no';
+		$launch_status    = $is_new_install ? 'unlaunched' : 'launched';
+		$store_pages_only = WCAdminHelper::is_site_fresh() ? 'no' : 'yes';
+		$private_link     = 'yes';
+		$share_key        = wp_generate_password( 32, false );
+
+		if ( false === get_option( 'woocommerce_coming_soon', false ) ) {
+			update_option( 'woocommerce_coming_soon', $coming_soon );
+		}
+		if ( false === get_option( 'woocommerce_store_pages_only', false ) ) {
+			update_option( 'woocommerce_store_pages_only', $store_pages_only );
+		}
+		if ( false === get_option( 'woocommerce_private_link', false ) ) {
+			update_option( 'woocommerce_private_link', $private_link );
+		}
+		if ( false === get_option( 'woocommerce_share_key', false ) ) {
+			update_option( 'woocommerce_share_key', $share_key );
+		}
+		if ( false === get_option( 'launch-status', false ) ) {
+			update_option( 'launch-status', $launch_status );
+		}
+	}
+
+	/**
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Ensures fatal errors are logged so they can be picked up in the status report.
 	 *
 	 * @since 3.2.0
@@ -401,6 +451,10 @@ final class WooCommerce {
 		 * The SSR in the name is preserved for bw compatibility, as this was initially used in System Status Report.
 		 */
 		$this->define( 'WC_SSR_PLUGIN_UPDATE_RELEASE_VERSION_TYPE', 'none' );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -992,7 +1046,11 @@ final class WooCommerce {
 	 * @param string $filename The filename of the activated plugin.
 	 */
 	public function activated_plugin( $filename ) {
+<<<<<<< HEAD
 		include_once __DIR__ . '/admin/helper/class-wc-helper.php';
+=======
+		include_once dirname( __FILE__ ) . '/admin/helper/class-wc-helper.php';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		if ( '/woocommerce.php' === substr( $filename, -16 ) ) {
 			set_transient( 'woocommerce_activated_plugin', $filename );
@@ -1008,7 +1066,11 @@ final class WooCommerce {
 	 * @param string $filename The filename of the deactivated plugin.
 	 */
 	public function deactivated_plugin( $filename ) {
+<<<<<<< HEAD
 		include_once __DIR__ . '/admin/helper/class-wc-helper.php';
+=======
+		include_once dirname( __FILE__ ) . '/admin/helper/class-wc-helper.php';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		WC_Helper::deactivated_plugin( $filename );
 	}

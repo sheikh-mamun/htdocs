@@ -51,7 +51,11 @@ class Envo_Demos_Helpers {
         if (!$url || !$file_path) {
             return false;
         }
+<<<<<<< HEAD
 		$args	= array();
+=======
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
         $try_file_get_contents = false;
 
         // Make sure we normalize $file_path.

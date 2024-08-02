@@ -1,8 +1,13 @@
 <?php return array(
     'root' => array(
         'name' => 'woocommerce/woocommerce',
+<<<<<<< HEAD
         'pretty_version' => '8.9.1',
         'version' => '8.9.1.0',
+=======
+        'pretty_version' => '8.8.3',
+        'version' => '8.8.3.0',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
         'reference' => null,
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
@@ -167,8 +172,13 @@
             'dev_requirement' => false,
         ),
         'woocommerce/woocommerce' => array(
+<<<<<<< HEAD
             'pretty_version' => '8.9.1',
             'version' => '8.9.1.0',
+=======
+            'pretty_version' => '8.8.3',
+            'version' => '8.8.3.0',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
             'reference' => null,
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',

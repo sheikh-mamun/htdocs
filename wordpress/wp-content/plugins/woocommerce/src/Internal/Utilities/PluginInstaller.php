@@ -155,12 +155,15 @@ class PluginInstaller implements RegisterHooksInterface {
 			$auto_installed_plugins[ $plugin_name ] = $plugin_data;
 			update_site_option( 'woocommerce_autoinstalled_plugins', $auto_installed_plugins );
 
+<<<<<<< HEAD
 			$auto_installed_plugins_history = get_site_option( 'woocommerce_history_of_autoinstalled_plugins', array() );
 			if ( ! isset( $auto_installed_plugins_history[ $plugin_name ] ) ) {
 				$auto_installed_plugins_history[ $plugin_name ] = $plugin_data;
 				update_site_option( 'woocommerce_history_of_autoinstalled_plugins', $auto_installed_plugins_history );
 			}
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			$post_install = function () use ( $plugin_name, $plugin_version, $installed_by, $plugin_url, $plugin_data ) {
 				$log_context = array(
 					'source'        => 'plugin_auto_installs',

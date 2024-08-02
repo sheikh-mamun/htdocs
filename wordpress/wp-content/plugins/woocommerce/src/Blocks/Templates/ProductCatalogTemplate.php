@@ -23,7 +23,10 @@ class ProductCatalogTemplate extends AbstractTemplate {
 	 */
 	public function init() {
 		add_action( 'template_redirect', array( $this, 'render_block_template' ) );
+<<<<<<< HEAD
 		add_filter( 'current_theme_supports-block-templates', array( $this, 'remove_block_template_support_for_shop_page' ) );
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -58,6 +61,7 @@ class ProductCatalogTemplate extends AbstractTemplate {
 			add_filter( 'woocommerce_has_block_template', '__return_true', 10, 0 );
 		}
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Remove the template panel from the Sidebar of the Shop page because
@@ -84,4 +88,6 @@ class ProductCatalogTemplate extends AbstractTemplate {
 
 		return $is_support;
 	}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }

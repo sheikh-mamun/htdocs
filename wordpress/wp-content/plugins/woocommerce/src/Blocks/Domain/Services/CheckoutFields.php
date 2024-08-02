@@ -4,7 +4,10 @@ namespace Automattic\WooCommerce\Blocks\Domain\Services;
 
 use Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry;
 use WC_Customer;
+<<<<<<< HEAD
 use WC_Data;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use WC_Order;
 use WP_Error;
 
@@ -25,7 +28,11 @@ class CheckoutFields {
 	 *
 	 * @var array
 	 */
+<<<<<<< HEAD
 	private $additional_fields = [];
+=======
+	private $additional_fields = array();
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 	/**
 	 * Fields locations.
@@ -42,6 +49,7 @@ class CheckoutFields {
 	private $supported_field_types = [ 'text', 'select', 'checkbox' ];
 
 	/**
+<<<<<<< HEAD
 	 * Groups of fields to be saved.
 	 *
 	 * @var array
@@ -49,6 +57,8 @@ class CheckoutFields {
 	protected $groups = [ 'billing', 'shipping', 'other' ];
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Instance of the asset data registry.
 	 *
 	 * @var AssetDataRegistry
@@ -60,19 +70,28 @@ class CheckoutFields {
 	 *
 	 * @var string
 	 */
+<<<<<<< HEAD
 	const BILLING_FIELDS_PREFIX = '_wc_billing/';
+=======
+	const BILLING_FIELDS_KEY = '_additional_billing_fields';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 	/**
 	 * Shipping fields meta key.
 	 *
 	 * @var string
 	 */
+<<<<<<< HEAD
 	const SHIPPING_FIELDS_PREFIX = '_wc_shipping/';
+=======
+	const SHIPPING_FIELDS_KEY = '_additional_shipping_fields';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 	/**
 	 * Additional fields meta key.
 	 *
 	 * @var string
+<<<<<<< HEAD
 	 * @deprecated 8.9.0 Use OTHER_FIELDS_PREFIX instead.
 	 */
 	const ADDITIONAL_FIELDS_PREFIX = '_wc_additional/';
@@ -83,6 +102,10 @@ class CheckoutFields {
 	 * @var string
 	 */
 	const OTHER_FIELDS_PREFIX = '_wc_other/';
+=======
+	 */
+	const ADDITIONAL_FIELDS_KEY = '_additional_fields';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 	/**
 	 * Sets up core fields.
@@ -91,8 +114,13 @@ class CheckoutFields {
 	 */
 	public function __construct( AssetDataRegistry $asset_data_registry ) {
 		$this->asset_data_registry = $asset_data_registry;
+<<<<<<< HEAD
 		$this->core_fields         = [
 			'email'      => [
+=======
+		$this->core_fields         = array(
+			'email'      => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'          => __( 'Email address', 'woocommerce' ),
 				'optionalLabel'  => __(
 					'Email address (optional)',
@@ -103,8 +131,13 @@ class CheckoutFields {
 				'autocomplete'   => 'email',
 				'autocapitalize' => 'none',
 				'index'          => 0,
+<<<<<<< HEAD
 			],
 			'first_name' => [
+=======
+			),
+			'first_name' => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'          => __( 'First name', 'woocommerce' ),
 				'optionalLabel'  => __(
 					'First name (optional)',
@@ -115,8 +148,13 @@ class CheckoutFields {
 				'autocomplete'   => 'given-name',
 				'autocapitalize' => 'sentences',
 				'index'          => 10,
+<<<<<<< HEAD
 			],
 			'last_name'  => [
+=======
+			),
+			'last_name'  => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'          => __( 'Last name', 'woocommerce' ),
 				'optionalLabel'  => __(
 					'Last name (optional)',
@@ -127,8 +165,13 @@ class CheckoutFields {
 				'autocomplete'   => 'family-name',
 				'autocapitalize' => 'sentences',
 				'index'          => 20,
+<<<<<<< HEAD
 			],
 			'company'    => [
+=======
+			),
+			'company'    => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'          => __( 'Company', 'woocommerce' ),
 				'optionalLabel'  => __(
 					'Company (optional)',
@@ -139,8 +182,13 @@ class CheckoutFields {
 				'autocomplete'   => 'organization',
 				'autocapitalize' => 'sentences',
 				'index'          => 30,
+<<<<<<< HEAD
 			],
 			'address_1'  => [
+=======
+			),
+			'address_1'  => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'          => __( 'Address', 'woocommerce' ),
 				'optionalLabel'  => __(
 					'Address (optional)',
@@ -151,8 +199,13 @@ class CheckoutFields {
 				'autocomplete'   => 'address-line1',
 				'autocapitalize' => 'sentences',
 				'index'          => 40,
+<<<<<<< HEAD
 			],
 			'address_2'  => [
+=======
+			),
+			'address_2'  => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'          => __( 'Apartment, suite, etc.', 'woocommerce' ),
 				'optionalLabel'  => __(
 					'Apartment, suite, etc. (optional)',
@@ -163,8 +216,13 @@ class CheckoutFields {
 				'autocomplete'   => 'address-line2',
 				'autocapitalize' => 'sentences',
 				'index'          => 50,
+<<<<<<< HEAD
 			],
 			'country'    => [
+=======
+			),
+			'country'    => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'         => __( 'Country/Region', 'woocommerce' ),
 				'optionalLabel' => __(
 					'Country/Region (optional)',
@@ -174,8 +232,13 @@ class CheckoutFields {
 				'hidden'        => false,
 				'autocomplete'  => 'country',
 				'index'         => 50,
+<<<<<<< HEAD
 			],
 			'city'       => [
+=======
+			),
+			'city'       => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'          => __( 'City', 'woocommerce' ),
 				'optionalLabel'  => __(
 					'City (optional)',
@@ -186,8 +249,13 @@ class CheckoutFields {
 				'autocomplete'   => 'address-level2',
 				'autocapitalize' => 'sentences',
 				'index'          => 70,
+<<<<<<< HEAD
 			],
 			'state'      => [
+=======
+			),
+			'state'      => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'          => __( 'State/County', 'woocommerce' ),
 				'optionalLabel'  => __(
 					'State/County (optional)',
@@ -198,8 +266,13 @@ class CheckoutFields {
 				'autocomplete'   => 'address-level1',
 				'autocapitalize' => 'sentences',
 				'index'          => 80,
+<<<<<<< HEAD
 			],
 			'postcode'   => [
+=======
+			),
+			'postcode'   => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'          => __( 'Postal code', 'woocommerce' ),
 				'optionalLabel'  => __(
 					'Postal code (optional)',
@@ -210,8 +283,13 @@ class CheckoutFields {
 				'autocomplete'   => 'postal-code',
 				'autocapitalize' => 'characters',
 				'index'          => 90,
+<<<<<<< HEAD
 			],
 			'phone'      => [
+=======
+			),
+			'phone'      => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'label'          => __( 'Phone', 'woocommerce' ),
 				'optionalLabel'  => __(
 					'Phone (optional)',
@@ -223,6 +301,7 @@ class CheckoutFields {
 				'autocomplete'   => 'tel',
 				'autocapitalize' => 'characters',
 				'index'          => 100,
+<<<<<<< HEAD
 			],
 		];
 
@@ -232,6 +311,17 @@ class CheckoutFields {
 			'contact' => array( 'email' ),
 			'order'   => [],
 		];
+=======
+			),
+		);
+
+		$this->fields_locations = array(
+			// omit email from shipping and billing fields.
+			'address'    => array_merge( \array_diff_key( array_keys( $this->core_fields ), array( 'email' ) ) ),
+			'contact'    => array( 'email' ),
+			'additional' => array(),
+		);
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		add_filter( 'woocommerce_get_country_locale_default', array( $this, 'update_default_locale_with_fields' ) );
 	}
@@ -262,6 +352,7 @@ class CheckoutFields {
 	 * @return array
 	 */
 	public function add_session_meta_keys( $keys ) {
+<<<<<<< HEAD
 		$meta_keys = array();
 		try {
 			foreach ( $this->get_additional_fields() as $field_key => $field ) {
@@ -286,6 +377,9 @@ class CheckoutFields {
 		}
 
 		return array_merge( $keys, $meta_keys );
+=======
+		return array_merge( $keys, array( self::BILLING_FIELDS_KEY, self::SHIPPING_FIELDS_KEY, self::ADDITIONAL_FIELDS_KEY ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -309,9 +403,15 @@ class CheckoutFields {
 	public function default_validate_callback( $value, $field ) {
 		if ( ! empty( $field['required'] ) && empty( $value ) ) {
 			return new WP_Error(
+<<<<<<< HEAD
 				'woocommerce_required_checkout_field',
 				sprintf(
 				// translators: %s is field key.
+=======
+				'woocommerce_blocks_checkout_field_required',
+				sprintf(
+					// translators: %s is field key.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					__( 'The field %s is required.', 'woocommerce' ),
 					$field['id']
 				)
@@ -335,7 +435,11 @@ class CheckoutFields {
 		// The above validate_options function ensures these options are valid. Type might not be supplied but then it defaults to text.
 		$field_data = wp_parse_args(
 			$options,
+<<<<<<< HEAD
 			[
+=======
+			array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'id'                         => '',
 				'label'                      => '',
 				'optionalLabel'              => sprintf(
@@ -347,11 +451,19 @@ class CheckoutFields {
 				'type'                       => 'text',
 				'hidden'                     => false,
 				'required'                   => false,
+<<<<<<< HEAD
 				'attributes'                 => [],
 				'show_in_order_confirmation' => true,
 				'sanitize_callback'          => array( $this, 'default_sanitize_callback' ),
 				'validate_callback'          => array( $this, 'default_validate_callback' ),
 			]
+=======
+				'attributes'                 => array(),
+				'show_in_order_confirmation' => true,
+				'sanitize_callback'          => array( $this, 'default_sanitize_callback' ),
+				'validate_callback'          => array( $this, 'default_validate_callback' ),
+			)
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		);
 
 		$field_data['attributes'] = $this->register_field_attributes( $field_data['id'], $field_data['attributes'] );
@@ -392,34 +504,52 @@ class CheckoutFields {
 		// Remove the field from the additional_fields array.
 		unset( $this->additional_fields[ $field_id ] );
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	/**
 	 * Validates the "base" options (id, label, location) and shows warnings if they're not supplied.
 	 *
 	 * @param array $options The options supplied during field registration.
 	 * @return bool false if an error was encountered, true otherwise.
 	 */
+<<<<<<< HEAD
 	private function validate_options( &$options ) {
 		if ( empty( $options['id'] ) ) {
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', 'A checkout field cannot be registered without an id.', '8.6.0' );
+=======
+	private function validate_options( $options ) {
+		if ( empty( $options['id'] ) ) {
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', 'A checkout field cannot be registered without an id.', '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			return false;
 		}
 
 		// Having fewer than 2 after exploding around a / means there is no namespace.
 		if ( count( explode( '/', $options['id'] ) ) < 2 ) {
 			$message = sprintf( 'Unable to register field with id: "%s". %s', $options['id'], 'A checkout field id must consist of namespace/name.' );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			return false;
 		}
 
 		if ( empty( $options['label'] ) ) {
 			$message = sprintf( 'Unable to register field with id: "%s". %s', $options['id'], 'The field label is required.' );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			return false;
 		}
 
 		if ( empty( $options['location'] ) ) {
 			$message = sprintf( 'Unable to register field with id: "%s". %s', $options['id'], 'The field location is required.' );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
 			return false;
 		}
@@ -432,6 +562,15 @@ class CheckoutFields {
 		if ( ! in_array( $options['location'], array_keys( $this->fields_locations ), true ) ) {
 			$message = sprintf( 'Unable to register field with id: "%s". %s', $options['id'], 'The field location is invalid.' );
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+			return false;
+		}
+
+		if ( ! in_array( $options['location'], array_keys( $this->fields_locations ), true ) ) {
+			$message = sprintf( 'Unable to register field with id: "%s". %s', $options['id'], 'The field location is invalid.' );
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			return false;
 		}
 
@@ -442,7 +581,11 @@ class CheckoutFields {
 		// Check to see if field is already in the array.
 		if ( ! empty( $this->additional_fields[ $id ] ) || in_array( $id, $this->fields_locations[ $location ], true ) ) {
 			$message = sprintf( 'Unable to register field with id: "%s". %s', $id, 'The field is already registered.' );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			return false;
 		}
 
@@ -454,27 +597,43 @@ class CheckoutFields {
 					$options['type'],
 					implode( ', ', $this->supported_field_types )
 				);
+<<<<<<< HEAD
 				_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+				_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				return false;
 			}
 		}
 
 		if ( ! empty( $options['sanitize_callback'] ) && ! is_callable( $options['sanitize_callback'] ) ) {
 			$message = sprintf( 'Unable to register field with id: "%s". %s', $id, 'The sanitize_callback must be a valid callback.' );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			return false;
 		}
 
 		if ( ! empty( $options['validate_callback'] ) && ! is_callable( $options['validate_callback'] ) ) {
 			$message = sprintf( 'Unable to register field with id: "%s". %s', $id, 'The validate_callback must be a valid callback.' );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			return false;
 		}
 
 		// Hidden fields are not supported right now. They will be registered with hidden => false.
 		if ( ! empty( $options['hidden'] ) && true === $options['hidden'] ) {
 			$message = sprintf( 'Registering a field with hidden set to true is not supported. The field "%s" will be registered as visible.', $id );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			// Don't return here unlike the other fields because this is not an issue that will prevent registration.
 		}
 
@@ -494,17 +653,29 @@ class CheckoutFields {
 
 		if ( empty( $options['options'] ) || ! is_array( $options['options'] ) ) {
 			$message = sprintf( 'Unable to register field with id: "%s". %s', $id, 'Fields of type "select" must have an array of "options".' );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
 			return false;
 		}
 		$cleaned_options = [];
 		$added_values    = [];
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+			return false;
+		}
+		$cleaned_options = array();
+		$added_values    = array();
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		// Check all entries in $options['options'] has a key and value member.
 		foreach ( $options['options'] as $option ) {
 			if ( ! isset( $option['value'] ) || ! isset( $option['label'] ) ) {
 				$message = sprintf( 'Unable to register field with id: "%s". %s', $id, 'Fields of type "select" must have an array of "options" and each option must contain a "value" and "label" member.' );
+<<<<<<< HEAD
 				_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+				_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				return false;
 			}
 
@@ -513,16 +684,27 @@ class CheckoutFields {
 
 			if ( in_array( $sanitized_value, $added_values, true ) ) {
 				$message = sprintf( 'Duplicate key found when registering field with id: "%s". The value in each option of "select" fields must be unique. Duplicate value "%s" found. The duplicate key will be removed.', $id, $sanitized_value );
+<<<<<<< HEAD
 				_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+				_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				continue;
 			}
 
 			$added_values[] = $sanitized_value;
 
+<<<<<<< HEAD
 			$cleaned_options[] = [
 				'value' => $sanitized_value,
 				'label' => $sanitized_label,
 			];
+=======
+			$cleaned_options[] = array(
+				'value' => $sanitized_value,
+				'label' => $sanitized_label,
+			);
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 
 		$field_data['options'] = $cleaned_options;
@@ -530,12 +712,21 @@ class CheckoutFields {
 		// If the field is not required, inject an empty option at the start.
 		if ( isset( $field_data['required'] ) && false === $field_data['required'] && ! in_array( '', $added_values, true ) ) {
 			$field_data['options'] = array_merge(
+<<<<<<< HEAD
 				[
 					[
 						'value' => '',
 						'label' => '',
 					],
 				],
+=======
+				array(
+					array(
+						'value' => '',
+						'label' => '',
+					),
+				),
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				$field_data['options']
 			);
 		}
@@ -559,7 +750,11 @@ class CheckoutFields {
 
 		if ( isset( $options['required'] ) && true === $options['required'] ) {
 			$message = sprintf( 'Registering checkbox fields as required is not supported. "%s" will be registered as optional.', $id );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 
 		return $field_data;
@@ -582,23 +777,39 @@ class CheckoutFields {
 
 		if ( ! is_array( $attributes ) || 0 === count( $attributes ) ) {
 			$message = sprintf( 'An invalid attributes value was supplied when registering field with id: "%s". %s', $id, 'Attributes must be a non-empty array.' );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			return [];
 		}
 
 		// These are formatted in camelCase because React components expect them that way.
+<<<<<<< HEAD
 		$allowed_attributes = [
+=======
+		$allowed_attributes = array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'maxLength',
 			'readOnly',
 			'pattern',
 			'autocomplete',
 			'autocapitalize',
 			'title',
+<<<<<<< HEAD
 		];
 
 		$valid_attributes = array_filter(
 			$attributes,
 			function ( $_, $key ) use ( $allowed_attributes ) {
+=======
+		);
+
+		$valid_attributes = array_filter(
+			$attributes,
+			function( $_, $key ) use ( $allowed_attributes ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				return in_array( $key, $allowed_attributes, true ) || strpos( $key, 'aria-' ) === 0 || strpos( $key, 'data-' ) === 0;
 			},
 			ARRAY_FILTER_USE_BOTH
@@ -608,12 +819,20 @@ class CheckoutFields {
 		if ( count( $attributes ) !== count( $valid_attributes ) ) {
 			$invalid_attributes = array_keys( array_diff_key( $attributes, $valid_attributes ) );
 			$message            = sprintf( 'Invalid attribute found when registering field with id: "%s". Attributes: %s are not allowed.', $id, implode( ', ', $invalid_attributes ) );
+<<<<<<< HEAD
 			_doing_it_wrong( 'woocommerce_register_additional_checkout_field', esc_html( $message ), '8.6.0' );
+=======
+			_doing_it_wrong( '__experimental_woocommerce_blocks_register_checkout_field', esc_html( $message ), '8.6.0' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 
 		// Escape attributes to remove any malicious code and return them.
 		return array_map(
+<<<<<<< HEAD
 			function ( $value ) {
+=======
+			function( $value ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				return esc_attr( $value );
 			},
 			$valid_attributes
@@ -676,6 +895,7 @@ class CheckoutFields {
 			 * @param mixed  $field_value The value of the field being sanitized.
 			 * @param string $field_key   Key of the field being sanitized.
 			 *
+<<<<<<< HEAD
 			 * @since 8.6.0
 			 * @deprecated 8.7.0 Use woocommerce_sanitize_additional_field instead.
 			 */
@@ -690,6 +910,11 @@ class CheckoutFields {
 			 * @since 8.7.0
 			 */
 			return apply_filters( 'woocommerce_sanitize_additional_field', $field_value, $field_key );
+=======
+			 * @since 8.7.0
+			 */
+			return apply_filters( '__experimental_woocommerce_blocks_sanitize_additional_field', $field_value, $field_key );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		} catch ( \Throwable $e ) {
 			// One of the filters errored so skip it. This allows the checkout process to continue.
@@ -737,6 +962,7 @@ class CheckoutFields {
 			 * @param string   $field_key   Key of the field being sanitized.
 			 * @param mixed    $field_value The value of the field being validated.
 			 *
+<<<<<<< HEAD
 			 * @since 8.6.0
 			 * @deprecated 8.7.0 Use woocommerce_validate_additional_field instead.
 			 */
@@ -751,6 +977,11 @@ class CheckoutFields {
 			 * @since 8.7.0
 			 */
 			do_action( 'woocommerce_validate_additional_field', $errors, $field_key, $field_value );
+=======
+			 * @since 8.7.0
+			 */
+			do_action( '__experimental_woocommerce_blocks_validate_additional_field', $errors, $field_key, $field_value );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		} catch ( \Throwable $e ) {
 
@@ -785,7 +1016,11 @@ class CheckoutFields {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns an array of fields keys for the address location.
+=======
+	 * Returns an array of fields keys for the address group.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 *
 	 * @return array An array of fields keys.
 	 */
@@ -794,7 +1029,11 @@ class CheckoutFields {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns an array of fields keys for the contact location.
+=======
+	 * Returns an array of fields keys for the contact group.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 *
 	 * @return array An array of fields keys.
 	 */
@@ -803,6 +1042,7 @@ class CheckoutFields {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns an array of fields keys for the additional area location.
 	 *
 	 * @return array An array of fields keys.
@@ -814,10 +1054,13 @@ class CheckoutFields {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Returns an array of fields keys for the additional area group.
 	 *
 	 * @return array An array of fields keys.
 	 */
+<<<<<<< HEAD
 	public function get_order_fields_keys() {
 		return $this->fields_locations['order'];
 	}
@@ -834,12 +1077,29 @@ class CheckoutFields {
 			$location = 'order';
 		}
 
+=======
+	public function get_additional_fields_keys() {
+		return $this->fields_locations['additional'];
+	}
+
+	/**
+	 * Returns an array of fields for a given group.
+	 *
+	 * @param string $location The location to get fields for (address|contact|additional).
+	 * @return array An array of fields definitions.
+	 */
+	public function get_fields_for_location( $location ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		if ( in_array( $location, array_keys( $this->fields_locations ), true ) ) {
 			$order_fields_keys = $this->fields_locations[ $location ];
 
 			return array_filter(
 				$this->get_additional_fields(),
+<<<<<<< HEAD
 				function ( $key ) use ( $order_fields_keys ) {
+=======
+				function( $key ) use ( $order_fields_keys ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					return in_array( $key, $order_fields_keys, true );
 				},
 				ARRAY_FILTER_USE_KEY
@@ -852,6 +1112,7 @@ class CheckoutFields {
 	 * Validates a set of fields for a given location against custom validation rules.
 	 *
 	 * @param array  $fields Array of key value pairs of field values to validate.
+<<<<<<< HEAD
 	 * @param string $location The location being validated (address|contact|order).
 	 * @param string $group The group to get the field value for (shipping|billing|other).
 	 * @return WP_Error
@@ -869,12 +1130,22 @@ class CheckoutFields {
 			$group = 'other';
 		}
 
+=======
+	 * @param string $location The location being validated (address|contact|additional).
+	 * @param string $group The group to get the field value for (shipping|billing|'') in which '' refers to the additional group.
+	 * @return WP_Error
+	 */
+	public function validate_fields_for_location( $fields, $location, $group = '' ) {
+		$errors = new WP_Error();
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		try {
 			/**
 			 * Pass an error object to allow validation of an additional field.
 			 *
 			 * @param WP_Error $errors  A WP_Error object that extensions may add errors to.
 			 * @param mixed    $fields  List of fields (key value pairs) in this location.
+<<<<<<< HEAD
 			 * @param string   $group   The group of this location (shipping|billing|other).
 			 *
 			 * @since 8.6.0
@@ -903,6 +1174,13 @@ class CheckoutFields {
 			 * @since 8.7.0
 			 */
 			do_action( 'woocommerce_blocks_validate_location_' . $location . '_fields', $errors, $fields, $group );
+=======
+			 * @param string   $group   The group of this location (shipping|billing|'').
+			 *
+			 * @since 8.7.0
+			 */
+			do_action( '__experimental_woocommerce_blocks_validate_location_' . $location . '_fields', $errors, $fields, $group );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		} catch ( \Throwable $e ) {
 
@@ -929,11 +1207,16 @@ class CheckoutFields {
 	 *
 	 * @param string $key The field key.
 	 * @param mixed  $value The field value.
+<<<<<<< HEAD
 	 * @param string $location The location to validate the field for (address|contact|order).
+=======
+	 * @param string $location The location to validate the field for (address|contact|additional).
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 *
 	 * @return true|WP_Error True if the field is valid, a WP_Error otherwise.
 	 */
 	public function validate_field_for_location( $key, $value, $location ) {
+<<<<<<< HEAD
 		if ( 'additional' === $location ) {
 			wc_deprecated_argument( 'location', '8.9.0', 'The "additional" location is deprecated. Use "order" instead.' );
 			$location = 'order';
@@ -944,6 +1227,13 @@ class CheckoutFields {
 				'woocommerce_invalid_checkout_field',
 				\sprintf(
 				// translators: % is field key.
+=======
+		if ( ! $this->is_field( $key ) ) {
+			return new WP_Error(
+				'woocommerce_blocks_checkout_field_invalid',
+				\sprintf(
+					// translators: % is field key.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					__( 'The field %s is invalid.', 'woocommerce' ),
 					$key
 				)
@@ -952,9 +1242,15 @@ class CheckoutFields {
 
 		if ( ! in_array( $key, $this->fields_locations[ $location ], true ) ) {
 			return new WP_Error(
+<<<<<<< HEAD
 				'woocommerce_invalid_checkout_field_location',
 				\sprintf(
 				// translators: %1$s is field key, %2$s location.
+=======
+				'woocommerce_blocks_checkout_field_invalid_location',
+				\sprintf(
+					// translators: %1$s is field key, %2$s location.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					__( 'The field %1$s is invalid for the location %2$s.', 'woocommerce' ),
 					$key,
 					$location
@@ -965,9 +1261,15 @@ class CheckoutFields {
 		$field = $this->additional_fields[ $key ];
 		if ( ! empty( $field['required'] ) && empty( $value ) ) {
 			return new WP_Error(
+<<<<<<< HEAD
 				'woocommerce_required_checkout_field',
 				\sprintf(
 				// translators: %s is field key.
+=======
+				'woocommerce_blocks_checkout_field_required',
+				\sprintf(
+					// translators: %s is field key.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					__( 'The field %s is required.', 'woocommerce' ),
 					$key
 				)
@@ -978,6 +1280,7 @@ class CheckoutFields {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns all fields key for a given group.
 	 *
 	 * @param string $group The group to get the key for (shipping|billing|other).
@@ -1000,6 +1303,8 @@ class CheckoutFields {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Returns true if the given key is a valid field.
 	 *
 	 * @param string $key The field key.
@@ -1011,6 +1316,7 @@ class CheckoutFields {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Returns true if the given key is a valid customer field.
 	 *
 	 * Customer fields are fields saved to the customer data, like address and contact fields.
@@ -1024,16 +1330,22 @@ class CheckoutFields {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Persists a field value for a given order. This would also optionally set the field value on the customer object if the order is linked to a registered customer.
 	 *
 	 * @param string   $key The field key.
 	 * @param mixed    $value The field value.
 	 * @param WC_Order $order The order to persist the field for.
+<<<<<<< HEAD
 	 * @param string   $group The group to persist the field for (shipping|billing|other).
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * @param bool     $set_customer Whether to set the field value on the customer or not.
 	 *
 	 * @return void
 	 */
+<<<<<<< HEAD
 	public function persist_field_for_order( string $key, $value, WC_Order $order, string $group = 'other', bool $set_customer = true ) {
 		if ( 'additional' === $group ) {
 			wc_deprecated_argument( 'group', '8.9.0', 'The "additional" group is deprecated. Use "other" instead.' );
@@ -1044,6 +1356,13 @@ class CheckoutFields {
 		if ( $set_customer && $order->get_customer_id() ) {
 			$customer = new WC_Customer( $order->get_customer_id() );
 			$this->persist_field_for_customer( $key, $value, $customer, $group );
+=======
+	public function persist_field_for_order( $key, $value, $order, $set_customer = true ) {
+		$this->set_array_meta( $key, $value, $order );
+		if ( $set_customer && $order->get_customer_id() ) {
+			$customer = new WC_Customer( $order->get_customer_id() );
+			$this->persist_field_for_customer( $key, $value, $customer );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 	}
 
@@ -1053,6 +1372,7 @@ class CheckoutFields {
 	 * @param string      $key The field key.
 	 * @param mixed       $value The field value.
 	 * @param WC_Customer $customer The customer to persist the field for.
+<<<<<<< HEAD
 	 * @param string      $group The group to persist the field for (shipping|billing|other).
 	 *
 	 * @return void
@@ -1064,6 +1384,13 @@ class CheckoutFields {
 		}
 
 		$this->set_array_meta( $key, $value, $customer, $group );
+=======
+	 *
+	 * @return void
+	 */
+	public function persist_field_for_customer( $key, $value, $customer ) {
+		$this->set_array_meta( $key, $value, $customer );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -1071,6 +1398,7 @@ class CheckoutFields {
 	 *
 	 * @param string               $key The field key.
 	 * @param mixed                $value The field value.
+<<<<<<< HEAD
 	 * @param WC_Customer|WC_Order $wc_object The object to set the field value for.
 	 * @param string               $group The group to set the field value for (shipping|billing|other).
 	 *
@@ -1096,12 +1424,68 @@ class CheckoutFields {
 		}
 		// Replacing all meta using `add_meta_data`. For some reason `update_meta_data` causes duplicate keys.
 		$wc_object->add_meta_data( $meta_key, $value, true );
+=======
+	 * @param WC_Customer|WC_Order $object The object to set the field value for.
+	 *
+	 * @return void
+	 */
+	private function set_array_meta( $key, $value, $object ) {
+		$meta_key = '';
+
+		if ( 0 === strpos( $key, '/billing/' ) ) {
+			$meta_key = self::BILLING_FIELDS_KEY;
+			$key      = str_replace( '/billing/', '', $key );
+		} elseif ( 0 === strpos( $key, '/shipping/' ) ) {
+			$meta_key = self::SHIPPING_FIELDS_KEY;
+			$key      = str_replace( '/shipping/', '', $key );
+		} else {
+			$meta_key = self::ADDITIONAL_FIELDS_KEY;
+		}
+
+		$meta_data = $object->get_meta( $meta_key, true );
+
+		if ( ! is_array( $meta_data ) ) {
+			$meta_data = array();
+		}
+
+		$meta_data[ $key ] = $value;
+
+		// Replacing all meta using `add_meta_data`. For some reason `update_meta_data` causes duplicate keys.
+		$object->add_meta_data( $meta_key, $meta_data, true );
+	}
+
+	/**
+	 * Returns a field value for a given object.
+	 *
+	 * @param string      $key The field key.
+	 * @param WC_Customer $customer The customer to get the field value for.
+	 * @param string      $group The group to get the field value for (shipping|billing|'') in which '' refers to the additional group.
+	 *
+	 * @return mixed The field value.
+	 */
+	public function get_field_from_customer( $key, $customer, $group = '' ) {
+		return $this->get_field_from_object( $key, $customer, $group );
+	}
+
+	/**
+	 * Returns a field value for a given order.
+	 *
+	 * @param string   $field The field key.
+	 * @param WC_Order $order The order to get the field value for.
+	 * @param string   $group The group to get the field value for (shipping|billing|'') in which '' refers to the additional group.
+	 *
+	 * @return mixed The field value.
+	 */
+	public function get_field_from_order( $field, $order, $group = '' ) {
+		return $this->get_field_from_object( $field, $order, $group );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
 	 * Returns a field value for a given object.
 	 *
 	 * @param string               $key The field key.
+<<<<<<< HEAD
 	 * @param WC_Customer|WC_Order $wc_object The customer or order to get the field value for.
 	 * @param string               $group The group to get the field value for (shipping|billing|other).
 	 *
@@ -1232,10 +1616,158 @@ class CheckoutFields {
 			}
 		}
 	}
+=======
+	 * @param WC_Customer|WC_Order $object The customer to get the field value for.
+	 * @param string               $group The group to get the field value for (shipping|billing|'') in which '' refers to the additional group.
+	 *
+	 * @return mixed The field value.
+	 */
+	private function get_field_from_object( $key, $object, $group = '' ) {
+		$meta_key = '';
+		if ( 0 === strpos( $key, '/billing/' ) || 'billing' === $group ) {
+			$meta_key = self::BILLING_FIELDS_KEY;
+			$key      = str_replace( '/billing/', '', $key );
+		} elseif ( 0 === strpos( $key, '/shipping/' ) || 'shipping' === $group ) {
+			$meta_key = self::SHIPPING_FIELDS_KEY;
+			$key      = str_replace( '/shipping/', '', $key );
+		} else {
+			$meta_key = self::ADDITIONAL_FIELDS_KEY;
+		}
+
+		$meta_data = $object->get_meta( $meta_key, true );
+
+		if ( ! is_array( $meta_data ) ) {
+			return '';
+		}
+
+		if ( ! isset( $meta_data[ $key ] ) ) {
+			return '';
+		}
+
+		return $meta_data[ $key ];
+	}
+
+	/**
+	 * Returns an array of all fields values for a given customer.
+	 *
+	 * @param WC_Customer $customer The customer to get the fields for.
+	 * @param bool        $all Whether to return all fields or only the ones that are still registered. Default false.
+	 *
+	 * @return array An array of fields.
+	 */
+	public function get_all_fields_from_customer( $customer, $all = false ) {
+		$meta_data = array(
+			'billing'    => array(),
+			'shipping'   => array(),
+			'additional' => array(),
+		);
+		if ( $customer instanceof WC_Customer ) {
+			$meta_data['billing']    = $customer->get_meta( self::BILLING_FIELDS_KEY, true );
+			$meta_data['shipping']   = $customer->get_meta( self::SHIPPING_FIELDS_KEY, true );
+			$meta_data['additional'] = $customer->get_meta( self::ADDITIONAL_FIELDS_KEY, true );
+		}
+		return $this->format_meta_data( $meta_data, $all );
+	}
+
+	/**
+	 * Returns an array of all fields values for a given order.
+	 *
+	 * @param WC_Order $order The order to get the fields for.
+	 * @param bool     $all Whether to return all fields or only the ones that are still registered. Default false.
+	 *
+	 * @return array An array of fields.
+	 */
+	public function get_all_fields_from_order( $order, $all = false ) {
+		$meta_data = array(
+			'billing'    => array(),
+			'shipping'   => array(),
+			'additional' => array(),
+		);
+		if ( $order instanceof WC_Order ) {
+			$meta_data['billing']    = $order->get_meta( self::BILLING_FIELDS_KEY, true );
+			$meta_data['shipping']   = $order->get_meta( self::SHIPPING_FIELDS_KEY, true );
+			$meta_data['additional'] = $order->get_meta( self::ADDITIONAL_FIELDS_KEY, true );
+		}
+		return $this->format_meta_data( $meta_data, $all );
+	}
+
+	/**
+	 * Returns an array of all fields values for a given meta object. It would add the billing or shipping prefix to the keys.
+	 *
+	 * @param array $meta The meta data to format.
+	 * @param bool  $all Whether to return all fields or only the ones that are still registered. Default false.
+	 *
+	 * @return array An array of fields.
+	 */
+	private function format_meta_data( $meta, $all = false ) {
+		$billing_fields    = $meta['billing'] ?? array();
+		$shipping_fields   = $meta['shipping'] ?? array();
+		$additional_fields = $meta['additional'] ?? array();
+
+		$fields = array();
+
+		if ( is_array( $billing_fields ) ) {
+			foreach ( $billing_fields as $key => $value ) {
+				if ( ! $all && ! $this->is_field( $key ) ) {
+					continue;
+				}
+				$fields[ '/billing/' . $key ] = $value;
+			}
+		}
+
+		if ( is_array( $shipping_fields ) ) {
+			foreach ( $shipping_fields as $key => $value ) {
+				if ( ! $all && ! $this->is_field( $key ) ) {
+					continue;
+				}
+				$fields[ '/shipping/' . $key ] = $value;
+			}
+		}
+
+		if ( is_array( $additional_fields ) ) {
+			foreach ( $additional_fields as $key => $value ) {
+				if ( ! $all && ! $this->is_field( $key ) ) {
+					continue;
+				}
+				$fields[ $key ] = $value;
+			}
+		}
+
+		return $fields;
+	}
+
+	/**
+	 * From a set of fields, returns only the ones that should be saved to the customer.
+	 * For now, this only supports fields in address location.
+	 *
+	 * @param array $fields The fields to filter.
+	 * @return array The filtered fields.
+	 */
+	public function filter_fields_for_customer( $fields ) {
+		$customer_fields_keys = array_merge(
+			$this->get_address_fields_keys(),
+			$this->get_contact_fields_keys(),
+		);
+		return array_filter(
+			$fields,
+			function( $key ) use ( $customer_fields_keys ) {
+				if ( 0 === strpos( $key, '/billing/' ) ) {
+					$key = str_replace( '/billing/', '', $key );
+				} elseif ( 0 === strpos( $key, '/shipping/' ) ) {
+					$key = str_replace( '/shipping/', '', $key );
+				}
+				return in_array( $key, $customer_fields_keys, true );
+			},
+			ARRAY_FILTER_USE_KEY
+		);
+	}
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	/**
 	 * From a set of fields, returns only the ones for a given location.
 	 *
 	 * @param array  $fields The fields to filter.
+<<<<<<< HEAD
 	 * @param string $location The location to validate the field for (address|contact|order).
 	 * @return array The filtered fields.
 	 */
@@ -1248,6 +1780,20 @@ class CheckoutFields {
 		return array_filter(
 			$fields,
 			function ( $key ) use ( $location ) {
+=======
+	 * @param string $location The location to validate the field for (address|contact|additional).
+	 * @return array The filtered fields.
+	 */
+	public function filter_fields_for_location( $fields, $location ) {
+		return array_filter(
+			$fields,
+			function( $key ) use ( $location ) {
+				if ( 0 === strpos( $key, '/billing/' ) ) {
+					$key = str_replace( '/billing/', '', $key );
+				} elseif ( 0 === strpos( $key, '/shipping/' ) ) {
+					$key = str_replace( '/shipping/', '', $key );
+				}
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				return $this->is_field( $key ) && $this->get_field_location( $key ) === $location;
 			},
 			ARRAY_FILTER_USE_KEY
@@ -1263,7 +1809,11 @@ class CheckoutFields {
 	public function filter_fields_for_order_confirmation( $fields ) {
 		return array_filter(
 			$fields,
+<<<<<<< HEAD
 			function ( $field ) {
+=======
+			function( $field ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				return ! empty( $field['show_in_order_confirmation'] );
 			}
 		);
@@ -1273,6 +1823,7 @@ class CheckoutFields {
 	 * Get additional fields for an order.
 	 *
 	 * @param WC_Order $order Order object.
+<<<<<<< HEAD
 	 * @param string   $location The location to get fields for (address|contact|order).
 	 * @param string   $group The group to get the field value for (shipping|billing|other).
 	 * @param string   $context The context to get the field value for (edit|view).
@@ -1294,6 +1845,19 @@ class CheckoutFields {
 
 		foreach ( $fields as $field_key => $field ) {
 			$value = $this->get_field_from_object( $field_key, $order, $group );
+=======
+	 * @param string   $location The location to get fields for (address|contact|additional).
+	 * @param string   $group The group to get the field value for (shipping|billing|'') in which '' refers to the additional group.
+	 * @param string   $context The context to get the field value for (edit|view).
+	 * @return array An array of fields definitions as well as their values formatted for display.
+	 */
+	public function get_order_additional_fields_with_values( $order, $location, $group = '', $context = 'edit' ) {
+		$fields             = $this->get_fields_for_location( $location );
+		$fields_with_values = array();
+
+		foreach ( $fields as $field_key => $field ) {
+			$value = $this->get_field_from_order( $field_key, $order, $group );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 			if ( '' === $value || null === $value ) {
 				continue;
@@ -1329,6 +1893,7 @@ class CheckoutFields {
 
 		return $value;
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Returns a group meta prefix based on its name.
@@ -1371,4 +1936,6 @@ class CheckoutFields {
 		}
 		return 'other';
 	}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }

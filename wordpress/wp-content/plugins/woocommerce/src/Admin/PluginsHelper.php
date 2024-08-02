@@ -13,10 +13,14 @@ use ActionScheduler_QueueRunner;
 use Automatic_Upgrader_Skin;
 use Automattic\WooCommerce\Admin\PluginsInstallLoggers\AsyncPluginsInstallLogger;
 use Automattic\WooCommerce\Admin\PluginsInstallLoggers\PluginsInstallLogger;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\Admin\WCAdminAssets;
 use Plugin_Upgrader;
 use WC_Helper;
 use WC_Helper_Updater;
+=======
+use Plugin_Upgrader;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use WP_Error;
 use WP_Upgrader;
 
@@ -38,9 +42,12 @@ class PluginsHelper {
 		add_action( 'woocommerce_plugins_install_callback', array( __CLASS__, 'install_plugins' ), 10, 2 );
 		add_action( 'woocommerce_plugins_install_and_activate_async_callback', array( __CLASS__, 'install_and_activate_plugins_async_callback' ), 10, 2 );
 		add_action( 'woocommerce_plugins_activate_callback', array( __CLASS__, 'activate_plugins' ), 10, 2 );
+<<<<<<< HEAD
 		add_action( 'admin_notices', array( __CLASS__, 'maybe_show_connect_notice_in_plugin_list' ) );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'maybe_enqueue_scripts_for_connect_notice' ) );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'maybe_enqueue_scripts_for_connect_notice_in_plugins' ) );
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -538,6 +545,7 @@ class PluginsHelper {
 		return self::get_action_data( $actions );
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Show notices to connect to woocommerce.com for unconnected store in the plugin list.
 	 *
@@ -614,4 +622,6 @@ class PluginsHelper {
 		WCAdminAssets::register_script( 'wp-admin-scripts', 'woo-plugin-update-connect-notice' );
 		wp_enqueue_script( 'woo-plugin-update-connect-notice' );
 	}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }

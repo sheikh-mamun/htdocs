@@ -4,4 +4,13 @@
 	http://jedwatson.github.io/classnames
 */
 
+<<<<<<< HEAD
+=======
+/*!
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /*! @license DOMPurify 2.4.7 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.4.7/LICENSE */

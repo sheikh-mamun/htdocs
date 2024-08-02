@@ -1,7 +1,10 @@
 <?php
 namespace Automattic\WooCommerce\Blocks;
 
+<<<<<<< HEAD
 use Automattic\WooCommerce\Admin\Features\Features;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use Automattic\WooCommerce\Blocks\Utils\BlockTemplateUtils;
 use Automattic\WooCommerce\Blocks\Templates\AbstractTemplate;
 use Automattic\WooCommerce\Blocks\Templates\AbstractTemplatePart;
@@ -9,9 +12,12 @@ use Automattic\WooCommerce\Blocks\Templates\MiniCartTemplate;
 use Automattic\WooCommerce\Blocks\Templates\CartTemplate;
 use Automattic\WooCommerce\Blocks\Templates\CheckoutTemplate;
 use Automattic\WooCommerce\Blocks\Templates\CheckoutHeaderTemplate;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Blocks\Templates\ComingSoonTemplate;
 use Automattic\WooCommerce\Blocks\Templates\ComingSoonEntireSiteTemplate;
 use Automattic\WooCommerce\Blocks\Templates\ComingSoonStoreOnlyTemplate;
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 use Automattic\WooCommerce\Blocks\Templates\OrderConfirmationTemplate;
 use Automattic\WooCommerce\Blocks\Templates\ProductAttributeTemplate;
 use Automattic\WooCommerce\Blocks\Templates\ProductCatalogTemplate;
@@ -53,9 +59,12 @@ class BlockTemplatesRegistry {
 		} else {
 			$templates = array();
 		}
+<<<<<<< HEAD
 		if ( Features::is_enabled( 'launch-your-store' ) ) {
 			$templates[ ComingSoonTemplate::SLUG ] = new ComingSoonTemplate();
 		}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		if ( BlockTemplateUtils::supports_block_templates( 'wp_template_part' ) ) {
 			$template_parts = array(
 				MiniCartTemplate::SLUG       => new MiniCartTemplate(),

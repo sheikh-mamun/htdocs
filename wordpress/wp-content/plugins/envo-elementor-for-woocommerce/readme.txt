@@ -1,9 +1,16 @@
 === Envo's Elementor Templates & Widgets for WooCommerce ===
 Contributors: EnvoThemes
+<<<<<<< HEAD
 Tags: elementor, woocommerce, templates, woo, widgets
 Requires at least: 4.4
 Tested up to: 6.5
 Stable tag: 1.4.12
+=======
+Tags: elementor, woocommerce, templates, woo, widgets, drag-and-drop, e-commerce, elements, landing page, elementor widget, woocommerce elementor, product
+Requires at least: 4.4
+Tested up to: 6.5
+Stable tag: 1.4.11
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -140,9 +147,12 @@ No, Elementor PRO or any other PRO addon is not required.
 
 == Changelog ==
 
+<<<<<<< HEAD
 = 1.4.12 =
 * Fixed missing icons
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 = 1.4.11 =
 * CSS improvements and fixes
 

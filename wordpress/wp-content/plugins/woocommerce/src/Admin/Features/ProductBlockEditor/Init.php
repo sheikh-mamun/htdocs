@@ -78,8 +78,11 @@ class Init {
 			add_action( 'rest_api_init', array( $this, 'register_layout_templates' ) );
 			add_action( 'rest_api_init', array( $this, 'register_user_metas' ) );
 
+<<<<<<< HEAD
 			add_filter( 'register_block_type_args', array( $this, 'register_metadata_attribute' ) );
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			// Make sure the block registry is initialized so that core blocks are registered.
 			BlockRegistry::get_instance();
 
@@ -115,9 +118,12 @@ class Init {
 		);
 		wp_tinymce_inline_scripts();
 		wp_enqueue_media();
+<<<<<<< HEAD
 		wp_register_style( 'wc-global-presets', false ); // phpcs:ignore
 		wp_add_inline_style( 'wc-global-presets', wp_get_global_stylesheet( array( 'presets' ) ) );
 		wp_enqueue_style( 'wc-global-presets' );
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -422,6 +428,7 @@ class Init {
 			)
 		);
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Registers the metadata block attribute for all block types.
@@ -449,4 +456,6 @@ class Init {
 
 		return $args;
 	}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }

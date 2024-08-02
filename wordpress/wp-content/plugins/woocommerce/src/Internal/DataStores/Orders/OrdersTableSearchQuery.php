@@ -27,7 +27,11 @@ class OrdersTableSearchQuery {
 	/**
 	 * Limits the search to a specific field.
 	 *
+<<<<<<< HEAD
 	 * @var string[]
+=======
+	 * @var string
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 */
 	private $search_filters;
 
@@ -40,8 +44,13 @@ class OrdersTableSearchQuery {
 	 */
 	public function __construct( OrdersTableQuery $query ) {
 		$this->query          = $query;
+<<<<<<< HEAD
 		$this->search_term    = $query->get( 's' );
 		$this->search_filters = $this->sanitize_search_filters( $query->get( 'search_filter' ) ?? '' );
+=======
+		$this->search_term    = urldecode( $query->get( 's' ) );
+		$this->search_filters = $this->sanitize_search_filters( urldecode( $query->get( 'search_filter' ) ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -52,18 +61,29 @@ class OrdersTableSearchQuery {
 	 * @return array Array of search filters.
 	 */
 	private function sanitize_search_filters( string $search_filter ) : array {
+<<<<<<< HEAD
 		$core_filters = array(
 			'order_id',
 			'transaction_id',
+=======
+		$available_filters = array(
+			'order_id',
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'customer_email',
 			'customers', // customers also searches in meta.
 			'products',
 		);
 
 		if ( 'all' === $search_filter || '' === $search_filter ) {
+<<<<<<< HEAD
 			return $core_filters;
 		} else {
 			return array( $search_filter );
+=======
+			return $available_filters;
+		} else {
+			return array_intersect( $available_filters, array( $search_filter ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 	}
 
@@ -120,6 +140,7 @@ class OrdersTableSearchQuery {
 				LEFT JOIN $items_table AS search_query_items ON search_query_items.order_id = $orders_table.id
 			";
 		}
+<<<<<<< HEAD
 
 		/**
 		 * Filter to support adding a custom order search filter.
@@ -143,6 +164,9 @@ class OrdersTableSearchQuery {
 			$search_filter,
 			$this->query
 		);
+=======
+		return '';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -200,6 +224,7 @@ class OrdersTableSearchQuery {
 			);
 		}
 
+<<<<<<< HEAD
 		if ( 'transaction_id' === $search_filter ) {
 			return $wpdb->prepare(
 				"`$order_table`.transaction_id LIKE %s", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- $order_table is hardcoded.
@@ -207,6 +232,8 @@ class OrdersTableSearchQuery {
 			);
 		}
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		if ( 'products' === $search_filter ) {
 			return $wpdb->prepare(
 				'search_query_items.order_item_name LIKE %s',
@@ -219,6 +246,7 @@ class OrdersTableSearchQuery {
 			return "`$order_table`.id IN ( $meta_sub_query ) ";
 		}
 
+<<<<<<< HEAD
 		/**
 		 * Filter to support adding a custom order search filter.
 		 * Provide a WHERE clause for a custom search filter via this filter. This should be used with the
@@ -241,6 +269,9 @@ class OrdersTableSearchQuery {
 			$search_filter,
 			$this->query
 		);
+=======
+		return '';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**

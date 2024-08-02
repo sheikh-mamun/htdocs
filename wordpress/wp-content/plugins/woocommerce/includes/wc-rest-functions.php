@@ -363,6 +363,7 @@ function wc_rest_check_product_reviews_permissions( $context = 'read', $object_i
 
 	return apply_filters( 'woocommerce_rest_check_permissions', $permission, $context, $object_id, 'product_review' );
 }
+<<<<<<< HEAD
 
 /**
  * Returns true if the current REST request is from the product editor.
@@ -373,3 +374,5 @@ function wc_rest_check_product_reviews_permissions( $context = 'read', $object_i
 function wc_rest_is_from_product_editor() {
 	return isset( $_SERVER['HTTP_X_WC_FROM_PRODUCT_EDITOR'] ) && '1' === $_SERVER['HTTP_X_WC_FROM_PRODUCT_EDITOR'];
 }
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744

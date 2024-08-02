@@ -29,7 +29,11 @@ if ( ! function_exists( 'wc_admin_get_feature_config' ) ) {
 			'product-grouped' => true,
 			'product-linked' => true,
 			'product-pre-publish-modal' => true,
+<<<<<<< HEAD
 			'product-custom-fields' => true,
+=======
+			'product-custom-fields' => false,
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'remote-inbox-notifications' => true,
 			'remote-free-extensions' => true,
 			'payment-gateway-suggestions' => true,

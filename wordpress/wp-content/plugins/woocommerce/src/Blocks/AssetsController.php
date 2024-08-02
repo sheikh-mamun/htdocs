@@ -50,7 +50,10 @@ final class AssetsController {
 		$this->register_style( 'wc-blocks-style', plugins_url( $this->api->get_block_asset_build_path( 'wc-blocks', 'css' ), dirname( __DIR__ ) ), array(), 'all', true );
 		$this->register_style( 'wc-blocks-editor-style', plugins_url( $this->api->get_block_asset_build_path( 'wc-blocks-editor-style', 'css' ), dirname( __DIR__ ) ), array( 'wp-edit-blocks' ), 'all', true );
 
+<<<<<<< HEAD
 		$this->api->register_script( 'wc-types', $this->api->get_block_asset_build_path( 'wc-types' ), array(), false );
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$this->api->register_script( 'wc-blocks-middleware', 'assets/client/blocks/wc-blocks-middleware.js', array(), false );
 		$this->api->register_script( 'wc-blocks-data-store', 'assets/client/blocks/wc-blocks-data.js', array( 'wc-blocks-middleware' ) );
 		$this->api->register_script( 'wc-blocks-vendors', $this->api->get_block_asset_build_path( 'wc-blocks-vendors' ), array(), false );
@@ -62,9 +65,14 @@ final class AssetsController {
 		// The price package is shared externally so has no blocks prefix.
 		$this->api->register_script( 'wc-price-format', 'assets/client/blocks/price-format.js', array(), false );
 
+<<<<<<< HEAD
 		$this->api->register_script( 'wc-blocks-vendors-frontend', $this->api->get_block_asset_build_path( 'wc-blocks-vendors-frontend' ), array(), false );
 		$this->api->register_script( 'wc-blocks-checkout', 'assets/client/blocks/blocks-checkout.js', array( 'wc-blocks-vendors-frontend' ) );
 		$this->api->register_script( 'wc-blocks-components', 'assets/client/blocks/blocks-components.js', array( 'wc-blocks-vendors-frontend' ) );
+=======
+		$this->api->register_script( 'wc-blocks-checkout', 'assets/client/blocks/blocks-checkout.js', array() );
+		$this->api->register_script( 'wc-blocks-components', 'assets/client/blocks/blocks-components.js', array() );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		// Register the interactivity components here for now.
 		$this->api->register_script( 'wc-interactivity-dropdown', 'assets/client/blocks/wc-interactivity-dropdown.js', array() );
@@ -208,7 +216,11 @@ final class AssetsController {
 			$this->get_script_dependency_src_array( $script_data['dependencies'] )
 		);
 		return array_map(
+<<<<<<< HEAD
 			function ( $src ) {
+=======
+			function( $src ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				return array(
 					'href' => $src,
 					'as'   => 'script',
@@ -228,7 +240,11 @@ final class AssetsController {
 		$wp_scripts = wp_scripts();
 		return array_reduce(
 			$dependencies,
+<<<<<<< HEAD
 			function ( $src, $handle ) use ( $wp_scripts ) {
+=======
+			function( $src, $handle ) use ( $wp_scripts ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				if ( isset( $wp_scripts->registered[ $handle ] ) ) {
 					$src[] = esc_url( add_query_arg( 'ver', $wp_scripts->registered[ $handle ]->ver, $this->get_absolute_url( $wp_scripts->registered[ $handle ]->src ) ) );
 					$src   = array_merge( $src, $this->get_script_dependency_src_array( $wp_scripts->registered[ $handle ]->deps ) );

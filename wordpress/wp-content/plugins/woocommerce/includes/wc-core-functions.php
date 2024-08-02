@@ -1539,18 +1539,25 @@ function wc_get_credit_card_type_label( $type ) {
 			'visa'             => _x( 'Visa', 'Name of credit card', 'woocommerce' ),
 			'discover'         => _x( 'Discover', 'Name of credit card', 'woocommerce' ),
 			'american express' => _x( 'American Express', 'Name of credit card', 'woocommerce' ),
+<<<<<<< HEAD
 			'cartes bancaires' => _x( 'Cartes Bancaires', 'Name of credit card', 'woocommerce' ),
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'diners'           => _x( 'Diners', 'Name of credit card', 'woocommerce' ),
 			'jcb'              => _x( 'JCB', 'Name of credit card', 'woocommerce' ),
 		)
 	);
 
+<<<<<<< HEAD
 	/**
 	 * Fallback to title case, uppercasing the first letter of each word.
 	 *
 	 * @since 8.9.0
 	 */
 	return apply_filters( 'woocommerce_get_credit_card_type_label', ( array_key_exists( $type, $labels ) ? $labels[ $type ] : ucwords( $type ) ) );
+=======
+	return apply_filters( 'woocommerce_get_credit_card_type_label', ( array_key_exists( $type, $labels ) ? $labels[ $type ] : ucfirst( $type ) ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }
 
 /**
@@ -1560,7 +1567,11 @@ function wc_get_credit_card_type_label( $type ) {
  * @param string $url   URL of the page to return to.
  */
 function wc_back_link( $label, $url ) {
+<<<<<<< HEAD
 	echo '<small class="wc-admin-breadcrumb"><a href="' . esc_url( $url ) . '" aria-label="' . esc_attr( $label ) . '">&#x2934;&#xfe0e;</a></small>';
+=======
+	echo '<small class="wc-admin-breadcrumb"><a href="' . esc_url( $url ) . '" aria-label="' . esc_attr( $label ) . '">&#x2934;</a></small>';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 }
 
 /**

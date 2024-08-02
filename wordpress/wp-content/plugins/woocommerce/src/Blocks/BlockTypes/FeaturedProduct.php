@@ -22,7 +22,11 @@ class FeaturedProduct extends FeaturedItem {
 		$id = absint( $attributes['productId'] ?? 0 );
 
 		$product = wc_get_product( $id );
+<<<<<<< HEAD
 		if ( ! $product || ( 'publish' !== $product->get_status() && ! current_user_can( 'read_product', $id ) ) ) {
+=======
+		if ( ! $product ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			return null;
 		}
 

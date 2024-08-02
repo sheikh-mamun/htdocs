@@ -2,11 +2,17 @@
 	"name": "woocommerce/order-confirmation-additional-fields-wrapper",
 	"version": "1.0.0",
 	"title": "Additional Fields",
+<<<<<<< HEAD
 	"description": "Display additional checkout fields from the 'contact' and 'order' locations.",
 	"category": "woocommerce",
 	"keywords": [
 		"WooCommerce"
 	],
+=======
+	"description": "Display additional checkout fields from the 'contact' and 'additional' locations.",
+	"category": "woocommerce",
+	"keywords": [ "WooCommerce" ],
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	"attributes": {
 		"heading": {
 			"type": "string"
@@ -14,10 +20,14 @@
 	},
 	"supports": {
 		"multiple": false,
+<<<<<<< HEAD
 		"align": [
 			"wide",
 			"full"
 		],
+=======
+		"align": [ "wide", "full" ],
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		"html": false,
 		"spacing": {
 			"padding": true,
@@ -31,4 +41,8 @@
 	"textdomain": "woocommerce",
 	"apiVersion": 2,
 	"$schema": "https://schemas.wp.org/trunk/block.json"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744

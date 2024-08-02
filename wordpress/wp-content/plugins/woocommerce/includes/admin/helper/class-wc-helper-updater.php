@@ -33,7 +33,11 @@ class WC_Helper_Updater {
 	 * Add the hook for modifying default WPCore update notices on the plugins management page.
 	 */
 	public static function add_hook_for_modifying_update_notices() {
+<<<<<<< HEAD
 		if ( ! WC_Woo_Update_Manager_Plugin::is_plugin_active() || ! WC_Helper::is_site_connected() ) {
+=======
+		if ( ! WC_Woo_Update_Manager_Plugin::is_plugin_active() ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			add_action( 'load-plugins.php', array( __CLASS__, 'setup_update_plugins_messages' ), 11 );
 		}
 	}
@@ -155,6 +159,7 @@ class WC_Helper_Updater {
 	 * @return void.
 	 */
 	public static function setup_update_plugins_messages() {
+<<<<<<< HEAD
 		$is_site_connected = WC_Helper::is_site_connected();
 		foreach ( WC_Helper::get_local_woo_plugins() as $plugin ) {
 			$filename = $plugin['_filename'];
@@ -163,10 +168,16 @@ class WC_Helper_Updater {
 			} else {
 				add_action( 'in_plugin_update_message-' . $filename, array( __CLASS__, 'add_connect_woocom_plugin_message' ) );
 			}
+=======
+		foreach ( WC_Helper::get_local_woo_plugins() as $plugin ) {
+			$filename = $plugin['_filename'];
+			add_action( 'in_plugin_update_message-' . $filename, array( __CLASS__, 'add_install_marketplace_plugin_message' ), 10, 2 );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Runs on in_plugin_update_message-{file-name}, show a message to connect to woocommerce.com for unconnected stores
 	 *
 	 * @return void.
@@ -197,6 +208,8 @@ class WC_Helper_Updater {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Runs on in_plugin_update_message-{file-name}, show a message to install the Woo Marketplace plugin, on plugin update notification,
 	 * if the Woo Marketplace plugin isn't already installed.
 	 *
@@ -439,9 +452,12 @@ class WC_Helper_Updater {
 	 * @return array Update data for each requested product.
 	 */
 	private static function _update_check( $payload ) {
+<<<<<<< HEAD
 		if ( empty( $payload ) ) {
 			return array();
 		}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		ksort( $payload );
 		$hash = md5( wp_json_encode( $payload ) );
 
@@ -460,6 +476,7 @@ class WC_Helper_Updater {
 			'errors'   => array(),
 		);
 
+<<<<<<< HEAD
 		if ( WC_Helper::is_site_connected() ) {
 			$request = WC_Helper_API::post(
 				'update-check',
@@ -476,6 +493,15 @@ class WC_Helper_Updater {
 				)
 			);
 		}
+=======
+		$request = WC_Helper_API::post(
+			'update-check',
+			array(
+				'body'          => wp_json_encode( array( 'products' => $payload ) ),
+				'authenticated' => true,
+			)
+		);
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		if ( wp_remote_retrieve_response_code( $request ) !== 200 ) {
 			$data['errors'][] = 'http-error';
@@ -550,7 +576,11 @@ class WC_Helper_Updater {
 	 */
 	public static function get_updates_count_based_on_site_status() {
 		if ( ! WC_Helper::is_site_connected() ) {
+<<<<<<< HEAD
 			return 0;
+=======
+			return 1;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 
 		$count = self::get_updates_count() ?? 0;
@@ -562,6 +592,7 @@ class WC_Helper_Updater {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get the type of woo connect notice to be shown in the WC Settings and Marketplace pages.
 	 * - If a store is connected to woocommerce.com or has no installed woo plugins, return 'none'.
 	 * - If a store has installed woo plugins but no updates, return 'short'.
@@ -601,6 +632,8 @@ class WC_Helper_Updater {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Return the updates count markup.
 	 *
 	 * @return string Updates count markup, empty string if no updates avairable.

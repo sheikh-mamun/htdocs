@@ -165,7 +165,10 @@ class TaskLists {
 					),
 				),
 				'tasks'   => array(
+<<<<<<< HEAD
 					'StoreConnect',
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					'AdditionalPayments',
 					'GetMobileApp',
 				),

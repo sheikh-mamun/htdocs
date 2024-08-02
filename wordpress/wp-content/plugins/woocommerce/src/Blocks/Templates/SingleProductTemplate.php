@@ -5,7 +5,11 @@ use Automattic\WooCommerce\Blocks\Templates\SingleProductTemplateCompatibility;
 use Automattic\WooCommerce\Blocks\Utils\BlockTemplateUtils;
 
 /**
+<<<<<<< HEAD
  * SingleProductTemplate class.
+=======
+ * SingleProductTemplae class.
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
  *
  * @internal
  */
@@ -51,7 +55,11 @@ class SingleProductTemplate extends AbstractTemplate {
 		if ( ! is_embed() && is_singular( 'product' ) ) {
 			global $post;
 
+<<<<<<< HEAD
 			$valid_slugs = array( self::SLUG );
+=======
+			$valid_slugs = [ self::SLUG ];
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			if ( 'product' === $post->post_type && $post->post_name ) {
 				$valid_slugs[] = 'single-product-' . $post->post_name;
 			}
@@ -75,7 +83,11 @@ class SingleProductTemplate extends AbstractTemplate {
 	 */
 	public function update_single_product_content( $query_result, $query, $template_type ) {
 		$query_result = array_map(
+<<<<<<< HEAD
 			function ( $template ) {
+=======
+			function( $template ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				if ( str_contains( $template->slug, self::SLUG ) ) {
 					// We don't want to add the compatibility layer on the Editor Side.
 					// The second condition is necessary to not apply the compatibility layer on the REST API. Gutenberg uses the REST API to clone the template.
@@ -84,7 +96,11 @@ class SingleProductTemplate extends AbstractTemplate {
 						// Add the product class to the body. We should move this to a more appropriate place.
 						add_filter(
 							'body_class',
+<<<<<<< HEAD
 							function ( $classes ) {
+=======
+							function( $classes ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 								return array_merge( $classes, wc_get_product_class() );
 							}
 						);
@@ -125,7 +141,11 @@ class SingleProductTemplate extends AbstractTemplate {
 		$single_product_template_blocks = array( 'woocommerce/product-image-gallery', 'woocommerce/product-details', 'woocommerce/add-to-cart-form', 'woocommerce/product-meta', 'woocommerce/product-rating', 'woocommerce/product-price', 'woocommerce/related-products' );
 		return array_reduce(
 			$parsed_blocks,
+<<<<<<< HEAD
 			function ( $carry, $block ) use ( $single_product_template_blocks ) {
+=======
+			function( $carry, $block ) use ( $single_product_template_blocks ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				if ( in_array( $block['blockName'], $single_product_template_blocks, true ) ) {
 					if ( $carry['is_already_replaced'] ) {
 						return array(

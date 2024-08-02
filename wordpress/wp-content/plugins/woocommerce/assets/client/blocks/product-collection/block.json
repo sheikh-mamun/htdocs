@@ -47,7 +47,10 @@
 		"queryContextIncludes": "queryContextIncludes",
 		"collection": "collection"
 	},
+<<<<<<< HEAD
 	"usesContext": [ "templateSlug" ],
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	"supports": {
 		"align": [ "wide", "full" ],
 		"anchor": true,

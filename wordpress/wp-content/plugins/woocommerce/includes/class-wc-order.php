@@ -2302,6 +2302,7 @@ class WC_Order extends WC_Abstract_Order {
 		$refunds = $this->get_refunds();
 		if ( $refunds ) {
 			foreach ( $refunds as $id => $refund ) {
+<<<<<<< HEAD
 				$reason = trim( $refund->get_reason() );
 
 				if ( strlen( $reason ) > 0 ) {
@@ -2311,6 +2312,11 @@ class WC_Order extends WC_Abstract_Order {
 				$total_rows[ 'refund_' . $id ] = array(
 					'label' => __( 'Refund', 'woocommerce' ) . ':',
 					'value' => wc_price( '-' . $refund->get_amount(), array( 'currency' => $this->get_currency() ) ) . $reason,
+=======
+				$total_rows[ 'refund_' . $id ] = array(
+					'label' => $refund->get_reason() ? $refund->get_reason() : __( 'Refund', 'woocommerce' ) . ':',
+					'value' => wc_price( '-' . $refund->get_amount(), array( 'currency' => $this->get_currency() ) ),
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				);
 			}
 		}

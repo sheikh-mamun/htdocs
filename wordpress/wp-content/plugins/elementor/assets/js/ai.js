@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*! elementor - v3.21.0 - 22-05-2024 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
@@ -687,6 +688,12 @@ function stylis_min (W) {
 
 /***/ }),
 
+=======
+/*! elementor - v3.21.0 - 08-05-2024 */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../assets/dev/js/utils/react.js":
 /*!***************************************!*\
   !*** ../assets/dev/js/utils/react.js ***!
@@ -1038,7 +1045,11 @@ var AiBehavior = /*#__PURE__*/function (_Marionette$Behavior) {
       if (!promotionTexts) {
         return;
       }
+<<<<<<< HEAD
       if (!(0, _promotionIntroductionSessionValidator.shouldShowPromotionIntroduction)(sessionStorage)) {
+=======
+      if (!(0, _promotionIntroductionSessionValidator.shouldShowPromotionIntroduction)()) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
         return;
       }
       setTimeout(function () {
@@ -1273,8 +1284,13 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 var _ui = __webpack_require__(/*! @elementor/ui */ "@elementor/ui");
 var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js"));
 var _pageContent = _interopRequireDefault(__webpack_require__(/*! ./page-content */ "../modules/ai/assets/js/editor/page-content.js"));
+<<<<<<< HEAD
 var _requestsIds = __webpack_require__(/*! ./context/requests-ids */ "../modules/ai/assets/js/editor/context/requests-ids.js");
 var _editorIntegration = __webpack_require__(/*! ./utils/editor-integration */ "../modules/ai/assets/js/editor/utils/editor-integration.js");
+=======
+var _helpers = __webpack_require__(/*! ./helpers */ "../modules/ai/assets/js/editor/helpers/index.js");
+var _requestsIds = __webpack_require__(/*! ./context/requests-ids */ "../modules/ai/assets/js/editor/context/requests-ids.js");
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 var App = function App(props) {
   return /*#__PURE__*/_react.default.createElement(_ui.DirectionProvider, {
     rtl: props.isRTL
@@ -1284,7 +1300,11 @@ var App = function App(props) {
     type: props.type,
     controlType: props.controlType,
     onClose: props.onClose,
+<<<<<<< HEAD
     onConnect: _editorIntegration.onConnect,
+=======
+    onConnect: _helpers.onConnect,
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
     getControlValue: props.getControlValue,
     setControlValue: props.setControlValue,
     controlView: props.controlView,
@@ -1580,7 +1600,11 @@ function AiPromotionInfotip(_ref2) {
   }));
 }
 AiPromotionInfotip.propTypes = {
+<<<<<<< HEAD
   anchor: PropTypes.object.isRequired,
+=======
+  anchor: PropTypes.element.isRequired,
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
   content: PropTypes.object.isRequired,
   focusOutListener: PropTypes.object.isRequired,
   placement: PropTypes.string,
@@ -1589,6 +1613,7 @@ AiPromotionInfotip.propTypes = {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/components/alert-dialog.js":
 /*!*****************************************************************!*\
   !*** ../modules/ai/assets/js/editor/components/alert-dialog.js ***!
@@ -1654,6 +1679,8 @@ AlertDialog.propTypes = {
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/components/dialog-header.js":
 /*!******************************************************************!*\
   !*** ../modules/ai/assets/js/editor/components/dialog-header.js ***!
@@ -5449,6 +5476,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/hooks/use-timeout.js":
 /*!***********************************************************!*\
   !*** ../modules/ai/assets/js/editor/hooks/use-timeout.js ***!
@@ -5489,6 +5517,8 @@ exports.useTimeout = useTimeout;
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/hooks/use-upgrade-message.js":
 /*!*******************************************************************!*\
   !*** ../modules/ai/assets/js/editor/hooks/use-upgrade-message.js ***!
@@ -5621,6 +5651,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/icons/arrow-left-icon.js":
 /*!***************************************************************!*\
   !*** ../modules/ai/assets/js/editor/icons/arrow-left-icon.js ***!
@@ -5654,6 +5685,8 @@ exports["default"] = _default;
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/icons/brush-icon.js":
 /*!**********************************************************!*\
   !*** ../modules/ai/assets/js/editor/icons/brush-icon.js ***!
@@ -5882,6 +5915,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/icons/copy-page-icon.js":
 /*!**************************************************************!*\
   !*** ../modules/ai/assets/js/editor/icons/copy-page-icon.js ***!
@@ -5915,6 +5949,8 @@ exports["default"] = _default;
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/icons/download-icon.js":
 /*!*************************************************************!*\
   !*** ../modules/ai/assets/js/editor/icons/download-icon.js ***!
@@ -6059,6 +6095,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/icons/expand-diagonal-icon.js":
 /*!********************************************************************!*\
   !*** ../modules/ai/assets/js/editor/icons/expand-diagonal-icon.js ***!
@@ -6092,6 +6129,8 @@ exports["default"] = _default;
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/icons/expand-icon.js":
 /*!***********************************************************!*\
   !*** ../modules/ai/assets/js/editor/icons/expand-icon.js ***!
@@ -6125,6 +6164,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/icons/lock-icon.js":
 /*!*********************************************************!*\
   !*** ../modules/ai/assets/js/editor/icons/lock-icon.js ***!
@@ -6228,6 +6268,8 @@ exports["default"] = _default;
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/icons/redo-icon.js":
 /*!*********************************************************!*\
   !*** ../modules/ai/assets/js/editor/icons/redo-icon.js ***!
@@ -6540,6 +6582,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/icons/website-icon.js":
 /*!************************************************************!*\
   !*** ../modules/ai/assets/js/editor/icons/website-icon.js ***!
@@ -6604,6 +6647,8 @@ exports["default"] = _default;
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/icons/zoom-in-icon.js":
 /*!************************************************************!*\
   !*** ../modules/ai/assets/js/editor/icons/zoom-in-icon.js ***!
@@ -6649,6 +6694,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/layout-app-wrapper.js":
 /*!************************************************************!*\
   !*** ../modules/ai/assets/js/editor/layout-app-wrapper.js ***!
@@ -6838,6 +6884,8 @@ exports["default"] = _default;
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/module.js":
 /*!************************************************!*\
   !*** ../modules/ai/assets/js/editor/module.js ***!
@@ -6891,7 +6939,11 @@ var Module = /*#__PURE__*/function (_elementorModules$edi) {
       if (((_args$container = args.container) === null || _args$container === void 0 ? void 0 : _args$container.id) !== 'document' || args.model.elType !== 'container' || args.containers) {
         return;
       }
+<<<<<<< HEAD
       if (!(0, _promotionIntroductionSessionValidator.shouldShowPromotionIntroduction)(sessionStorage)) {
+=======
+      if (!(0, _promotionIntroductionSessionValidator.shouldShowPromotionIntroduction)()) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
         return;
       }
       var element = args.container.view.$el[0];
@@ -7611,6 +7663,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/pages/form-layout/components/attachments.js":
 /*!**********************************************************************************!*\
   !*** ../modules/ai/assets/js/editor/pages/form-layout/components/attachments.js ***!
@@ -9363,6 +9416,8 @@ exports["default"] = _default;
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/pages/form-layout/context/config.js":
 /*!**************************************************************************!*\
   !*** ../modules/ai/assets/js/editor/pages/form-layout/context/config.js ***!
@@ -9425,6 +9480,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/pages/form-layout/context/remote-config.js":
 /*!*********************************************************************************!*\
   !*** ../modules/ai/assets/js/editor/pages/form-layout/context/remote-config.js ***!
@@ -10314,6 +10370,8 @@ exports["default"] = _default;
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/pages/form-media/components/back-button.js":
 /*!*********************************************************************************!*\
   !*** ../modules/ai/assets/js/editor/pages/form-media/components/back-button.js ***!
@@ -15049,16 +15107,29 @@ var GetStarted = function GetStarted(_ref) {
     direction: "row",
     gap: 1.5,
     alignItems: "flex-start"
+<<<<<<< HEAD
   }, /*#__PURE__*/_react.default.createElement(_ui.InputLabel, {
     onClick: function onClick() {
+=======
+  }, /*#__PURE__*/_react.default.createElement(_ui.Checkbox, {
+    id: "e-ai-terms-approval",
+    color: "secondary",
+    sx: {
+      p: 0
+    },
+    onChange: function onChange() {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
       return setIsTermsChecked(function (prevState) {
         return !prevState;
       });
     }
+<<<<<<< HEAD
   }, /*#__PURE__*/_react.default.createElement(_ui.Checkbox, {
     id: "e-ai-terms-approval",
     color: "secondary",
     checked: isTermsChecked
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
   }), /*#__PURE__*/_react.default.createElement(_ui.Stack, null, /*#__PURE__*/_react.default.createElement(_ui.Typography, {
     variant: "caption",
     sx: {
@@ -15074,7 +15145,11 @@ var GetStarted = function GetStarted(_ref) {
     href: "https://go.elementor.com/ai-privacy-policy/",
     target: "_blank",
     color: "info.main"
+<<<<<<< HEAD
   }, (0, _i18n.__)('Privacy Policy', 'elementor')), (0, _i18n.__)(' of the Elementor AI service.', 'elementor'), /*#__PURE__*/_react.default.createElement("br", null), (0, _i18n.__)('This includes consenting to the collection and use of data to improve user experience.', 'elementor'))))), /*#__PURE__*/_react.default.createElement(_ui.Button, {
+=======
+  }, (0, _i18n.__)('Privacy Policy', 'elementor')), (0, _i18n.__)(' of the Elementor AI service.', 'elementor'), /*#__PURE__*/_react.default.createElement("br", null), (0, _i18n.__)('This includes consenting to the collection and use of data to improve user experience.', 'elementor')))), /*#__PURE__*/_react.default.createElement(_ui.Button, {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
     disabled: !isTermsChecked,
     variant: "contained",
     onClick: onGetStartedClick,
@@ -15094,6 +15169,7 @@ exports["default"] = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/types/attachment.js":
 /*!**********************************************************!*\
   !*** ../modules/ai/assets/js/editor/types/attachment.js ***!
@@ -15527,6 +15603,8 @@ function deleteContainers(containers) {
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../modules/ai/assets/js/editor/utils/promotion-introduction-session-validator.js":
 /*!****************************************************************************************!*\
   !*** ../modules/ai/assets/js/editor/utils/promotion-introduction-session-validator.js ***!
@@ -15539,6 +15617,7 @@ function deleteContainers(containers) {
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
+<<<<<<< HEAD
 exports.HOURS_BETWEEN_PROMOTION_INTRODUCTIONS = void 0;
 exports.shouldShowPromotionIntroduction = shouldShowPromotionIntroduction;
 var HOURS_BETWEEN_PROMOTION_INTRODUCTIONS = 48;
@@ -15556,6 +15635,13 @@ function shouldShowPromotionIntroduction(session) {
   var currentTimestamp = new Date().getTime();
   if (!editorSessionValue || !lastPromotionTimestamp || passedRequiredHoursSinceLastPromotion(currentTimestamp, lastPromotionTimestamp)) {
     session.setItem('ai_promotion_introduction_editor_session_key', "".concat(window.EDITOR_SESSION_ID, "#").concat(currentTimestamp));
+=======
+exports.shouldShowPromotionIntroduction = shouldShowPromotionIntroduction;
+function shouldShowPromotionIntroduction() {
+  var editorSessionValue = sessionStorage.getItem('ai_promotion_introduction_editor_session_key');
+  if (!editorSessionValue || editorSessionValue !== EDITOR_SESSION_ID) {
+    sessionStorage.setItem('ai_promotion_introduction_editor_session_key', EDITOR_SESSION_ID);
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
     return true;
   }
   return false;
@@ -15563,6 +15649,7 @@ function shouldShowPromotionIntroduction(session) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../modules/ai/assets/js/editor/utils/screenshot.js":
 /*!**********************************************************!*\
   !*** ../modules/ai/assets/js/editor/utils/screenshot.js ***!
@@ -15759,6 +15846,8 @@ function wrapContainer(container, wrapper) {
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../node_modules/clsx/dist/clsx.m.js":
 /*!*******************************************!*\
   !*** ../node_modules/clsx/dist/clsx.m.js ***!
@@ -16466,6 +16555,7 @@ module.exports = function extend() {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":
 /*!***********************************************************************************!*\
   !*** ../node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
@@ -17863,6 +17953,8 @@ const isInstanceOfElement = (node, instance) => {
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../node_modules/inline-style-parser/index.js":
 /*!****************************************************!*\
   !*** ../node_modules/inline-style-parser/index.js ***!
@@ -23478,6 +23570,7 @@ var ReactSketchCanvas = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardR
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../node_modules/shallowequal/index.js":
 /*!*********************************************!*\
   !*** ../node_modules/shallowequal/index.js ***!
@@ -23534,6 +23627,8 @@ module.exports = function shallowEqual(objA, objB, compare, compareContext) {
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "../node_modules/style-to-object/index.js":
 /*!************************************************!*\
   !*** ../node_modules/style-to-object/index.js ***!
@@ -23587,6 +23682,7 @@ module.exports["default"] = StyleToObject; // ESM support
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "../node_modules/styled-components/dist/styled-components.browser.esm.js":
 /*!*******************************************************************************!*\
   !*** ../node_modules/styled-components/dist/styled-components.browser.esm.js ***!
@@ -24158,6 +24254,8 @@ module.exports["default"] = exports.default;
 
 /***/ }),
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /***/ "react":
 /*!************************!*\
   !*** external "React" ***!
@@ -49187,11 +49285,14 @@ function isUrl(fileUrlOrPath) {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+<<<<<<< HEAD
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
 /******/ 	})();
 /******/ 	
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.

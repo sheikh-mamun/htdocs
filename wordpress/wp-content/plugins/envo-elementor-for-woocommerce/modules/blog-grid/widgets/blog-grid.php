@@ -30,7 +30,11 @@ class Blog_Grid extends Widget_Base {
 	}
 
 	public function get_style_depends() {
+<<<<<<< HEAD
 		return [ 'etww-blog-grid', 'font-awesome-5' ];
+=======
+		return [ 'etww-blog-grid' ];
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	protected function register_controls() {

@@ -1,68 +1,68 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "core/details",
-	"title": "Details",
-	"category": "text",
-	"description": "Hide and show additional content.",
-	"keywords": [ "accordion", "summary", "toggle", "disclosure" ],
-	"textdomain": "default",
-	"attributes": {
-		"showContent": {
-			"type": "boolean",
-			"default": false
-		},
-		"summary": {
-			"type": "rich-text",
-			"source": "rich-text",
-			"selector": "summary"
-		}
-	},
+	"name": "woocommerce/order-confirmation-downloads",
+	"version": "1.0.0",
+	"title": "Order Downloads",
+	"description": "Display links to purchased downloads.",
+	"category": "woocommerce",
+	"keywords": [ "WooCommerce" ],
 	"supports": {
+		"multiple": false,
 		"align": [ "wide", "full" ],
+		"html": false,
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		},
 		"color": {
-			"gradients": true,
+			"background": true,
+			"text": true,
 			"link": true,
+			"gradients": true,
 			"__experimentalDefaultControls": {
 				"background": true,
 				"text": true
 			}
 		},
-		"__experimentalBorder": {
-			"color": true,
-			"width": true,
-			"style": true
-		},
-		"html": false,
 		"spacing": {
-			"margin": true,
 			"padding": true,
-			"blockGap": true,
+			"margin": true,
 			"__experimentalDefaultControls": {
 				"margin": false,
 				"padding": false
 			}
 		},
-		"typography": {
-			"fontSize": true,
-			"lineHeight": true,
-			"__experimentalFontFamily": true,
-			"__experimentalFontWeight": true,
-			"__experimentalFontStyle": true,
-			"__experimentalTextTransform": true,
-			"__experimentalTextDecoration": true,
-			"__experimentalLetterSpacing": true,
+		"__experimentalBorder": {
+			"color": true,
+			"style": true,
+			"width": true,
 			"__experimentalDefaultControls": {
-				"fontSize": true
+				"color": true,
+				"style": true,
+				"width": true
 			}
 		},
-		"layout": {
-			"allowEditing": false
+		"__experimentalSelector": ".wp-block-woocommerce-order-confirmation-totals table"
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "wide"
 		},
-		"interactivity": {
-			"clientNavigation": true
+		"className": {
+			"type": "string",
+			"default": ""
 		}
 	},
-	"editorStyle": "wp-block-details-editor",
-	"style": "wp-block-details"
+	"textdomain": "woocommerce",
+	"apiVersion": 2,
+	"$schema": "https://schemas.wp.org/trunk/block.json"
 }

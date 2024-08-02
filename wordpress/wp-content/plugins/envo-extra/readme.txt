@@ -4,7 +4,11 @@ Author URI: https://envothemes.com/
 Plugin URL: https://envothemes.com/
 Requires at Least: 4.9
 Tested Up To: 6.5
+<<<<<<< HEAD
 Stable tag: 1.8.20
+=======
+Stable tag: 1.8.19
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +33,7 @@ This plugin will only function with the [Enwoo](https://enwoo-wp.com/) or [Envo 
 
 == Changelog ==
 
+<<<<<<< HEAD
 = 1.8.20 =
 * Fixed Woo Equal Height default option issue
 * Removed unused code
@@ -36,6 +41,8 @@ This plugin will only function with the [Enwoo](https://enwoo-wp.com/) or [Envo 
 * Updated demo importer
 * Tested with Elementor 3.22
 
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 = 1.8.19 =
 * CSS improvements and fixes
 * Added new demos

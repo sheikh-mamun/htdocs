@@ -1,29 +1,18 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "core/verse",
-	"title": "Verse",
-	"category": "text",
-	"description": "Insert poetry. Use special spacing formats. Or quote song lyrics.",
-	"keywords": [ "poetry", "poem" ],
-	"textdomain": "default",
-	"attributes": {
-		"content": {
-			"type": "rich-text",
-			"source": "rich-text",
-			"selector": "pre",
-			"__unstablePreserveWhiteSpace": true,
-			"__experimentalRole": "content"
-		},
-		"textAlign": {
-			"type": "string"
-		}
-	},
+	"name": "woocommerce/order-confirmation-shipping-address",
+	"version": "1.0.0",
+	"title": "Shipping Address",
+	"description": "Display the order confirmation shipping address.",
+	"category": "woocommerce",
+	"keywords": [ "WooCommerce" ],
 	"supports": {
-		"anchor": true,
+		"multiple": false,
+		"align": [ "wide", "full" ],
+		"inserter": false,
+		"html": false,
 		"color": {
-			"gradients": true,
-			"link": true,
+			"text": true,
+			"background": true,
 			"__experimentalDefaultControls": {
 				"background": true,
 				"text": true
@@ -31,35 +20,43 @@
 		},
 		"typography": {
 			"fontSize": true,
-			"__experimentalFontFamily": true,
 			"lineHeight": true,
-			"__experimentalFontStyle": true,
+			"__experimentalFontFamily": true,
 			"__experimentalFontWeight": true,
-			"__experimentalLetterSpacing": true,
+			"__experimentalFontStyle": true,
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
 		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"width": true,
+			"style": true,
+			"__experimentalDefaultControls": {
+				"width": true,
+				"color": true
+			}
+		},
 		"spacing": {
-			"margin": true,
 			"padding": true,
+			"margin": true,
 			"__experimentalDefaultControls": {
 				"margin": false,
 				"padding": false
 			}
-		},
-		"__experimentalBorder": {
-			"radius": true,
-			"width": true,
-			"color": true,
-			"style": true
-		},
-		"interactivity": {
-			"clientNavigation": true
 		}
 	},
-	"style": "wp-block-verse",
-	"editorStyle": "wp-block-verse-editor"
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "wide"
+		}
+	},
+	"textdomain": "woocommerce",
+	"apiVersion": 2,
+	"$schema": "https://schemas.wp.org/trunk/block.json"
 }

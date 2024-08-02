@@ -62,6 +62,7 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 				'schema' => array( $this, 'get_public_item_schema' ),
 			)
 		);
+<<<<<<< HEAD
 
 		register_rest_route(
 			$this->namespace,
@@ -110,6 +111,8 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 		$response_data = $duplicated_product->get_data();
 
 		return new WP_REST_Response( $response_data, 200 );
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -373,7 +376,11 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 		global $wpdb;
 		if ( ! empty( $this->search_sku_in_product_lookup_table ) ) {
 			$like_search = '%' . $wpdb->esc_like( $this->search_sku_in_product_lookup_table ) . '%';
+<<<<<<< HEAD
 			$where      .= ' AND ' . $wpdb->prepare( '(wc_product_meta_lookup.sku LIKE %s)', $like_search );
+=======
+			$where .= ' AND ' . $wpdb->prepare( '(wc_product_meta_lookup.sku LIKE %s)', $like_search );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 		return $where;
 	}
@@ -1160,7 +1167,11 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 					'context'     => array( 'view', 'edit' ),
 					'readonly'    => true,
 				),
+<<<<<<< HEAD
 				'low_stock_amount'      => array(
+=======
+				'low_stock_amount'       => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					'description' => __( 'Low Stock amount for the product.', 'woocommerce' ),
 					'type'        => array( 'integer', 'null' ),
 					'context'     => array( 'view', 'edit' ),
@@ -1392,7 +1403,11 @@ class WC_REST_Products_Controller extends WC_REST_Products_V2_Controller {
 						),
 					),
 				),
+<<<<<<< HEAD
 				'has_options'           => array(
+=======
+				'has_options'     => array(
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					'description' => __( 'Shows if the product needs to be configured before it can be bought.', 'woocommerce' ),
 					'type'        => 'boolean',
 					'context'     => array( 'view', 'edit' ),

@@ -264,7 +264,11 @@ class WC_Admin_Marketplace_Promotions {
 				&& $promotion['menu_item_id'] === $menu_item['id']
 			) {
 				$bubble_text                   = $promotion['content'][ self::$locale ] ?? ( $promotion['content']['en_US'] ?? __( 'Sale', 'woocommerce' ) );
+<<<<<<< HEAD
 				$menu_items[ $index ]['title'] = self::append_bubble( $menu_item['title'], $bubble_text );
+=======
+				$menu_items[ $index ]['title'] = $menu_item['title'] . self::append_bubble( $bubble_text );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 				break;
 			}
@@ -274,6 +278,7 @@ class WC_Admin_Marketplace_Promotions {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Return the markup for a menu item bubble with a given text.
 	 *
 	 * @param string $menu_item_text Text of menu item we want to change.
@@ -289,6 +294,28 @@ class WC_Admin_Marketplace_Promotions {
 			. '<span class="awaiting-mod update-plugins remaining-tasks-badge woocommerce-task-list-remaining-tasks-badge">'
 			. esc_html( $bubble_text )
 			. '</span>';
+=======
+	 * Return the markup for a menu item bubble with a given text and optional additional attributes.
+	 *
+	 * @param string $bubble_text Text of bubble.
+	 * @param array  $attributes Optional. Additional attributes for the bubble, such as class or style.
+	 *
+	 * @return string
+	 */
+	private static function append_bubble( $bubble_text, $attributes = array() ) {
+		$default_attributes = array(
+			'class' => 'awaiting-mod update-plugins remaining-tasks-badge woocommerce-task-list-remaining-tasks-badge',
+			'style' => '',
+		);
+
+		$attributes = wp_parse_args( $attributes, $default_attributes );
+		$class_attr = ! empty( $attributes['class'] ) ? sprintf( 'class="%s"', esc_attr( $attributes['class'] ) ) : '';
+		$style_attr = ! empty( $attributes['style'] ) ? sprintf( 'style="%s"', esc_attr( $attributes['style'] ) ) : '';
+
+		$bubble_html = sprintf( ' <span %s %s>%s</span>', $class_attr, $style_attr, esc_html( $bubble_text ) );
+
+		return $bubble_html;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**

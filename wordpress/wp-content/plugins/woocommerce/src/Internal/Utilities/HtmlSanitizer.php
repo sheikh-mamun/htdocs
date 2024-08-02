@@ -33,6 +33,7 @@ class HtmlSanitizer {
 	);
 
 	/**
+<<<<<<< HEAD
 	 * Sanitizes a chunk of HTML, by following the same rules as `wp_kses_post()` but also allowing
 	 * the style element to be supplied.
 	 *
@@ -47,6 +48,8 @@ class HtmlSanitizer {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Sanitizes the HTML according to the provided rules.
 	 *
 	 * @see wp_kses()

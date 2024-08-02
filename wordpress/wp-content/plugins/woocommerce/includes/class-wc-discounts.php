@@ -333,6 +333,7 @@ class WC_Discounts {
 
 			$items_to_apply[] = $item_to_apply;
 		}
+<<<<<<< HEAD
 
 		/**
 		 * Filters the items that a coupon should be applied to.
@@ -347,6 +348,9 @@ class WC_Discounts {
 		 * @return array The modified list of items that the coupon should be applied to.
 		 */
 		return apply_filters( 'woocommerce_coupon_get_items_to_apply', $items_to_apply, $coupon, $this );
+=======
+		return $items_to_apply;
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**

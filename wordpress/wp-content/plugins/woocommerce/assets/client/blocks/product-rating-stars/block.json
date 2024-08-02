@@ -3,7 +3,10 @@
 	"version": "1.0.0",
 	"title": "Product Rating Stars",
 	"description": "Display the average rating of a product with stars",
+<<<<<<< HEAD
 	"category": "woocommerce-product-elements",
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	"attributes": {
 		"productId": {
 			"type": "number",
@@ -27,6 +30,10 @@
 		}
 	},
 	"usesContext": [ "query", "queryId", "postId" ],
+<<<<<<< HEAD
+=======
+	"category": "woocommerce",
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	"keywords": [ "WooCommerce" ],
 	"supports": {
 		"align": true

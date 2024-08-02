@@ -80,6 +80,7 @@ class AssetDataRegistry {
 	 */
 	protected function get_core_data() {
 		return [
+<<<<<<< HEAD
 			'adminUrl'               => admin_url(),
 			'countries'              => WC()->countries->get_countries(),
 			'currency'               => $this->get_currency_data(),
@@ -99,6 +100,26 @@ class AssetDataRegistry {
 			'wcVersion'              => defined( 'WC_VERSION' ) ? WC_VERSION : '',
 			'wpLoginUrl'             => wp_login_url(),
 			'wpVersion'              => get_bloginfo( 'version' ),
+=======
+			'adminUrl'           => admin_url(),
+			'countries'          => WC()->countries->get_countries(),
+			'currency'           => $this->get_currency_data(),
+			'currentUserId'      => get_current_user_id(),
+			'currentUserIsAdmin' => current_user_can( 'manage_woocommerce' ),
+			'dateFormat'         => wc_date_format(),
+			'homeUrl'            => esc_url( home_url( '/' ) ),
+			'locale'             => $this->get_locale_data(),
+			'dashboardUrl'       => wc_get_account_endpoint_url( 'dashboard' ),
+			'orderStatuses'      => $this->get_order_statuses(),
+			'placeholderImgSrc'  => wc_placeholder_img_src(),
+			'productsSettings'   => $this->get_products_settings(),
+			'siteTitle'          => wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ),
+			'storePages'         => $this->get_store_pages(),
+			'wcAssetUrl'         => plugins_url( 'assets/', WC_PLUGIN_FILE ),
+			'wcVersion'          => defined( 'WC_VERSION' ) ? WC_VERSION : '',
+			'wpLoginUrl'         => wp_login_url(),
+			'wpVersion'          => get_bloginfo( 'version' ),
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		];
 	}
 
@@ -333,7 +354,11 @@ class AssetDataRegistry {
 	public function hydrate_data_from_api_request( $key, $path, $check_key_exists = false ) {
 		$this->add(
 			$key,
+<<<<<<< HEAD
 			function () use ( $path ) {
+=======
+			function() use ( $path ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				if ( isset( $this->preloaded_api_requests[ $path ], $this->preloaded_api_requests[ $path ]['body'] ) ) {
 					return $this->preloaded_api_requests[ $path ]['body'];
 				}

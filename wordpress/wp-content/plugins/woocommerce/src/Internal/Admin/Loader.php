@@ -124,6 +124,7 @@ class Loader {
 
 		$sections = self::get_embed_breadcrumbs();
 		$sections = is_array( $sections ) ? $sections : array( $sections );
+<<<<<<< HEAD
 
 		$page_title      = '';
 		$pages_with_tabs = array( 'Settings', 'Reports', 'Status' );
@@ -137,12 +138,18 @@ class Loader {
 		} else {
 			$page_title = end( $sections );
 		}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		?>
 		<div id="woocommerce-embedded-root" class="is-embed-loading">
 			<div class="woocommerce-layout">
 				<div class="woocommerce-layout__header is-embed-loading">
 					<h1 class="woocommerce-layout__header-heading">
+<<<<<<< HEAD
 						<?php self::output_heading( $page_title ); ?>
+=======
+						<?php self::output_heading( end( $sections ) ); ?>
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					</h1>
 				</div>
 			</div>
@@ -306,7 +313,11 @@ class Loader {
 			$settings['orderStatuses'] = self::get_order_statuses( wc_get_order_statuses() );
 			$settings['stockStatuses'] = self::get_order_statuses( wc_get_product_stock_status_options() );
 			$settings['currency']      = self::get_currency_settings();
+<<<<<<< HEAD
 			$settings['locale']        = array(
+=======
+			$settings['locale']        = [
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				'siteLocale'    => isset( $settings['siteLocale'] )
 					? $settings['siteLocale']
 					: get_locale(),
@@ -316,7 +327,11 @@ class Loader {
 				'weekdaysShort' => isset( $settings['l10n']['weekdaysShort'] )
 					? $settings['l10n']['weekdaysShort']
 					: array_values( $wp_locale->weekday_abbrev ),
+<<<<<<< HEAD
 			);
+=======
+			];
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		}
 
 		$preload_data_endpoints = apply_filters( 'woocommerce_component_settings_preload_endpoints', array() );
@@ -340,7 +355,11 @@ class Loader {
 			$setting_options = new \WC_REST_Setting_Options_V2_Controller();
 			foreach ( $preload_settings as $group ) {
 				$group_settings   = $setting_options->get_group_settings( $group );
+<<<<<<< HEAD
 				$preload_settings = array();
+=======
+				$preload_settings = [];
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				foreach ( $group_settings as $option ) {
 					if ( array_key_exists( 'id', $option ) && array_key_exists( 'value', $option ) ) {
 						$preload_settings[ $option['id'] ] = $option['value'];
@@ -387,7 +406,11 @@ class Loader {
 		if ( ! empty( $preload_data_endpoints ) ) {
 			$settings['dataEndpoints'] = isset( $settings['dataEndpoints'] )
 				? $settings['dataEndpoints']
+<<<<<<< HEAD
 				: array();
+=======
+				: [];
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			foreach ( $preload_data_endpoints as $key => $endpoint ) {
 				// Handle error case: rest_do_request() doesn't guarantee success.
 				if ( empty( $preload_data[ $endpoint ] ) ) {

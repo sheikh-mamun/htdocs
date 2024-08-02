@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /*! elementor - v3.21.0 - 22-05-2024 */
+=======
+/*! elementor - v3.21.0 - 08-05-2024 */
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -31813,7 +31817,11 @@ var HomeScreen = function HomeScreen(props) {
         pb: 2
       }
     }, /*#__PURE__*/_react.default.createElement(_topSection.default, {
+<<<<<<< HEAD
       topData: props.homeScreenData.top_with_licences,
+=======
+      topData: props.homeScreenData.top,
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
       createNewPageUrl: props.homeScreenData.create_new_page_url
     }), /*#__PURE__*/_react.default.createElement(_ui.Box, {
       sx: {
@@ -31984,7 +31992,10 @@ var TopSection = function TopSection(_ref) {
         xs: 'column',
         sm: 'row'
       },
+<<<<<<< HEAD
       justifyContent: 'space-between',
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
       py: {
         xs: 3,
         md: 3

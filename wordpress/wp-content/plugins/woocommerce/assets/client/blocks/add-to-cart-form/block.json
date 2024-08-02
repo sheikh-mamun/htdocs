@@ -3,15 +3,24 @@
 	"version": "1.0.0",
 	"title": "Add to Cart with Options",
 	"description": "Display a button so the customer can add a product to their cart. Options will also be displayed depending on product type. e.g. quantity, variation.",
+<<<<<<< HEAD
 	"category": "woocommerce-product-elements",
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	"attributes": {
 		"isDescendentOfSingleProductBlock": {
 			"type": "boolean",
 			"default": false
 		}
 	},
+<<<<<<< HEAD
 	"keywords": [ "WooCommerce" ],
 	"usesContext": [ "postId" ],
+=======
+	"category": "woocommerce",
+	"keywords": [ "WooCommerce" ],
+	"usesContext": ["postId"],
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	"textdomain": "woocommerce",
 	"apiVersion": 2,
 	"$schema": "https://schemas.wp.org/trunk/block.json"

@@ -41,8 +41,11 @@ class Checkout extends AbstractBlock {
 				return isset( $_GET['_wp-find-template'] ) ? false : $return;
 			}
 		);
+<<<<<<< HEAD
 
 		add_action( 'save_post', array( $this, 'update_local_pickup_title' ), 10, 2 );
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -245,6 +248,7 @@ class Checkout extends AbstractBlock {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Update the local pickup title in WooCommerce Settings when the checkout page containing a Checkout block is saved.
 	 *
 	 * @param int      $post_id The post ID.
@@ -312,6 +316,8 @@ class Checkout extends AbstractBlock {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Extra data passed through from server to client for block.
 	 *
 	 * @param array $attributes  Any attributes that currently are available from the block.
@@ -321,6 +327,7 @@ class Checkout extends AbstractBlock {
 	protected function enqueue_data( array $attributes = [] ) {
 		parent::enqueue_data( $attributes );
 
+<<<<<<< HEAD
 		$country_data    = CartCheckoutUtils::get_country_data();
 		$address_formats = WC()->countries->get_address_formats();
 
@@ -335,6 +342,9 @@ class Checkout extends AbstractBlock {
 
 		$this->asset_data_registry->add( 'countryData', $country_data );
 		$this->asset_data_registry->add( 'defaultAddressFormat', $address_formats['default'] );
+=======
+		$this->asset_data_registry->add( 'countryData', CartCheckoutUtils::get_country_data() );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$this->asset_data_registry->add( 'baseLocation', wc_get_base_location() );
 		$this->asset_data_registry->add(
 			'checkoutAllowsGuest',
@@ -361,9 +371,14 @@ class Checkout extends AbstractBlock {
 		$this->asset_data_registry->register_page_id( isset( $attributes['cartPageId'] ) ? $attributes['cartPageId'] : 0 );
 		$this->asset_data_registry->add( 'isBlockTheme', wc_current_theme_is_fse_theme() );
 
+<<<<<<< HEAD
 		$pickup_location_settings = LocalPickupUtils::get_local_pickup_settings();
 		$this->asset_data_registry->add( 'localPickupEnabled', $pickup_location_settings['enabled'] );
 		$this->asset_data_registry->add( 'localPickupText', $pickup_location_settings['title'] );
+=======
+		$pickup_location_settings = get_option( 'woocommerce_pickup_location_settings', [] );
+		$this->asset_data_registry->add( 'localPickupEnabled', wc_string_to_bool( $pickup_location_settings['enabled'] ?? 'no' ) );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 		$is_block_editor = $this->is_block_editor();
 
@@ -570,7 +585,10 @@ class Checkout extends AbstractBlock {
 			'CheckoutOrderSummaryShippingBlock',
 			'CheckoutOrderSummarySubtotalBlock',
 			'CheckoutOrderSummaryTaxesBlock',
+<<<<<<< HEAD
 			'CheckoutOrderSummaryTotalsBlock',
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 			'CheckoutPaymentBlock',
 			'CheckoutShippingAddressBlock',
 			'CheckoutShippingMethodsBlock',

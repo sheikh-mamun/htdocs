@@ -62,6 +62,7 @@ class ProductTemplate {
 	private $icon = null;
 
 	/**
+<<<<<<< HEAD
 	 * If the template is directly selectable through the UI.
 	 *
 	 * @var boolean
@@ -69,6 +70,8 @@ class ProductTemplate {
 	private $is_selectable_by_user = true;
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * ProductTemplate constructor
 	 *
 	 * @param array $data The data.
@@ -93,10 +96,13 @@ class ProductTemplate {
 		if ( isset( $data['icon'] ) ) {
 			$this->icon = $data['icon'];
 		}
+<<<<<<< HEAD
 
 		if ( isset( $data['is_selectable_by_user'] ) ) {
 			$this->is_selectable_by_user = $data['is_selectable_by_user'];
 		}
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 
 	/**
@@ -192,6 +198,7 @@ class ProductTemplate {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get the selectable attribute.
 	 *
 	 * @return boolean Selectable.
@@ -201,6 +208,8 @@ class ProductTemplate {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Set the template order.
 	 *
 	 * @param int $order The template order.
@@ -216,6 +225,7 @@ class ProductTemplate {
 	 */
 	public function to_json() {
 		return array(
+<<<<<<< HEAD
 			'id'                 => $this->get_id(),
 			'title'              => $this->get_title(),
 			'description'        => $this->get_description(),
@@ -224,6 +234,15 @@ class ProductTemplate {
 			'layoutTemplateId'   => $this->get_layout_template_id(),
 			'productData'        => $this->get_product_data(),
 			'isSelectableByUser' => $this->get_is_selectable_by_user(),
+=======
+			'id'               => $this->get_id(),
+			'title'            => $this->get_title(),
+			'description'      => $this->get_description(),
+			'icon'             => $this->get_icon(),
+			'order'            => $this->get_order(),
+			'layoutTemplateId' => $this->get_layout_template_id(),
+			'productData'      => $this->get_product_data(),
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		);
 	}
 }

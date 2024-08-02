@@ -64,7 +64,11 @@ class ProductVariationTemplate extends AbstractProductFormTemplate implements Pr
 	/**
 	 * Adds the group blocks to the template.
 	 */
+<<<<<<< HEAD
 	protected function add_group_blocks() {
+=======
+	private function add_group_blocks() {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$this->add_group(
 			array(
 				'id'         => $this::GROUP_IDS['GENERAL'],
@@ -106,7 +110,11 @@ class ProductVariationTemplate extends AbstractProductFormTemplate implements Pr
 	/**
 	 * Adds the general group blocks to the template.
 	 */
+<<<<<<< HEAD
 	protected function add_general_group_blocks() {
+=======
+	private function add_general_group_blocks() {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$general_group = $this->get_group_by_id( $this::GROUP_IDS['GENERAL'] );
 		$general_group->add_block(
 			array(
@@ -193,7 +201,11 @@ class ProductVariationTemplate extends AbstractProductFormTemplate implements Pr
 	/**
 	 * Adds the pricing group blocks to the template.
 	 */
+<<<<<<< HEAD
 	protected function add_pricing_group_blocks() {
+=======
+	private function add_pricing_group_blocks() {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$is_calc_taxes_enabled = wc_tax_enabled();
 
 		$pricing_group = $this->get_group_by_id( $this::GROUP_IDS['PRICING'] );
@@ -315,7 +327,11 @@ class ProductVariationTemplate extends AbstractProductFormTemplate implements Pr
 	/**
 	 * Adds the inventory group blocks to the template.
 	 */
+<<<<<<< HEAD
 	protected function add_inventory_group_blocks() {
+=======
+	private function add_inventory_group_blocks() {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$inventory_group = $this->get_group_by_id( $this::GROUP_IDS['INVENTORY'] );
 		$inventory_group->add_block(
 			array(
@@ -366,7 +382,11 @@ class ProductVariationTemplate extends AbstractProductFormTemplate implements Pr
 				'blockName'  => 'woocommerce/product-toggle-field',
 				'order'      => 20,
 				'attributes' => array(
+<<<<<<< HEAD
 					'label'        => __( 'Track inventory', 'woocommerce' ),
+=======
+					'label'        => __( 'Track stock quantity for this product', 'woocommerce' ),
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					'property'     => 'manage_stock',
 					'disabled'     => 'yes' !== get_option( 'woocommerce_manage_stock' ),
 					'disabledCopy' => sprintf(
@@ -425,7 +445,11 @@ class ProductVariationTemplate extends AbstractProductFormTemplate implements Pr
 	/**
 	 * Adds the shipping group blocks to the template.
 	 */
+<<<<<<< HEAD
 	protected function add_shipping_group_blocks() {
+=======
+	private function add_shipping_group_blocks() {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 		$shipping_group = $this->get_group_by_id( $this::GROUP_IDS['SHIPPING'] );
 		$shipping_group->add_block(
 			array(
@@ -471,7 +495,11 @@ class ProductVariationTemplate extends AbstractProductFormTemplate implements Pr
 					'title'       => __( 'Fees & dimensions', 'woocommerce' ),
 					'description' => sprintf(
 					/* translators: %1$s: How to get started? link opening tag. %2$s: How to get started? link closing tag.*/
+<<<<<<< HEAD
 						__( 'Set up shipping costs and enter dimensions used for accurate rate calculations. %1$sHow to get started?%2$s', 'woocommerce' ),
+=======
+						__( 'Set up shipping costs and enter dimensions used for accurate rate calculations. %1$sHow to get started?%2$s.', 'woocommerce' ),
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 						'<a href="https://woocommerce.com/posts/how-to-calculate-shipping-costs-for-your-woocommerce-store/" target="_blank" rel="noreferrer">',
 						'</a>'
 					),

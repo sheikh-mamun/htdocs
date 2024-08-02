@@ -693,7 +693,11 @@ class Widget_Image_Box extends Widget_Base {
 
 			var image_url = elementor.imagesManager.getImageUrl( image );
 
+<<<<<<< HEAD
 			var imageHtml = '<img src="' + _.escape( image_url ) + '" class="elementor-animation-' + _.escape( settings.hover_animation ) + '" />';
+=======
+			var imageHtml = '<img src="' + _.escape( image_url ) + '" class="elementor-animation-' + settings.hover_animation + '" />';
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 
 			if ( settings.link.url ) {
 				imageHtml = '<a href="' + _.escape( settings.link.url ) + '" tabindex="-1">' + imageHtml + '</a>';
@@ -706,7 +710,11 @@ class Widget_Image_Box extends Widget_Base {
 			html += '<div class="elementor-image-box-content">';
 
 			if ( settings.title_text ) {
+<<<<<<< HEAD
 				var title_html = elementor.helpers.sanitize( settings.title_text ),
+=======
+				var title_html = settings.title_text,
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 					titleSizeTag = elementor.helpers.validateHTMLTag( settings.title_size );
 
 				if ( settings.link.url ) {

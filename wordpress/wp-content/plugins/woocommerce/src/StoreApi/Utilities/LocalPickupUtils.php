@@ -8,6 +8,7 @@ namespace Automattic\WooCommerce\StoreApi\Utilities;
 class LocalPickupUtils {
 
 	/**
+<<<<<<< HEAD
 	 * Gets the local pickup location settings.
 	 *
 	 * @param string $context The context for the settings. Defaults to 'view'.
@@ -42,13 +43,20 @@ class LocalPickupUtils {
 	}
 
 	/**
+=======
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	 * Checks if WC Blocks local pickup is enabled.
 	 *
 	 * @return bool True if local pickup is enabled.
 	 */
 	public static function is_local_pickup_enabled() {
+<<<<<<< HEAD
 		$pickup_location_settings = self::get_local_pickup_settings();
 		return $pickup_location_settings['enabled'];
+=======
+		$pickup_location_settings = get_option( 'woocommerce_pickup_location_settings', [] );
+		return wc_string_to_bool( $pickup_location_settings['enabled'] ?? 'no' );
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 	}
 	/**
 	 * Gets a list of payment method ids that support the 'local-pickup' feature.
@@ -58,7 +66,11 @@ class LocalPickupUtils {
 	public static function get_local_pickup_method_ids() {
 		$all_methods_supporting_local_pickup = array_reduce(
 			WC()->shipping()->get_shipping_methods(),
+<<<<<<< HEAD
 			function ( $methods, $method ) {
+=======
+			function( $methods, $method ) {
+>>>>>>> 85b704a4e7f213a7fc8e00dda037f0f84f541744
 				if ( $method->supports( 'local-pickup' ) ) {
 					$methods[] = $method->id;
 				}
