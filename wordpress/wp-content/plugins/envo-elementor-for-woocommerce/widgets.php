@@ -98,6 +98,7 @@ final class ETWW_Elementor_Widgets {
 	public function enqueue_styles() {
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		wp_enqueue_style('etww-frontend', plugins_url('/assets/css/etww-frontend' . $suffix . '.css', ETWW_ELEMENTOR__FILE__));
+		wp_register_style( 'font-awesome-5', ELEMENTOR_ASSETS_URL . 'lib/font-awesome/css/all.min.css', false );
 	}
 
 	/**

@@ -112,7 +112,7 @@ function envo_extra_woo_enqueue_header_css() {
 	}
     
     $plus_minus = get_theme_mod('woo_hide_plus_minus', 'block');
-    $equal_height = get_theme_mod('woo_archive_product_equal_height', 0);
+    $equal_height = get_theme_mod('woo_archive_product_equal_height', 1);
     
     if ($plus_minus == 0) {
         $css .= '.woocommerce div.product form.cart div.quantity {margin-right: 4px!important;}';

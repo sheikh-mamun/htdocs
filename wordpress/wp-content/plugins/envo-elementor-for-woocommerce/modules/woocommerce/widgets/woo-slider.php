@@ -35,7 +35,7 @@ class Woo_Slider extends Widget_Base {
     }
 
     public function get_style_depends() {
-        return ['etww-woo-slider'];
+        return ['etww-woo-slider', 'font-awesome-5'];
     }
 
     public function get_query() {

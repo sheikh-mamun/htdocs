@@ -1153,7 +1153,7 @@ Kirki::add_field( 'envo_extra', array(
 	'settings'			 => 'woo_archive_button_border_color',
 	'label'				 => esc_attr__( 'Border color', 'envo-extra' ),
 	'section'			 => 'woo_archive_button_section',
-	'default'			 => '#515151',
+	'default'			 => '',
 	'transport'			 => 'auto',
 	'priority'			 => 40,
 	'output'			 => array(
@@ -1358,8 +1358,8 @@ foreach ( $devices as $key => $value ) {
 		'priority'		 => 15,
 		'default'		 => array(
 			'top'	 => '5px',
-			'right'	 => '5px',
-			'bottom' => '8px',
+			'right'	 => '8px',
+			'bottom' => '5px',
 			'left'	 => '8px',
 		),
 		'transport'		 => 'auto',

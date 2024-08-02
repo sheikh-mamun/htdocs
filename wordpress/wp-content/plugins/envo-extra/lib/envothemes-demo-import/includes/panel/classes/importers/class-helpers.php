@@ -51,7 +51,7 @@ class Envo_Demos_Helpers {
         if (!$url || !$file_path) {
             return false;
         }
-
+		$args	= array();
         $try_file_get_contents = false;
 
         // Make sure we normalize $file_path.

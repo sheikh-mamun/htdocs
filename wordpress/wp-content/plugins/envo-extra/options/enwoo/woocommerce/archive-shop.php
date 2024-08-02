@@ -1471,8 +1471,8 @@ foreach ( $devices as $key => $value ) {
 		'priority'		 => 15,
 		'default'		 => array(
 			'top'	 => '5px',
-			'right'	 => '5px',
-			'bottom' => '8px',
+			'right'	 => '8px',
+			'bottom' => '5px',
 			'left'	 => '8px',
 		),
 		'transport'		 => 'auto',
